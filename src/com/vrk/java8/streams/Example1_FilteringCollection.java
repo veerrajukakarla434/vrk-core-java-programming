@@ -17,6 +17,14 @@ public class Example1_FilteringCollection {
 		this.price = price;
 	}
 
+	
+
+	@Override
+	public String toString() {
+		return "Example1_FilteringCollection [id=" + id + ", name=" + name + ", price=" + price + "]";
+	}
+
+
 
 	public static void main(String[] args) {
 		
@@ -34,7 +42,14 @@ public class Example1_FilteringCollection {
         	}
         }
        
-       
+       //Enhanced For loop
+        for(Example1_FilteringCollection product: productsList) {
+        	System.out.println();
+        	System.out.println(product);
+        	System.out.println();
+        }
+        
+        
         //Using Streams
         	
         	List<Float> productPriceList2  =productsList.stream()
