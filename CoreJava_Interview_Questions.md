@@ -14,3 +14,8 @@
 Java Reserved words are 53 including used, unused and literals 
 
 ![Reserved-Keywords1](http://www.java2learn.com/wp-content/uploads/2015/06/Reserved-Keywords1.png  "Reserved-Keywords1")
+
+
+**Reserved words:**
+
+![Java-Reserved-Words-and-Keywords](https://www.researchgate.net/profile/Edward_Sykes2/publication/260790397/figure/tbl1/AS:668630790443011@1536425411372/Java-Reserved-Words-and-Keywords.png "Java-Reserved-Words-and-Keywords")
