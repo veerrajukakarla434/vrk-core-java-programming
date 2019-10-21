@@ -9,7 +9,7 @@
 * **7) Java Collections**
 * **8) Java 7,8 Futures**
 
-## 1) Java Basics
+## LANGUAGE FUNDAMENTALS
 
 Java Reserved words are 53 including used, unused and literals 
 
