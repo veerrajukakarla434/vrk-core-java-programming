@@ -84,3 +84,29 @@ Java Reserved words are 53 including used, unused and literals
 * **Provides runtime environment**   
 
 
+**JRE:**
+
+* JRE is an acronym for Java Runtime Environment. It is also written as Java RTE. The Java Runtime Environment is a set of software tools which are used for developing Java applications. It is used to provide the runtime environment. It is the implementation of JVM. It physically exists. It contains a set of libraries + other files that JVM uses at runtime.
+
+
+* JDK is an acronym for Java Development Kit. The Java Development Kit (JDK) is a software development environment which is used to develop Java applications and applets. It physically exists. It contains JRE + development tools.
+
+* JDK is an implementation of any one of the below given Java Platforms released by Oracle Corporation:
+
+* **Standard Edition Java Platform***
+* **Enterprise Edition Java Platform**
+* **Micro Edition Java Platform**
+* The JDK contains a private Java Virtual Machine (JVM) and a few other resources such as an interpreter/loader (java), a compiler (javac), an archiver (jar), a documentation generator (Javadoc), etc. to complete the development of a Java Application.
+
+OR 
+
+* **JDK – Java Development Kit** (in short JDK) is Kit which provides the environment to develop and execute(run) the Java program. JDK is a kit(or package) which includes two things
+Development Tools(to provide an environment to develop your java programs)
+JRE (to execute your java program).
+Note : JDK is only used by Java Developers.
+
+* **JRE – Java Runtime Environment** (to say JRE) is an installation package which provides environment to only run(not develop) the java program(or application)onto your machine. JRE is only used by them who only wants to run the Java Programs i.e. end users of your system.
+
+* **JVM – Java Virtual machine(JVM)** is a very important part of both JDK and JRE because it is contained or inbuilt in both. Whatever Java program you run using JRE or JDK goes into JVM and JVM is responsible for executing the java program line by line hence it is also known as interpreter.
+
+![JDK_JRE_JVM_x](https://media.geeksforgeeks.org/wp-content/uploads/JDK_JRE_JVM_x.jpg "JDK_JRE_JVM_x")
