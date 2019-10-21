@@ -22,11 +22,14 @@ Java Reserved words are 53 including used, unused and literals
 
 #### For Easy Remember Category wise Keywords
 
-* **Keywords for Data types:**
+* **Keywords for Data types (8):**
 
 * byte, short, int, long, float, double, char and boolean.
 
-* **Keywords for FlowControl:** 
+* **Keywords for FlowControl (11):** 
 
 * if, else, switch, case, default, do, while, for, break, continue and return.
 
+* **Keywords for ExceptionHandling:** 
+
+* 
