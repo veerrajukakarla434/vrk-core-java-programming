@@ -137,7 +137,9 @@ Note : JDK is only used by Java Developers.
 * As shown in the above architecture diagram JVM is divided into three main subsystems
 
 **1) Class Loader Subsystem**
+
 **2)Runtime Data Area**
+
 **3)Execution Engine**
 
 
