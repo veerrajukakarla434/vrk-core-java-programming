@@ -59,6 +59,9 @@ Java Reserved words are 53 including used, unused and literals
 * false Allowed values for boolean data types
 * null Default value for object reference
 
+* In details of reserved words Link : https://www.javatpoint.com/java-keywords
+
+
 ### Java Data Types:
 
 ![datatype](http://theoryofprogramming.azurewebsites.net/wp-content/uploads/2015/05/datatype.png "datatype")
