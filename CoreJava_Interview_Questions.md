@@ -124,6 +124,10 @@ Note : JDK is only used by Java Developers.
 
 ![jvm-3](https://media.geeksforgeeks.org/wp-content/uploads/jvm-3.jpg "jvm-3")
 
+### OR
+
+![JVM-Architecture](https://javainterviewpoint-7ac9.kxcdn.com/wp-content/uploads/2016/01/JVM-Architecture.png "JVM-Architecture")
+
 ### Class Loader Subsystem
 
 * It is mainly responsible for three activities.
