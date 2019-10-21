@@ -18,7 +18,7 @@ Java Reserved words are 53 including used, unused and literals
 
 **Reserved words:**
 
-![Java-Reserved-Words-and-Keywords](https://www.researchgate.net/profile/Edward_Sykes2/publication/260790397/figure/tbl1/AS:668630790443011@1536425411372/Java-Reserved-Words-and-Keywords.png "Java-Reserved-Words-and-Keywords")
+![Reserved+Words](https://slideplayer.com/slide/9347846/28/images/17/Reserved+Words.jpg "Reserved+Words")
 
 #### For Easy Remember Category wise Keywords
 
@@ -30,6 +30,33 @@ Java Reserved words are 53 including used, unused and literals
 
 * if, else, switch, case, default, do, while, for, break, continue and return.
 
-* **Keywords for ExceptionHandling:** 
+* **Keywords for ExceptionHandling(6):** 
 
-* 
+* try, catch, finally, throw, throws, assert 
+
+* **Keywords for Modifers(11):** 
+
+* public, private, protected, final, abstract, static
+* native, synchronized, volatile, transient, strictfp
+
+* **Class Related Keywords(6):**
+
+*  class,interface, package, extends, implements, import
+
+* **Object Related Keywords():**
+* new, instanceof, super, this
+
+* **void return type Keywords(1):**
+ * if a method doesn’t return anything compulsory that method should be with void return type
+ 
+* **UnUsed Keywords(2):**
+* goto  in java usage is considered as harmful.
+* const  alternatively we should use final keyword.
+
+* ** Enum Keyword(1):**
+* This keyword has introduced in 1.5 version, to define user defined data types.
+* **Reserved Literals():**
+* true
+* false Allowed values for boolean data types
+* null Default value for object reference
+
