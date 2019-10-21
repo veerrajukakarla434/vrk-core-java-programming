@@ -126,6 +126,9 @@ Note : JDK is only used by Java Developers.
 
 ### OR
 
+### What is a JVM in Java ?
+* A Virtual Machine is a Software implementation of a Physical Machine, Java was developed with the concept of WORA ( Write Once Run Anywhere ) which runs on a VM. The compiler will be compiling the java file into a java .class file.  The .class file is input to JVM which Loads and executes the class file. Below goes the Architecture of JVM.
+
 ![JVM-Architecture](https://javainterviewpoint-7ac9.kxcdn.com/wp-content/uploads/2016/01/JVM-Architecture.png "JVM-Architecture")
 
 ### Class Loader Subsystem
