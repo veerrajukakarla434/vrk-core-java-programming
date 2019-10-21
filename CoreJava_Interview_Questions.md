@@ -131,6 +131,17 @@ Note : JDK is only used by Java Developers.
 
 ![JVM-Architecture](https://javainterviewpoint-7ac9.kxcdn.com/wp-content/uploads/2016/01/JVM-Architecture.png "JVM-Architecture")
 
+
+### How JVM works in Java ?
+* As shown in the above architecture diagram JVM is divided into three main subsystems
+
+**1) Class Loader Subsystem**
+**2)Runtime Data Area**
+**3)Execution Engine**
+
+
+
+
 ### Class Loader Subsystem
 
 * It is mainly responsible for three activities.
