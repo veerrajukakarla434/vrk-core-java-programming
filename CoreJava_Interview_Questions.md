@@ -121,6 +121,18 @@ Note : JDK is only used by Java Developers.
 
 ![jvm-3](https://media.geeksforgeeks.org/wp-content/uploads/jvm-3.jpg "jvm-3")
 
+### Class Loader Subsystem
+
+* It is mainly responsible for three activities.
+   *  Loading
+   *  Linking
+   *  Initialization
+
+* **Loading :** The Class loader reads the .class file, generate the corresponding binary data and save it in method area. For each .class file, JVM stores following information in method area.
+
+* Fully qualified name of the loaded class and its immediate parent class.
+* Whether .class file is related to Class or Interface or Enum
+* Modifier, Variables and Method information etc.
 
 
 
