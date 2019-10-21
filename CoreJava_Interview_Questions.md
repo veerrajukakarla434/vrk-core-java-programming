@@ -133,6 +133,7 @@ Note : JDK is only used by Java Developers.
 
 
 ### How JVM works in Java ?
+
 * As shown in the above architecture diagram JVM is divided into three main subsystems
 
 **1) Class Loader Subsystem**
