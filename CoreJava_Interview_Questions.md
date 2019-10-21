@@ -61,7 +61,7 @@ Java Reserved words are 53 including used, unused and literals
 
 ### Java Data Types:
 
-![Type_Primitive](https://www.ntu.edu.sg/home/ehchua/programming/java/images/Type_Primitive.gif "Type_Primitive")
+![datatype](http://theoryofprogramming.azurewebsites.net/wp-content/uploads/2015/05/datatype.png "datatype")
 
 ### Range Of Data types:
 
