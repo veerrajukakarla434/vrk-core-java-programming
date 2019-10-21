@@ -16,8 +16,6 @@ Java Reserved words are 53 including used, unused and literals
 ![Reserved-Keywords1](http://www.java2learn.com/wp-content/uploads/2015/06/Reserved-Keywords1.png  "Reserved-Keywords1")
 
 
-**Reserved words:**
-
 ![Reserved+Words](https://slideplayer.com/slide/9347846/28/images/17/Reserved+Words.jpg "Reserved+Words")
 
 ## For Easy Remember Category wise Keywords
@@ -69,7 +67,7 @@ Java Reserved words are 53 including used, unused and literals
 
 ![java-basics-user-input-data-type-constructor-18-638](https://image.slidesharecdn.com/lect3-basicsuserinputdatatypeconstructor-150219175632-conversion-gate01/95/java-basics-user-input-data-type-constructor-18-638.jpg?cb=1424368743 "java-basics-user-input-data-type-constructor-18-638") 
 
-
+### **1) Java Basics:**
 
 
 
