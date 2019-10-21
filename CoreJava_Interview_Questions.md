@@ -69,5 +69,18 @@ Java Reserved words are 53 including used, unused and literals
 
 ### **1) Java Basics:**
 
+* **Differences between JDK, JRE and JVM**
+
+**JVM:**
+* JVM (Java Virtual Machine) is an abstract machine. It is called a virtual machine because it doesn't physically exist. It is a specification that provides a runtime environment in which Java bytecode can be executed. It can also run those programs which are written in other languages and compiled to Java bytecode.
+
+* JVMs are available for many hardware and software platforms. JVM, JRE, and JDK are platform dependent because the configuration of each OS is different from each other. However, Java is platform independent. There are three notions of the JVM: specification, implementation, and instance.
+
+* The JVM performs the following main tasks:
+
+* **Loads code**
+* **Verifies code**
+* **Executes code**
+* **Provides runtime environment**   
 
 
