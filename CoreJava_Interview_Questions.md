@@ -61,4 +61,15 @@ Java Reserved words are 53 including used, unused and literals
 * false Allowed values for boolean data types
 * null Default value for object reference
 
+### Java Data Types:
+
+![Type_Primitive](https://www.ntu.edu.sg/home/ehchua/programming/java/images/Type_Primitive.gif "Type_Primitive")
+
+### Range Of Data types:
+
+![java-basics-user-input-data-type-constructor-18-638](https://image.slidesharecdn.com/lect3-basicsuserinputdatatypeconstructor-150219175632-conversion-gate01/95/java-basics-user-input-data-type-constructor-18-638.jpg?cb=1424368743 "java-basics-user-input-data-type-constructor-18-638") 
+
+
+
+
 
