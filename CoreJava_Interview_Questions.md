@@ -130,9 +130,9 @@ Note : JDK is only used by Java Developers.
 
 * **Loading :** The Class loader reads the .class file, generate the corresponding binary data and save it in method area. For each .class file, JVM stores following information in method area.
 
-* Fully qualified name of the loaded class and its immediate parent class.
-* Whether .class file is related to Class or Interface or Enum
-* Modifier, Variables and Method information etc.
+   *  Fully qualified name of the loaded class and its immediate parent class.
+   *  Whether .class file is related to Class or Interface or Enum
+   *  Modifier, Variables and Method information etc.
 
 
 
