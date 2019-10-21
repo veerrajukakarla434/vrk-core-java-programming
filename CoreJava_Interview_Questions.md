@@ -19,3 +19,14 @@ Java Reserved words are 53 including used, unused and literals
 **Reserved words:**
 
 ![Java-Reserved-Words-and-Keywords](https://www.researchgate.net/profile/Edward_Sykes2/publication/260790397/figure/tbl1/AS:668630790443011@1536425411372/Java-Reserved-Words-and-Keywords.png "Java-Reserved-Words-and-Keywords")
+
+#### For Easy Remember Category wise Keywords
+
+* **Keywords for Data types:**
+
+* byte, short, int, long, float, double, char and boolean.
+
+* **Keywords for FlowControl:** 
+
+* if, else, switch, case, default, do, while, for, break, continue and return.
+
