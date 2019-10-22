@@ -213,6 +213,18 @@ The above Class Loaders will follow Delegation Hierarchy Algorithm while loading
   
   4. Profiler – Profiler is a special component, it is responsible for finding the hotspots (i.e) Used to identify whether the      method is called multiple time or not.
 
+**3. Garbage Collector:** Garbage Collector is a part of Execution Engine, it collects/removes the unreferenced objects. Garbage Collection can be triggered by calling “System.gc()”, but the execution is not guaranteed. Garbage collector of JVM collects only those objects that are created by new keyword. So if you have created any object without new, you can use finalize method to perform cleanup.
+
+
+#### Java Native Interface (JNI):
+  * JNI will be interacting with the Native Method Libraries and provides the Native Libraries required for the Execution Engine.
+
+#### Native Method Libraries : 
+* It is a Collection of the Native Libraries which is required for the Execution Engine.
+
+
+
+
 
 ```java
 
