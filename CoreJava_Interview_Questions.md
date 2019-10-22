@@ -175,6 +175,23 @@ The above Class Loaders will follow Delegation Hierarchy Algorithm while loading
 
 * This is the final phase of Class Loading, here all static variable will be assigned with the original values and static block will be executed.
 
+### 2. Runtime Data Area
+
+* Runtime Data Area is divided into 5 major components
+
+** 1. Method Area:** – All the Class level data will be stored here including static variables. Method Area is one per JVM and it is a shared resource.
+
+** 2. Heap Area:** – All the Objects and its corresponding instance variables and arrays will be stored here. Heap Area is also one per JVM since Method area and Heap area shares memory for multiple threads the data stored is not thread safe.
+
+** 3. Stack Area:** – For every thread, a separate runtime stack will be created. For every method call, one entry will be made in the stack memory which is called as Stack Frame. All local variables will be created in the stack memory. Stack area is thread safe since it is not a shared resource. Stack Frame is divided into three sub-entities such as
+
+   * **Local Variable Array:** – Related to the method how many local variables are involved and the corresponding values will be stored here.
+   
+   * **Operand stack:** – If any intermediate operation is required to perform, operand stack act as runtime workspace to perform the operation.
+   
+   * **Frame data:** – All symbols corresponding to the method is stored here. In the case of any exception, the catch block information will be maintained in the frame data.
+
+
 
 ```java
 
