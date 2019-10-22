@@ -225,6 +225,6 @@ The above Class Loaders will follow Delegation Hierarchy Algorithm while loading
 
 ## 2) Java OOPS
 
-
+![java-oops](https://static.javatpoint.com/images/java-oops.png "java-oops")
 
 
