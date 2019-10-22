@@ -192,6 +192,11 @@ The above Class Loaders will follow Delegation Hierarchy Algorithm while loading
    * **Frame data:** – All symbols corresponding to the method is stored here. In the case of any exception, the catch block information will be maintained in the frame data.
 
 
+**4. PC Registers:** – Each thread will have separate PC Registers, to hold address of current executing instruction once the instruction is executed the PC register will be updated with the next instruction
+
+**5. Native Method stacks:** – Native Method Stack holds native method information. For every thread, separate native method stack will be created.
+
+
 
 ```java
 
