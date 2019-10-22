@@ -221,17 +221,3 @@ The above Class Loaders will follow Delegation Hierarchy Algorithm while loading
 
 #### Native Method Libraries : 
 * It is a Collection of the Native Libraries which is required for the Execution Engine.
-
-
-
-
-
-```java
-
-dfgsdf
-
-```
-
-**Note :** For every loaded .class file, only one object of Class is created.
-
-
