@@ -197,6 +197,16 @@ The above Class Loaders will follow Delegation Hierarchy Algorithm while loading
 **5. Native Method stacks:** – Native Method Stack holds native method information. For every thread, separate native method stack will be created.
 
 
+### 3. Execution Engine
+
+* The bytecode which is assigned to the Runtime Data Area will be executed by the Execution Engine. The Execution Engine reads the byte code and executes one by one.
+
+**1. Interpreter:** – Reads the bytecode, interprets it and executes it one by one. The interpreter interprets the bytecode faster but executes slowly. The disadvantage of the interpreter is that when one method called multiple times, every time interpretation is required.
+
+**2. JIT Compiler:** – JIT Compiler neutralizes the disadvantage of the Interpreter ( a single method called multiple times, each time interpretation is required ), The Execution Engine will be using the help of Interpreter in converting but when it found repeated code it uses JIT compiler which compiles the entire bytecode and changes it to native code.  This native code will be used directly for repeated method calls which improve the performance of the system.
+
+
+
 
 ```java
 
