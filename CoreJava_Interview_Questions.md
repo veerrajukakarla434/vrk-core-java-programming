@@ -205,7 +205,13 @@ The above Class Loaders will follow Delegation Hierarchy Algorithm while loading
 
 **2. JIT Compiler:** – JIT Compiler neutralizes the disadvantage of the Interpreter ( a single method called multiple times, each time interpretation is required ), The Execution Engine will be using the help of Interpreter in converting but when it found repeated code it uses JIT compiler which compiles the entire bytecode and changes it to native code.  This native code will be used directly for repeated method calls which improve the performance of the system.
 
-
+  1. Intermediate Code generator – produces intermediate code
+  
+  2. Code Optimizer – Code Optimizer is responsible for optimizing the intermediate code generated above
+  
+  3. Target Code Generator – Target Code Generator is responsible for Generating Machine Code/ Native Code
+  
+  4. Profiler – Profiler is a special component, it is responsible for finding the hotspots (i.e) Used to identify whether the      method is called multiple time or not.
 
 
 ```java
