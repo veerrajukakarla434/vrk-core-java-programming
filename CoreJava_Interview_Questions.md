@@ -351,6 +351,65 @@ Moves by swimming.
 Eats seafood.
 ```
 
+### Interfaces
+
+* An interface is a 100% abstract class. It can have only static, final, and public fields and abstract methods. It’s frequently referred to as a blueprint of a class as well. Java interfaces allow us to implement multiple inheritance in our code, as a class can implement any number of interfaces. Classes can access an interface using the implements keyword.
+
+* In the example, define two interfaces, Animal and Bird. Animal has two abstract methods, while Bird has two static fields and an abstract method.
+
+```Java
+interface Animal {
+	public void eat();
+	public void sound();
+}
+
+interface Bird {
+	int numberOfLegs = 2;
+	String outerCovering = "feather";
+
+	public void fly();
+}
+```
+The class Eagle implements both interfaces. It defines its own functionality for the three abstract methods. The eat() and sound() methods come from the Animal class, while fly() comes from Bird.
+```Java
+class Eagle implements Animal, Bird {
+	public void eat() {
+		System.out.println("Eats reptiles and amphibians.");
+	}
+	public void sound() {
+		System.out.println("Has a high-pitched whistling sound.");
+	}
+	public void fly() {
+		System.out.println("Flies up to 10,000 feet.");
+	}
+}
+```
+* In the TestEagle test class, instantiate a new Eagle object (called myEagle) and print out all the fields and methods to the console.
+* As static fields don’t belong to a specific object but to a whole class, you need to access them from the Bird interface instead of the myEagle object.
+```Java
+class TestEagle {
+	public static void main(String[] args) {
+		Eagle myEagle = new Eagle();
+
+		myEagle.eat();
+		myEagle.sound();
+		myEagle.fly();
+
+		System.out.println("Number of legs: " + Bird.numberOfLegs);
+		System.out.println("Outer covering: " + Bird.outerCovering);
+	}
+}
+```
+The Java console returns all the information you wanted to access:
+```Console
+[Console output of TestEagle]
+Eats reptiles and amphibians.
+Has a high-pitched whistling sound.
+Flies up to 10,000 feet.
+Number of legs: 2
+Outer covering: feather
+```
+
 ### Encapsulation
 * Encapsulation allows us to protect the data stored in a class from system-wide access. As its name suggests, it safeguards the internal contents of a class like a real-life capsule. You can implement encapsulation in Java by keeping the fields (class variables) private and providing public getter and setter methods to each of them. Java Beans are examples of fully encapsulated classes.
 
