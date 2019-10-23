@@ -338,7 +338,18 @@ class TestFish {
 	}
 }
 ``` 
+In the console, the concrete method has been called from the Animal abstract class, while the two abstract methods have been called from Bird() and Fish(), respectively.
+```Console
+[Console output of TestBird]
+Animal's data:
+Moves by flying.
+Eats birdfood.
 
+[Console output of TestFish]
+Animal's data:
+Moves by swimming.
+Eats seafood.
+```
 
 ### Encapsulation
 * Encapsulation allows us to protect the data stored in a class from system-wide access. As its name suggests, it safeguards the internal contents of a class like a real-life capsule. You can implement encapsulation in Java by keeping the fields (class variables) private and providing public getter and setter methods to each of them. Java Beans are examples of fully encapsulated classes.
