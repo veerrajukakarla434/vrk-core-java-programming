@@ -251,5 +251,12 @@ The above Class Loaders will follow Delegation Hierarchy Algorithm while loading
 You can hide internal implementation details by using abstract classes or interfaces. On the abstract level, you only need to define 
 the method signatures (name and parameter list) and let each class implement them in their own way.
 
+* Abstraction in Java:
 
+  * Hides the underlying complexity of data
+  * Helps avoid repetitive code
+  * Presents only the signature of internal functionality
+  * Gives flexibility to programmers to change the implementation of the abstract behaviour
+  * Partial abstraction (0-100%) can be achieved with abstract classes
+  * **Total abstraction (100%) can be achieved with interfaces**
 
