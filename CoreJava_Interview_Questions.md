@@ -295,6 +295,50 @@ abstract class Animal {
 	}
 }
 ```
+Extend the Animal abstract class with two child classes: Bird and Fish. Both of them set up their own functionality for the move() and eat() abstract methods.
+```Java
+class Bird extends Animal {
+
+void move() {
+		 System.out.println("Moves by flying.");
+     }
+	void eat() {
+		 System.out.println("Eats birdfood.");
+}	 
+}
+
+class Fish extends Animal {
+		 void move() {
+			 System.out.println("Moves by swimming.");
+	     }
+		 void eat() {
+			 System.out.println("Eats seafood.");
+		 }
+}
+```
+ Now, test it with the TestBird and TestFish classes. Both call the one concrete (label()) and the two abstract (move() and eat()) methods.
+```Java
+class TestBird {
+	public static void main(String[] args) {
+		Animal myBird = new Bird();
+
+		myBird.label();
+		myBird.move();
+		myBird.eat();
+	}
+}
+
+class TestFish {
+	public static void main(String[] args) {
+		Animal myFish = new Fish();
+
+		myFish.label();
+		myFish.move();
+		myFish.eat();
+	}
+}
+``` 
+
 
 ### Encapsulation
 * Encapsulation allows us to protect the data stored in a class from system-wide access. As its name suggests, it safeguards the internal contents of a class like a real-life capsule. You can implement encapsulation in Java by keeping the fields (class variables) private and providing public getter and setter methods to each of them. Java Beans are examples of fully encapsulated classes.
