@@ -279,6 +279,23 @@ A Java abstract class can have class members like private, protected, etc.	| Mem
 public abstract class Shape{ public abstract void draw(); }	| public interface Drawable{ void draw(); }
 
 
+### Abstract classes
+
+* An abstract class is a superclass (parent class) that cannot be instantiated. You need to instantiate one of its child classes if you want to create a new object. Abstract classes can have both abstract and concrete methods. Abstract methods contain only the method signature, while concrete methods declare a method body as well. Abstract classes are defined with the abstract keyword.
+
+```Java
+abstract class Animal {
+	// abstract methods
+	abstract void move();
+	abstract void eat();
+
+	// concrete method
+	void label() {
+		System.out.println("Animal's data:");
+	}
+}
+```
+
 ### Encapsulation
 * Encapsulation allows us to protect the data stored in a class from system-wide access. As its name suggests, it safeguards the internal contents of a class like a real-life capsule. You can implement encapsulation in Java by keeping the fields (class variables) private and providing public getter and setter methods to each of them. Java Beans are examples of fully encapsulated classes.
 
