@@ -276,6 +276,6 @@ The abstract keyword is used to declare abstract class.	| The interface keyword 
 An abstract class can extend another Java class and implement multiple Java interfaces.	| An interface can extend another Java interface only.
 An abstract class can be extended using keyword "extends".	| An interface can be implemented using keyword "implements".
 A Java abstract class can have class members like private, protected, etc.	| Members of a Java interface are public by default.
-Example:public abstract class Shape{public abstract void draw();}	| Example:public interface Drawable{void draw();}
+public abstract class Shape{ public abstract void draw(); }	| public interface Drawable{ void draw(); }
 
 
