@@ -246,5 +246,10 @@ The above Class Loaders will follow Delegation Hierarchy Algorithm while loading
 
 ### Abstraction:
 
+* Abstraction aims to hide complexity from the users and show them only the relevant information.
+* For example, if you want to drive a car, you don’t need to know about its internal workings. The same is true of Java classes. 
+You can hide internal implementation details by using abstract classes or interfaces. On the abstract level, you only need to define 
+the method signatures (name and parameter list) and let each class implement them in their own way.
+
 
 
