@@ -279,3 +279,13 @@ A Java abstract class can have class members like private, protected, etc.	| Mem
 public abstract class Shape{ public abstract void draw(); }	| public interface Drawable{ void draw(); }
 
 
+### Encapsulation
+* Encapsulation allows us to protect the data stored in a class from system-wide access. As its name suggests, it safeguards the internal contents of a class like a real-life capsule. You can implement encapsulation in Java by keeping the fields (class variables) private and providing public getter and setter methods to each of them. Java Beans are examples of fully encapsulated classes.
+
+* Encapsulation in Java:
+  * Restricts direct access to data members (fields) of a class.
+  * Fields are set to private
+  * Each field has a getter and setter method
+  * Getter methods return the field
+  * Setter methods let us change the value of the field
+
