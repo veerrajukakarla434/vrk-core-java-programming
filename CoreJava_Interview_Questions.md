@@ -264,7 +264,24 @@ the method signatures (name and parameter list) and let each class implement the
 
 Yes, an abstract class can have a constructor in Java. You can either explicitly provide a constructor to abstract class or if you don't, the compiler will add default constructor of no argument in abstract class. This is true for all classes and it also applies to an abstract class. For those who want to recall what is an abstract class in Java, it's a class which can not be instantiated with new() operator or any other ways. In order to use an abstract class in Java,  You need to extend it and provide a concrete class. Abstract class is commonly used to define a base class for a type hierarchy with default implementation, which is applicable to all child classes.
 
+* **What is the difference between abstract class and interface ?**
 
-
+**Abstract class** | **Interface**
+------------ | -------------
+1) Abstract class can have abstract and non-abstract methods.	| Interface can have only abstract methods. Since Java 8, it can have default and static methods also.
+2) Abstract class doesn't support multiple inheritance.	| Interface supports multiple inheritance.
+3) Abstract class can have final, non-final, static and non-static variables.	| Interface has only static and final variables.
+4) Abstract class can provide the implementation of interface.	| Interface can't provide the implementation of abstract class.
+5) The abstract keyword is used to declare abstract class.	| The interface keyword is used to declare interface.
+6) An abstract class can extend another Java class and implement multiple Java interfaces.	| An interface can extend another Java interface only.
+7) An abstract class can be extended using keyword "extends".	| An interface can be implemented using keyword "implements".
+8) A Java abstract class can have class members like private, protected, etc.	| Members of a Java interface are public by default.
+9)Example:
+public abstract class Shape{
+public abstract void draw();
+}	| Example:
+public interface Drawable{
+void draw();
+}
 
 
