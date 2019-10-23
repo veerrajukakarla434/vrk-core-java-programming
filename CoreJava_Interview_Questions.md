@@ -227,4 +227,18 @@ The above Class Loaders will follow Delegation Hierarchy Algorithm while loading
 
 ![java-oops](https://static.javatpoint.com/images/java-oops.png "java-oops")
 
+* Java is a class-based object-oriented programming (OOP) language that is built around the concept of objects. OOP concepts (OOP) intend to improve code readability and reusability by defining how to structure a Java program efficiently. The main principles of object-oriented programming are:
 
+**1. Abstraction**
+
+**2. Encapsulation**
+
+**3. Inheritance**
+
+**4. Polymorphism**
+
+**5. Association**
+
+**6. Aggregation**
+
+**7. Composition**
