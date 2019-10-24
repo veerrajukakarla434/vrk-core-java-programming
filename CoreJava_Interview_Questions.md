@@ -568,3 +568,83 @@ The bird is flying.
 The bird is flying 10000 feet high.
 The eagle is flying 10000 feet high.
 ```
+
+**Dynamic polymorphism:**
+
+* By using the method overriding feature of Java, you can override the methods of a parent class from its child class.
+
+* The Bird class extends the Animal class in the example below. Both have an eat() method. By default, Bird inherits its parent’s eat() method. However, as it also defines its own eat() method, Java will override the original method and call eat() from the child class.
+
+```Java
+class Animal {
+	public void eat() {
+		System.out.println("This animal eats insects.");
+	}
+}
+
+class Bird extends Animal {
+
+	public void eat() {
+		System.out.println("This bird eats seeds.");
+	}
+
+}
+```
+* The TestBird class first instantiates a new Animal object and calls its eat() method. Then, it also creates a Bird object and calls the polymorphic eat() method again.
+```Java
+class TestBird {
+	public static void main(String[] args) {
+		Animal myAnimal = new Animal();
+		myAnimal.eat();
+
+		Bird myBird = new Bird();
+		myBird.eat();
+	}
+}
+```
+* The console returns the values of the relevant methods properly. Therefore Java could have differentiated the two eat() methods indeed.
+```Console
+[Console output of TestBird]
+This animal eats insects.
+This bird eats seeds.
+```
+
+* **Can we overload static method in Java Program ?**
+
+* Yes, we can overload static method in Java. In terms of method overloading static method are just like normal methods and in order to overload static method you need to provide another static method with same name but different method signature. Static overloaded method are resolved using Static Binding during compile time.
+
+```Java
+/**   
+ * Java program to show that we can overload static method in Java.
+ */
+public class StaticOverloadingTest {
+ 
+    public static void main(String args[]) {
+        greet("John"); //will call static method with one String argument
+        greet("John", "Good Morning"); //overloaded static method will be call    
+
+    }
+ 
+    /*
+     * static method which will be overloaded
+     */
+    public static void greet(String name){
+        System.out.println("Hello " + name);
+    }
+ 
+    /*
+     * Another static method which overload above Hello method
+     * This shows that we can overload static method in Java
+     */
+    public static void greet(String name, String greeting){
+        System.out.println(greeting + " " + name);
+    }
+
+
+}
+Output
+Hello John
+Good Morning John
+```
+* **That's all on How can we overload static method in Java. In summary, Don't confuse between method overloading and method overriding. In short, you can overload static method in Java but you can not override static method in Java.**
+
