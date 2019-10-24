@@ -648,3 +648,13 @@ Good Morning John
 ```
 * **That's all on How can we overload static method in Java. In summary, Don't confuse between method overloading and method overriding. In short, you can overload static method in Java but you can not override static method in Java.**
 
+**What is covariant method overriding in Java?**
+
+* Covariant Method Overriding Example
+
+As I said, one of the best example of this is overriding clone() method, which is declared in java.lang.Object class and has a return type of Object. If you have used java.util.Date in your project and has called it's clone method to make a copy, you might know that you need to cast it back to Date as shown below :
+```Java
+Date d = new Date();
+Date clone = (Date) d.clone(); 
+```
+
