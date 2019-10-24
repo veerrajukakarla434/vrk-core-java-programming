@@ -427,3 +427,56 @@ Outer covering: feather
 * The Animal class below is fully encapsulated. It has three private fields and each of them has its own set of getter and setter methods.
 
 ```Java
+class Animal {
+	private String name;
+	private double averageWeight;
+	private int numberOfLegs;
+
+	// Getter methods
+	public String getName() {
+		return name;
+	}
+	public double getAverageWeight() {
+		return averageWeight;
+	}
+	public int getNumberOfLegs() {
+		return numberOfLegs;
+	}
+
+	// Setter methods
+	public void setName(String name) {
+		this.name = name;
+	}
+	public void setAverageWeight(double averageWeight) {
+		this.averageWeight = averageWeight;
+	}
+	public void setNumberOfLegs(int numberOfLegs) {
+		this.numberOfLegs = numberOfLegs;
+	}
+}
+```
+* The TestAnimal class first sets a value for each field with the setter methods, then prints out the values using the getter methods.
+```Java
+public class TestAnimal {
+	public static void main(String[] args) {
+		Animal myAnimal = new Animal();
+
+		myAnimal.setName("Eagle");
+		myAnimal.setAverageWeight(1.5);
+		myAnimal.setNumberOfLegs(2);
+
+		System.out.println("Name: " + myAnimal.getName());
+		System.out.println("Average weight: " + myAnimal.getAverageWeight() + "kg");
+		System.out.println("Number of legs: " + myAnimal.getNumberOfLegs());
+	}
+}
+```
+* As you can see below, the Java console returns properly all the values you set with the setter methods:
+```Console
+[Console output of TestAnimal]
+Name: Eagle
+Average weight: 1.5kg
+Number of legs: 2
+```
+
+
