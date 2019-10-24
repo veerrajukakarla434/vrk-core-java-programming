@@ -711,4 +711,8 @@ class Duck implements Cloneable{
    
 }
 ```
+**Can we overload or override the main method in Java?**
+
+**No,** since main() is a static method, you can only overload it, you cannot override it because the static method is resolved at compile time without needing object information hence we cannot override the main method in Java.
+
 
