@@ -650,6 +650,8 @@ Good Morning John
 
 **What is covariant method overriding in Java?**
 
+* In covariant method overriding, the overriding method can return the subclass of the object returned by original or overridden method. This concept was introduced in Java 1.5 (Tiger) version and it's very helpful in case original method is returning general type like Object class, because, then by using covariant method overriding you can return more suitable object and prevent client side type casting. One of the practical use of this concept is in when you override the clone() method in Java.
+
 * Covariant Method Overriding Example
 
 As I said, one of the best example of this is overriding clone() method, which is declared in java.lang.Object class and has a return type of Object. If you have used java.util.Date in your project and has called it's clone method to make a copy, you might know that you need to cast it back to Date as shown below :
