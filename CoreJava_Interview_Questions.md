@@ -716,3 +716,16 @@ class Duck implements Cloneable{
 **No,** since main() is a static method, you can only overload it, you cannot override it because the static method is resolved at compile time without needing object information hence we cannot override the main method in Java.
 
 
+* **Difference between super() and this() in java**
+
+
+
+
+ 	|**super()**|**this()**
+------------ | ------------ | ------------ 
+Definition|	super() - refers immediate parent class instance.	|this() - refers current class instance.
+Invoke	|Can be used to invoke immediate parent class method.|	Can be used to invoke current class method.
+Constructor	|super() acts as immediate parent class constructor and should be first line in child class constructor.|	this() acts as current class constructor and can be used in parametrized constructors.
+Override|	When invoking a superclass version of an overridden method the super keyword is used.|	When invoking a current version of an overridden method the this keyword is used.
+
+
