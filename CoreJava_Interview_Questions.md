@@ -808,3 +808,26 @@ method of sub class
 * Hiding doesn't work like overriding, because static methods are not polymorphic. Overriding occurs only with instance methods. It supports late binding, so which method will be called is determined at runtime.
 
 * **On the other hand, method hiding works with static ones. Therefore it's determined at compile time.**
+
+* **Can we prevent overriding a method without using the final modifier? **
+* Yes, you can prevent the method overriding in Java without using the final modifier. In fact, there are several ways to accomplish it e.g. you can mark the method private or static, those cannot be overridden.
+
+
+* **Can we override a private method in Java?**
+* No, you cannot. Since the private method is only accessible and visible inside the class they are declared, it's not possible to override them in subclasses. Though, you can override them inside the inner class as they are accessible there.
+
+
+* **What is covariant method overriding in Java?**
+* In covariant method overriding, the overriding method can return the subclass of the object returned by original or overridden method. This concept was introduced in Java 1.5 (Tiger) version and it's very helpful in case original method is returning general type like Object class, because, then by using covariant method overriding you can return more suitable object and prevent client side type casting. One of the practical use of this concept is in when you override the clone() method in Java.
+
+
+* **Can we change the return type of method to subclass while overriding?**
+* Yes, you can, but only from Java 5 onward. This feature is known as covariant method overriding and it was introduced in JDK 5 release. This is immensely helpful if original method return super-class e.g. clone() method return java.lang.Object. By using this, you can directly return the actual type, preventing client-side type casting of the result.
+
+
+* **Can we change the argument list of an overriding method?**
+* No, you cannot. The argument list is part of the method signature and both overriding and overridden method must have the same signature.
+
+
+Can we override a method which throws runtime exception without throws clause? (answer)
+Yes, there is no restriction on unchecked exception while overriding. On the other hand, in the case of checked exception, an overriding exception cannot throw a checked exception which comes higher in type hierarchy e.g. if original method is throwing IOException than overriding method cannot throw java.lang.Exception or java.lang.Throwable.
