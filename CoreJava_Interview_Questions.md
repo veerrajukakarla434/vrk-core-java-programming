@@ -809,7 +809,8 @@ method of sub class
 
 * **On the other hand, method hiding works with static ones. Therefore it's determined at compile time.**
 
-* **Can we prevent overriding a method without using the final modifier? **
+* **Can we prevent overriding a method without using the final modifier?**
+
 * Yes, you can prevent the method overriding in Java without using the final modifier. In fact, there are several ways to accomplish it e.g. you can mark the method private or static, those cannot be overridden.
 
 
@@ -829,5 +830,5 @@ method of sub class
 * No, you cannot. The argument list is part of the method signature and both overriding and overridden method must have the same signature.
 
 
-Can we override a method which throws runtime exception without throws clause? (answer)
-Yes, there is no restriction on unchecked exception while overriding. On the other hand, in the case of checked exception, an overriding exception cannot throw a checked exception which comes higher in type hierarchy e.g. if original method is throwing IOException than overriding method cannot throw java.lang.Exception or java.lang.Throwable.
+* **Can we override a method which throws runtime exception without throws clause?**
+* Yes, there is no restriction on unchecked exception while overriding. On the other hand, in the case of checked exception, an overriding exception cannot throw a checked exception which comes higher in type hierarchy e.g. if original method is throwing IOException than overriding method cannot throw java.lang.Exception or java.lang.Throwable.
