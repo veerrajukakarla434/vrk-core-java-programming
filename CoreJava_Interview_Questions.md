@@ -719,9 +719,7 @@ class Duck implements Cloneable{
 * **Difference between super() and this() in java**
 
 
-
-
- 	|**super()**|**this()**
+ ** * **	|**super()**|**this()**
 ------------ | ------------ | ------------ 
 Definition|	super() - refers immediate parent class instance.	|this() - refers current class instance.
 Invoke	|Can be used to invoke immediate parent class method.|	Can be used to invoke current class method.
