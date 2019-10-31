@@ -997,4 +997,12 @@ s1==s2? true
 * Notice that we are calling s1 = s1.intern(), so the s1 is now referring to the string pool object having value “abc”.
 * At this point, all the three string objects are referring to the same object in the string pool. Hence s1==s2 is returning true now.
 
+#### Why Char array is preferred over String for storing password?
 
+* String is immutable in Java and stored in String pool. Once it’s created it stays in the pool until unless garbage collected, so even though we are done with password it’s available in memory for longer duration and there is no way to avoid it. It’s a security risk because anyone having access to memory dump can find the password as clear text.
+If we use a char array to store password, we can set it to blank once we are done with it. So we can control for how long it’s available in memory that avoids the security threat with String.
+
+#### String vs StringBuffer Vs StringBuilder
+
+* Objects of String are immutable, and objects of StringBuffer and StringBuilder are mutable.
+* StringBuffer and StringBuilder are similar, but StringBuilder is faster and preferred over StringBuffer for single threaded program. If thread safety is needed, then StringBuffer is used.
