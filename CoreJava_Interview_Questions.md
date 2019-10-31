@@ -832,3 +832,62 @@ method of sub class
 
 * **Can we override a method which throws runtime exception without throws clause?**
 * Yes, there is no restriction on unchecked exception while overriding. On the other hand, in the case of checked exception, an overriding exception cannot throw a checked exception which comes higher in type hierarchy e.g. if original method is throwing IOException than overriding method cannot throw java.lang.Exception or java.lang.Throwable.
+
+### 3) Java Strings
+
+#### Why String is Immutable or Final in Java ?
+
+* String pool is possible only because String is immutable in Java. This way Java Runtime saves a lot of heap space because different String variables can refer to the same String variable in the pool. If String would not have been immutable, then String interning would not have been possible because if any variable would have changed the value, it would have been reflected in the other variables too.
+
+* If String is not immutable then it would cause a severe security threat to the application. For example, database username, password are passed as String to get database connection and in socket programming host and port details passed as String. Since String is immutable, its value can’t be changed otherwise any hacker could change the referenced value to cause security issues in the application.
+
+* Since String is immutable, it is safe for multithreading. A single String instance can be shared across different threads. This avoids the use of synchronization for thread safety. Strings are implicitly thread-safe.
+
+* Strings are used in java classloader and immutability provides security that correct class is getting loaded by Classloader. For example, think of an instance where you are trying to load java.sql.Connection class but the referenced value is changed to myhacked.Connection class that can do unwanted things to your database.
+
+* Since String is immutable, its hashcode is cached at the time of creation and it doesn’t need to be calculated again. This makes it a great candidate for the key in a Map and its processing is faster than other HashMap key objects. This is why String is the most widely used as HashMap keys.
+
+#### What is String Pool in Java ?
+
+* As the name suggests, String Pool in java is a pool of Strings stored in Java Heap Memory. We know that String is special class in java and we can create String object using new operator as well as providing values in double quotes.
+
+* Here is a diagram which clearly explains how String Pool is maintained in java heap space and what happens when we use different ways to create Strings.
+![String-Pool-Java1](https://cdn.journaldev.com/wp-content/uploads/2012/11/String-Pool-Java1.png "String-Pool-Java1")
+
+* String Pool is possible only because String is immutable in Java and its implementation of String interning concept. String pool is also example of Flyweight design pattern.
+
+* However using new operator, we force String class to create a new String object in heap space. We can use intern() method to put it into the pool or refer to another String object from the string pool having the same value.
+
+
+```Java
+package com.journaldev.util;
+
+public class StringPool {
+
+    /**
+     * Java String Pool example
+     * @param args
+     */
+    public static void main(String[] args) {
+        String s1 = "Cat";
+        String s2 = "Cat";
+        String s3 = new String("Cat");
+        
+        System.out.println("s1 == s2 :"+(s1==s2));
+        System.out.println("s1 == s3 :"+(s1==s3));
+    }
+
+}
+```
+
+Output of the above program is:
+
+```Console
+s1 == s2 :true
+s1 == s3 :false
+```
+
+
+
+
+
