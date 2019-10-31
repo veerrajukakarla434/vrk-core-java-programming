@@ -771,3 +771,40 @@ Tiger
 Animals can move
 Dogs can walk and run
 ```
+
+* **Can we override static method in Java?**
+* No, you cannot override static method in Java because method overriding is based upon dynamic binding at runtime. Usually static methods are bonded using static binding at compile time before even program runs.
+
+* Basically, keyword static modifies the lifecycle of variable and method. If you specify static method or variable then those are created at the time of class is loaded and not at runtime. Nonstatic variables and methods are only available during runtime.
+
+* **What is method hiding in Java and how to use it?**
+
+When super class and sub class contains same method including parameters and if they are static.
+
+The method in the super class will be hidden by the one that is in the sub class. This mechanism is known as method hiding.
+
+**Example**
+
+```Java
+class Demo{
+   public static void demoMethod() {
+      System.out.println("method of super class");
+   }
+}
+public class Sample extends Demo {
+   public static void demoMethod() {
+      System.out.println("method of sub class");
+   }
+   public static void main(String args[] ) {
+      Sample.demoMethod();
+   }
+}
+Output
+method of sub class
+```
+
+* **Method Hiding vs Overriding**
+
+* Hiding doesn't work like overriding, because static methods are not polymorphic. Overriding occurs only with instance methods. It supports late binding, so which method will be called is determined at runtime.
+
+* **On the other hand, method hiding works with static ones. Therefore it's determined at compile time.**
