@@ -887,7 +887,114 @@ s1 == s2 :true
 s1 == s3 :false
 ```
 
+#### How many Strings are getting Created in the String Pool?
 
+* Sometimes in java interview, you will be asked a question around String pool. For example, how many strings are getting created in the below statement;
 
+```Java
+String str = new String("Cat");
+```
+
+* In the above statement, either 1 or 2 string will be created. If there is already a string literal “Cat” in the pool, then only one string “str” will be created in the pool. If there is no string literal “Cat” in the pool, then it will be first created in the pool and then in the heap space, so a total of 2 string objects will be created.
+
+#### final vs Immutability in Java
+
+* **final :** In Java, final is a modifier which is used for class, method and variable also. When a variable is declared with final keyword, it’s value can’t be modified, essentially, a constant.
+
+* **Immutability :** In simple terms, immutability means unchanging over time or unable to be changed. In Java, we know that String objects are immutable means we cant change anything to the existing String objects.
+
+* final means that you can’t change the object’s reference to point to another reference or another object, but you can still mutate its state (using setter methods e.g). Whereas immutable means that the object’s actual value can’t be changed, but you can change its reference to another one.
+* final modifier is applicable for variable but not for objects, Whereas immutability applicable for an object but not for variables.
+* By declaring a reference variable as final, we won’t get any immutability nature, Even though reference variable is final. We can perform any type of change in the corresponding Object. But we cant perform reassignment for that variable.
+* final ensures that the address of the object remains the same whereas the Immutable suggests that we can’t change the state of the object once created.
+
+```Java
+// Java program to illustrate 
+// difference between final 
+// and immutability 
+  
+class Geeks { 
+    public static void main(String[] args) 
+    { 
+        final StringBuffer sb = new StringBuffer("Hello"); 
+  
+        // Even though reference varibale sb is final 
+        // We can perform any changes 
+        sb.append("GFG"); 
+  
+        System.out.println(sb); 
+  
+        // Here we will get Compile time error 
+        // Because reassignment is not possible for final variable 
+        sb = new StringBuffer("Hello World"); 
+  
+        System.out.println(sb); 
+    } 
+} 
+```
+Output:
+
+```Console
+Geeks.java:14: error: cannot assign a value to final variable sb
+        sb = new StringBuffer("Hello World");
+        ^
+1 error
+
+```
+* **Pictorial Representation of the above Program**
+![Untitled-32](https://media.geeksforgeeks.org/wp-content/uploads/Untitled-32.png "Untitled-32")
+
+* **Explanation:** In the above picture, we can see that we are creating an object of StringBuffer class by making reference final.
+
+* Declaring reference variable as final, does not mean that the object is immutable.
+* In the next line we are performing append() operation on the created object and it is successfully changed.
+* If the object is immutable, then the above append operation can’t be done.
+* But it is executed successfully as we declare reference variable as final. final means we can’t reassign anything to that reference variable again.
+* Therefore when we try to create a new object of BufferedReader then it wont created any object by throwing an error to the console.
+
+#### Java String intern()
+
+* Let’s try to understand intern() method with a simple program.
+
+```Java
+package com.journaldev.string;
+
+public class StringIntern {
+
+	public static void main(String args[]) {
+
+		String s1 = new String("abc"); // goes to Heap Memory, like other objects
+		String s2 = "abc"; // goes to String Pool
+		String s3 = "abc"; // again, goes to String Pool
+
+		// Let's check out above theories by checking references
+		System.out.println("s1==s2? " + (s1 == s2)); // should be false
+		System.out.println("s2==s3? " + (s2 == s3)); // should be true
+
+		// Let's call intern() method on s1 now
+		s1 = s1.intern(); // this should return the String with same value, BUT from String Pool
+
+		// Let's run the test again
+		System.out.println("s1==s2? " + (s1 == s2)); // should be true now
+
+	}
+}
+```
+
+Output:
+
+```Console
+s1==s2? false
+s2==s3? true
+s1==s2? true
+```
+**String intern() Example Explanation**
+* When we are using new operator, the String is created in the heap space. So “s1” object is created in the heap memory with value “abc”.
+* When we create string literal, it’s created in the string pool. So “s2” and “s3” are referring to string object in the pool having value “abc”.
+* In the first print statement, s1 and s2 are referring to different objects. Hence s1==s2 is returning false.
+* In the second print statement, s2 and s3 are referring to the same object in the pool. Hence s2==s3 is returning true.
+* Now, when we are calling s1.intern(), JVM checks if there is any string in the pool with value “abc” is present? Since there is a string object in the pool with value “abc”, its reference is returned.
+* Notice that we are calling s1 = s1.intern(), so the s1 is now referring to the string pool object having value “abc”.
+* At this point, all the three string objects are referring to the same object in the string pool. Hence s1==s2 is returning true now.
 
 
