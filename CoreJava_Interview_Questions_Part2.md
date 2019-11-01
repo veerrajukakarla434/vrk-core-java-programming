@@ -205,7 +205,8 @@ catch(NullPointerException ex)
 Final is used to apply restrictions on class, method and variable.| Final class can't be inherited, final method can't be overridden and final variable value can't be changed.|	Finally is used to place important code, it will be executed whether exception is handled or not.	|Finalize is used to perform clean up processing just before object is garbage collected.
 Final is a keyword.|	Finally is a block.|	Finalize is a method.
 
-####final keyword :
+#### final keyword :
+
 * final is a keyword which is used to make a variable or a method or a class as “unchangeable“. In simple terms,
 
 A variable which is declared as final, it’s value can not be changed once it is initialized.
@@ -248,7 +249,9 @@ class SubClass extends SuperClass
     //Compile time error, can not create a sub class to final class
 }
 ```
+
 #### finally Block :
+
 * finally is a block which is used for exception handling along with try and catch blocks. finally block is always executed whether exception is raised or not and raised exception is handled or not. Most of time, this block is used to close the resources like database connection, I/O resources etc.
 
 ```Java
