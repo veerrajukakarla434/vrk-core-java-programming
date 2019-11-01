@@ -1006,3 +1006,13 @@ If we use a char array to store password, we can set it to blank once we are don
 
 * Objects of String are immutable, and objects of StringBuffer and StringBuilder are mutable.
 * StringBuffer and StringBuilder are similar, but StringBuilder is faster and preferred over StringBuffer for single threaded program. If thread safety is needed, then StringBuffer is used.
+
+
+#### Substring in Java
+
+* A part of string is called substring. In other words, substring is a subset of another string. In case of substring **startIndex is inclusive** and **endIndex is exclusive.**
+
+**Note: Index starts from 0.**
+
+
+
