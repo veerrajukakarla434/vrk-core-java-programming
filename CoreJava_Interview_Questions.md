@@ -1014,5 +1014,15 @@ If we use a char array to store password, we can set it to blank once we are don
 
 **Note: Index starts from 0.**
 
+* You can get substring from the given string object by one of the two methods:
+
+* **public String substring(int startIndex):** This method returns new String object containing the substring of the given string from specified startIndex (inclusive).
+
+* **public String substring(int startIndex, int endIndex):** This method returns new String object containing the substring of the given string from specified startIndex to endIndex.
+
+* In case of string:
+  * **startIndex: inclusive**
+  * **endIndex: exclusive**
+
 
 
