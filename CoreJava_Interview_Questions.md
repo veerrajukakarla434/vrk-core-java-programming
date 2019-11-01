@@ -9,6 +9,8 @@
 * **7) Java Collections**
 * **8) Java 7,8 Futures**
 
+Reference : https://howtodoinjava.com/interview-questions/core-java-interview-questions-series-part-1/
+
 ## 1) Java Basics
 
 Java Reserved words are 53 including used, unused and literals 
@@ -1190,3 +1192,18 @@ Program output:
 100 - test - Tue Oct 30 21:34:08 IST 2012
 100 - test - Tue Oct 30 21:34:08 IST 2012
 ```
+
+#### Immutable classes in JDK
+* Apart from your written classes, JDK itself has lots of immutable classes. Given is such a list of immutable classes in Java.
+
+  * String
+  * Wrapper classes such as Integer, Long, Double etc.
+  * Immutable collection classes such as Collections.singletonMap() etc.
+  * java.lang.StackTraceElement
+  * Java enums (ideally they should be)
+  * java.util.Locale
+  * java.util.UUID
+  
+  
+
+
