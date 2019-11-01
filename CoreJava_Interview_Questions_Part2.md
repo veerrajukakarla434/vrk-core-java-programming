@@ -276,6 +276,17 @@ protected void finalize() throws Throwable
 {
     //Clean up operations
 }
+=======================================
+class FinalizeExample{  
+public void finalize(){System.out.println("finalize called");}  
+public static void main(String[] args){  
+FinalizeExample f1=new FinalizeExample();  
+FinalizeExample f2=new FinalizeExample();  
+f1=null;  
+f2=null;  
+System.gc();  
+}
+}  
 ```
 #### What is the difference between throw, throws and throwable in java?
 **throw In Java :**
@@ -329,3 +340,6 @@ class ThrowAndThrowsExample
 * The task of main thread is to execute the main() method. The task of thread scheduler is to schedule the threads. The task of garbage collector thread is to sweep out abandoned objects from the heap memory. Abandoned objects or dead objects are those objects which does not have live references. Garbage collector thread before sweeping out an abandoned object, it calls finalize() method of that object. After finalize() method is executed, object is destroyed from the memory. That means clean up operations which you have kept in the finalize() method are executed before an object is destroyed from the memory.
 
 * Garbage collector thread does not come to heap memory whenever an object becomes abandoned. It comes once in a while to the heap memory and at that time if it sees any abandoned objects, it sweeps out those objects after calling finalize() method on them. Garbage collector thread calls finalize() method only once for one object.
+
+
+
