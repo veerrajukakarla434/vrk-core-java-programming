@@ -1043,6 +1043,23 @@ public class TestSubstring{
  }  
 }  
 ```
+
+```Java
+public class StringExample 
+{
+    public static void main(String[] args) 
+    {
+        String blogName = "howtodoinjava.com";
+ 
+        System.out.println(blogName.substring(14, blogName.length()));  //com
+             
+        System.out.println("hello world".substring(6,9));   //wor
+        
+        System.out.println("0123456789".substring(3, 7));   //3456
+    }
+}
+```
+
   
   
 
