@@ -1206,6 +1206,11 @@ Program output:
   
  ## 4) Java Exceptions
  
+ #### What is an exception
+ 
+* Exception is an abnormal condition which occurs during the execution of a program and disrupts normal flow of the program. This exception must be handled properly. If it is not handled, program will be terminated abruptly.
+ 
+ 
   
 
 
