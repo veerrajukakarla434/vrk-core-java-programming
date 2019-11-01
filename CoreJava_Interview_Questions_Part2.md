@@ -172,4 +172,26 @@ Caused by: java.lang.ClassNotFoundException: A
 It is an exception. It is of type java.lang.Exception.	|It is an error. It is of type java.lang.Error.
 It occurs when an application tries to load a class at run time which is not updated in the classpath. |	It occurs when java runtime system doesn’t find a class definition, which is present at compile time, but missing at run time.
 It is thrown by the application itself. It is thrown by the methods like Class.forName(), loadClass() and findSystemClass().	|It is thrown by the Java Runtime System.
-It occurs when classpath is not updated with required JAR files.	|It occurs when required class definition is missing at run time.  
+It occurs when classpath is not updated with required JAR files.	|It occurs when required class definition is missing at run time. 
+
+#### Does finally block get executed If either try or catch blocks are returning the control?
+
+* Yes, finally block will be always executed no matter whether try or catch blocks are returning the control or not.
+
+#### What is Re-throwing an exception in java?
+
+* Exceptions raised in the try block are handled in the catch block. If it is unable to handle that exception, it can re-throw that exception using throw keyword. It is called re-throwing an exception.
+
+```Java
+try
+{
+    String s = null;
+    System.out.println(s.length());   //This statement throws NullPointerException
+}
+catch(NullPointerException ex)
+{
+    System.out.println("NullPointerException is caught here");
+  
+    throw ex;     //Re-throwing NullPointerException
+}
+``` 
