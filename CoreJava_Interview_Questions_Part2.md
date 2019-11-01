@@ -205,5 +205,124 @@ catch(NullPointerException ex)
 Final is used to apply restrictions on class, method and variable.| Final class can't be inherited, final method can't be overridden and final variable value can't be changed.|	Finally is used to place important code, it will be executed whether exception is handled or not.	|Finalize is used to perform clean up processing just before object is garbage collected.
 Final is a keyword.|	Finally is a block.|	Finalize is a method.
 
+####final keyword :
+* final is a keyword which is used to make a variable or a method or a class as “unchangeable“. In simple terms,
 
+A variable which is declared as final, it’s value can not be changed once it is initialized.
 
+```Java
+final int i = 10;    //final variable
+ 
+i = 20;      //Compile time error, Value can not be changed
+A method declared as final can not be overridden or modified in the sub class.
+
+```
+
+```Java
+class SuperClass
+{
+    final void methodOfSuperClass()
+    {
+        System.out.println("final Method");
+    }
+}
+ 
+class SubClass extends SuperClass
+{
+    void methodOfSuperClass()
+    {
+        //Compile time error, final method can not be overridden.
+    }
+}
+```
+A class declared as final can not be extended.
+
+```Java
+final class SuperClass
+{
+    //final class
+}
+ 
+class SubClass extends SuperClass
+{
+    //Compile time error, can not create a sub class to final class
+}
+```
+#### finally Block :
+* finally is a block which is used for exception handling along with try and catch blocks. finally block is always executed whether exception is raised or not and raised exception is handled or not. Most of time, this block is used to close the resources like database connection, I/O resources etc.
+
+```Java
+try
+{
+    //checking the code for exceptions
+}
+catch(Exception ex)
+{
+    //Catching the exceptions
+}
+finally
+{
+    //This block is always executed
+}
+```
+#### finalize() Method :
+* finalize() method is a protected method of java.lang.Object class. It is inherited to every class you create in java. This method is called by garbage collector thread before an object is removed from the memory. finalize() method is used to perform some clean up operations on an object before it is removed from the memory.
+
+```Java
+protected void finalize() throws Throwable
+{
+    //Clean up operations
+}
+```
+#### What is the difference between throw, throws and throwable in java?
+**throw In Java :**
+
+* throw is a keyword in java which is used to throw an exception manually. Using throw keyword, you can throw an exception from any method or block. But, that exception must be of type java.lang.Throwable class or it’s sub classes. Below example shows how to throw an exception using throw keyword.
+
+```Java
+class ThrowAndThrowsExample
+{
+    void method() throws Exception
+    {
+        Exception e = new Exception();
+ 
+        throw e;            //throwing an exception using 'throw'
+    }
+}
+```
+#### throws In Java :
+* throws is also a keyword in java which is used in the method signature to indicate that this method may throw mentioned exceptions. The caller to such methods must handle the mentioned exceptions either using try-catch blocks or using throws keyword. Below is the syntax for using throws keyword.
+
+```Java
+return_type method_name(parameter_list) throws exception_list
+{
+     //some statements
+}
+```
+#### Throwable In Java :
+* Throwable is a super class for all types of errors and exceptions in java. This class is a member of java.lang package. Only instances of this class or it’s sub classes are thrown by the java virtual machine or by the throw statement. The only argument of catch block must be of this type or it’s sub classes. If you want to create your own customized exceptions, then your class must extend this class. 
+
+* Below example shows how to create customized exceptions by extending java.lang.Throwable class.
+
+```Java
+class MyException extends Throwable
+{
+           //Customized Exception class
+}
+ 
+class ThrowAndThrowsExample
+{
+    void method() throws MyException
+    {
+        MyException e = new MyException();
+ 
+        throw e;
+    }
+}
+```
+#### Garbage Collection In Java :
+* Whenever you run a java program, JVM creates three threads. 1) main thread   2) Thread Scheduler   3) Garbage Collector Thread. In these three threads, main thread is a user thread and remaining two are daemon threads which run in background.
+
+* The task of main thread is to execute the main() method. The task of thread scheduler is to schedule the threads. The task of garbage collector thread is to sweep out abandoned objects from the heap memory. Abandoned objects or dead objects are those objects which does not have live references. Garbage collector thread before sweeping out an abandoned object, it calls finalize() method of that object. After finalize() method is executed, object is destroyed from the memory. That means clean up operations which you have kept in the finalize() method are executed before an object is destroyed from the memory.
+
+* Garbage collector thread does not come to heap memory whenever an object becomes abandoned. It comes once in a while to the heap memory and at that time if it sees any abandoned objects, it sweeps out those objects after calling finalize() method on them. Garbage collector thread calls finalize() method only once for one object.
