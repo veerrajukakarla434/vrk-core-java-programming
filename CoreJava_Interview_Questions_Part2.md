@@ -169,7 +169,6 @@ Caused by: java.lang.ClassNotFoundException: A
  
 **ClassNotFoundException** | **NoClassDefFoundError**
 ------------ | ------------
-
 It is an exception. It is of type java.lang.Exception.	|It is an error. It is of type java.lang.Error.
 It occurs when an application tries to load a class at run time which is not updated in the classpath. |	It occurs when java runtime system doesn’t find a class definition, which is present at compile time, but missing at run time.
 It is thrown by the application itself. It is thrown by the methods like Class.forName(), loadClass() and findSystemClass().	|It is thrown by the Java Runtime System.
