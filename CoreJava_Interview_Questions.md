@@ -1005,7 +1005,14 @@ If we use a char array to store password, we can set it to blank once we are don
 #### String vs StringBuffer Vs StringBuilder
 
 * Objects of String are immutable, and objects of StringBuffer and StringBuilder are mutable.
-* StringBuffer and StringBuilder are similar, but StringBuilder is faster and preferred over StringBuffer for single threaded program. If thread safety is needed, then StringBuffer is used.
+
+* String class represents a sequence of characters and provides useful methods to work with characters. String class instances are immutable. So each time you perform string concatenation using string class, a new object will be created with the concatenated string.
+
+* StringBuilder class is used to perform string concatenation operations in more memory efficient way. It internally maintains a char array and manipulate the content in this array only. 
+When you need to get the complete concatenated string after performing all operations, it creates a new String with character array content.
+
+* StringBuffer is very much same as StringBuilder class. Only difference is that it is thread-safe. It’s all methods are synchronized.
+
 
 
 #### Substring in Java
