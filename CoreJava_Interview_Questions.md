@@ -1013,8 +1013,6 @@ When you need to get the complete concatenated string after performing all opera
 
 * StringBuffer is very much same as StringBuilder class. Only difference is that it is thread-safe. It’s all methods are synchronized.
 
-
-
 #### Substring in Java
 
 * A part of string is called substring. In other words, substring is a subset of another string. In case of substring **startIndex is inclusive** and **endIndex is exclusive.**
@@ -1067,8 +1065,16 @@ public class StringExample
 }
 ```
 
+#### How to create a immutable object in Java? Count all benefits?
+
+* An immutable class is one whose state can not be changed once created. Here, state of object essentially means the values stored in instance variable in class whether they are primitive types or reference types.
   
-  
+* To make a class immutable, below steps needs to be followed:
+
+  * Don’t provide “setter” methods or methods that modify fields or objects referred to by fields. Setter methods are meant to change the state of object and this is what we want to prevent here.
+  * Make all fields final and private. Fields declared private will not be accessible outside the class and making them final will ensure the even accidentally you can not change them.
+  * Don’t allow subclasses to override methods. The simplest way to do this is to declare the class as final. Final classes in java can not be overridden.
+  * Always remember that your instance variables will be either mutable or immutable. Identify them and return new objects with copied content for all mutable objects (object references). Immutable variables (primitive types) can be returned safely without extra effort.  
 
 
 
