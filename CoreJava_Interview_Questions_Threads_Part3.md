@@ -21,3 +21,20 @@
 
 * **Task submission and execution:** 
   * Executors framework provides methods for submitting tasks for execution in the thread pool, and also gives you the power to decide when the tasks will be executed. For example, You can submit a task to be executed now or schedule them to be executed later or make them execute periodically.
+  
+  
+* Java Concurrency API defines the following three executor interfaces that covers everything that is needed for creating and managing threads -
+
+* **Executor** - 
+  * A simple interface that contains a method called execute() to launch a task specified by a Runnable object.
+
+* **ExecutorService** - 
+  * A sub-interface of Executor that adds functionality to manage the lifecycle of the tasks. 
+  * It also provides a submit() method whose overloaded versions can accept a Runnable as well as a Callable object.
+  * Callable objects are similar to Runnable except that the task specified by a Callable object can also return a value.
+
+* **ScheduledExecutorService*** - 
+  * A sub-interface of ExecutorService. It adds functionality to schedule the execution of the tasks.  
+
+
+
