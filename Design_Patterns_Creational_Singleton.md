@@ -2,5 +2,6 @@
 https://howtodoinjava.com/design-patterns/creational/
 
 
-## 1 Singleton Design pattern:
+## Singleton Design pattern:
 
+* Before going to singleton you should know about volatile keyword.
