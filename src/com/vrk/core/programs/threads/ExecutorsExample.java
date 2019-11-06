@@ -24,6 +24,9 @@ public class ExecutorsExample {
         System.out.println("Submit the task specified by the runnable to the executor service.");
         
         executorService.submit(runnable);
+        
+        System.out.println("Shutting down the executor");
+        executorService.shutdown();
     }
 		
 		

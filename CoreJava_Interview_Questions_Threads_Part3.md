@@ -73,6 +73,7 @@ ExecutorService es = Executors.newScheduledThreadPool(10);
 
 ```Java
 package com.vrk.core.programs.threads;
+
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -102,8 +103,18 @@ Submit the task specified by the runnable to the executor service.
 Inside : pool-1-thread-1
 ```
 
+* The above example shows how to create an executor service and execute a task inside the executor. We use the **Executors.newSingleThreadExecutor()** method to create an **ExecutorService** that uses a single worker thread for executing tasks. If a task is submitted for execution and the thread is currently busy executing another task, then the new task will wait in a queue until the thread is free to execute it.
 
+* If you run the above program, you will notice that the program never exits, because, the executor service keeps listening for new tasks until we shut it down explicitly.
 
+### Shutting down the ExecutorService
 
+* ExecutorService provides two methods for shutting down an executor -
+
+* **shutdown()** - when shutdown() method is called on an executor service, it stops accepting new tasks, waits for previously submitted tasks to execute, and then terminates the executor.
+
+* **shutdownNow()** - this method interrupts the running task and shuts down the executor immediately.
+
+* Let’s add shutdown code at the end of our program so that it exits gracefully -
 
 
