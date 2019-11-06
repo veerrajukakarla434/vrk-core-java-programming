@@ -198,3 +198,15 @@ Executing Task2 inside : pool-1-thread-2
 Executing Task1 inside : pool-1-thread-1
 Executing Task3 inside : pool-1-thread-1
 ```
+
+* In the example above, we created an executor service with a fixed thread pool of size 2. A fixed thread pool is a very common type of thread pool that is frequently used in multi-threaded applications.
+
+* In a fixed thread-pool, the executor service makes sure that the pool always has the specified number of threads running. If any thread dies due to some reason, it is replaced by a new thread immediately.
+
+* When a new task is submitted, the executor service picks one of the available threads from the pool and executes the task on that thread. If we submit more tasks than the available number of threads and all the threads are currently busy executing the existing tasks, then the new tasks will wait for their turn in a queue.
+
+
+
+
+
+
