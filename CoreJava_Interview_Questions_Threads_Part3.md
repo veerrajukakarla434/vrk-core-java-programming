@@ -205,6 +205,19 @@ Executing Task3 inside : pool-1-thread-1
 
 * When a new task is submitted, the executor service picks one of the available threads from the pool and executes the task on that thread. If we submit more tasks than the available number of threads and all the threads are currently busy executing the existing tasks, then the new tasks will wait for their turn in a queue.
 
+## Thread Pool
+
+* Most of the executor implementations use thread pools to execute tasks. A thread pool is nothing but a bunch of worker threads that exist separately from the Runnable or Callable tasks and is managed by the executor.
+
+* Creating a thread is an expensive operation and it should be minimized. Having worker threads minimizes the overhead due to thread creation because executor service has to create the thread pool only once and then it can reuse the threads for executing any task.
+
+* We already saw an example of a thread pool in the previous section called a fixed thread-pool.
+
+* Tasks are submitted to a thread pool via an internal queue called the Blocking Queue. If there are more tasks than the number of active threads, they are inserted into the blocking queue for waiting until any thread becomes available. If the blocking queue is full than new tasks are rejected.
+
+
+![executor-service-thread-pool-blocking-queue-example](https://www.callicoder.com/assets/images/post/large/executor-service-thread-pool-blocking-queue-example.jpg "executor-service-thread-pool-blocking-queue-example")
+
 
 
 
