@@ -117,4 +117,9 @@ Inside : pool-1-thread-1
 
 * Let’s add shutdown code at the end of our program so that it exits gracefully -
 
+```Java
+System.out.println("Shutting down the executor");
+executorService.shutdown();
+```
+
 
