@@ -131,4 +131,10 @@ Submit the task specified by the runnable to the executor service.
 Inside : pool-1-thread-1
 Shutting down the executor
 ```
+### ExecutorService example with multiple threads and tasks
+
+* In the earlier example, we created an ExecutorService that uses a single worker thread. But the real power of ExecutorService comes when we create a pool of threads and execute multiple tasks concurrently in the thread pool.
+
+* Following example shows how you can create an executor service that uses a thread pool and execute multiple tasks concurrently -
+
 
