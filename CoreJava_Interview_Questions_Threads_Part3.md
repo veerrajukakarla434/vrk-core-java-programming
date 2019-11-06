@@ -72,6 +72,7 @@ ExecutorService es = Executors.newScheduledThreadPool(10);
 * In the following example, we first create an ExecutorService with a single worker thread, and then submit a task to be executed inside the worker thread.
 
 ```Java
+package com.vrk.core.programs.threads;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
