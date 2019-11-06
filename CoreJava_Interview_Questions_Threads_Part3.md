@@ -121,5 +121,14 @@ Inside : pool-1-thread-1
 System.out.println("Shutting down the executor");
 executorService.shutdown();
 ```
+Now the output
 
+```Console
+Inside : main
+Creating Executor Service .....
+Creating a Runnable...
+Submit the task specified by the runnable to the executor service.
+Inside : pool-1-thread-1
+Shutting down the executor
+```
 
