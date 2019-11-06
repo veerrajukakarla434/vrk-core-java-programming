@@ -1,7 +1,7 @@
 # Java Interview Questions - Threads - Part3
 ## 5) Java Threads
 
-#### Java ExecutorService and Thread Pools Tutorial
+### Java ExecutorService and Thread Pools Tutorial
  
 * We know how to create threads in Java by extending the Thread class or implementing the Runnable interface.
 
@@ -40,3 +40,33 @@
 
 * Refer  List of Executors class Methods : https://www.javatpoint.com/java-executors
 
+
+### Callable and Future
+
+* Another important advantage of the Executor framework was the Callable interface. It’s similar to the Runnable interface with two benefits:
+
+  * It’s call() method returns a result after the thread execution is complete.
+  * When we send a Callable object to an executor, we get a Future object’s reference. We can use this object to query the status of thread and the result of the Callable object.
+
+### Creating ExecutorService instances
+
+* ExecutorService is an interface and it’s implementations can execute a Runnable or Callable class in an asynchronous way. Note that invoking the run() method of a Runnable interface in a synchronous way is simply calling a method.
+
+* We can create an instance of ExecutorService in following ways:
+
+* **Executors class:**- Executors is a utility class that provides factory methods for creating the implementations of the interface.
+
+```Java
+//Executes only one thread
+ExecutorService es = Executors.newSingleThreadExecutor(); 
+ 
+//Internally manages thread pool of 2 threads
+ExecutorService es = Executors.newFixedThreadPool(2); 
+ 
+//Internally manages thread pool of 10 threads to run scheduled tasks
+ExecutorService es = Executors.newScheduledThreadPool(10); 
+```
+
+#### ExecutorService example
+
+* In the following example, we first create an ExecutorService with a single worker thread, and then submit a task to be executed inside the worker thread.
