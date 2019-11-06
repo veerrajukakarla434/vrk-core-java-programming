@@ -138,11 +138,13 @@ Shutting down the executor
 * Following example shows how you can create an executor service that uses a thread pool and execute multiple tasks concurrently -
 
 ```Java
+package com.vrk.core.programs.threads;
+
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
-public class ExecutorsExample {
+public class ExecutorsThreadPoolExample {
     public static void main(String[] args) {
         System.out.println("Inside : " + Thread.currentThread().getName());
 
