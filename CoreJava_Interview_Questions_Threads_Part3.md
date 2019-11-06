@@ -70,3 +70,39 @@ ExecutorService es = Executors.newScheduledThreadPool(10);
 #### ExecutorService example
 
 * In the following example, we first create an ExecutorService with a single worker thread, and then submit a task to be executed inside the worker thread.
+
+```Java
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+public class ExecutorsExample {
+    public static void main(String[] args) {
+        System.out.println("Inside : " + Thread.currentThread().getName());
+
+        System.out.println("Creating Executor Service...");
+        ExecutorService executorService = Executors.newSingleThreadExecutor();
+
+        System.out.println("Creating a Runnable...");
+        Runnable runnable = () -> {
+            System.out.println("Inside : " + Thread.currentThread().getName());
+        };
+
+        System.out.println("Submit the task specified by the runnable to the executor service.");
+        executorService.submit(runnable);
+    }
+}
+```
+```Console
+# Output
+Inside : main
+Creating Executor Service...
+Creating a Runnable...
+Submit the task specified by the runnable to the executor service.
+Inside : pool-1-thread-1
+```
+
+
+
+
+
+
