@@ -36,5 +36,4 @@
 * **ScheduledExecutorService*** - 
   * A sub-interface of ExecutorService. It adds functionality to schedule the execution of the tasks.  
 
-
-
+* Apart from the above three interfaces, The API also provides an Executors class that contains factory methods for creating different kinds of executor services.
