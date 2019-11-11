@@ -79,4 +79,83 @@ public class ButtonListenerNewWay {
 	
 }
 ```
+### Note:
+* 1. As you can see that we used less code with lambda expression.
+* 2. Backward compatibility: You can use the lambda expression with your old code. Lambdas are backward compatible so you can use them in existing API when you migrate your project to java 8.
 
+**Lets see few more examples of Lambda expressions.***
+
+#### Example 1: Java Lambda Expression with no parameter
+
+```Java
+Example 1: Java Lambda Expression with no parameter
+@FunctionalInterface
+interface MyFunctionalInterface {
+
+	//A method with no parameter
+    public String sayHello();
+}
+public class Example {
+
+   public static void main(String args[]) {
+        // lambda expression
+    	MyFunctionalInterface msg = () -> {
+    		return "Hello";
+    	};
+        System.out.println(msg.sayHello());
+    }
+}
+Output:
+
+Hello
+Example 2: Java Lambda Expression with single parameter
+@FunctionalInterface
+interface MyFunctionalInterface {
+
+	//A method with single parameter
+    public int incrementByFive(int a);
+}
+public class Example {
+
+   public static void main(String args[]) {
+        // lambda expression with single parameter num
+    	MyFunctionalInterface f = (num) -> num+5;
+        System.out.println(f.incrementByFive(22));
+    }
+}
+Output:
+
+27
+Example 3: Java Lambda Expression with Multiple Parameters
+interface StringConcat {
+
+    public String sconcat(String a, String b);
+}
+public class Example {
+
+   public static void main(String args[]) {
+        // lambda expression with multiple arguments
+    	StringConcat s = (str1, str2) -> str1 + str2;
+        System.out.println("Result: "+s.sconcat("Hello ", "World"));
+    }
+}
+Output:
+
+Result: Hello World
+Example 4: Iterating collections using foreach loop
+import java.util.*;  
+public class Example{  
+    public static void main(String[] args) {       
+       List<String> list=new ArrayList<String>();  
+       list.add("Rick");         
+       list.add("Negan");       
+       list.add("Daryl");         
+       list.add("Glenn");         
+       list.add("Carl");                
+       list.forEach(          
+           // lambda expression        
+           (names)->System.out.println(names)         
+       );     
+    }  
+}
+```
