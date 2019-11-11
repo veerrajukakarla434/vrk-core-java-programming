@@ -198,3 +198,59 @@ Executing Task2 inside : pool-1-thread-2
 Executing Task1 inside : pool-1-thread-1
 Executing Task3 inside : pool-1-thread-1
 ```
+
+* In the example above, we created an executor service with a fixed thread pool of size 2. A fixed thread pool is a very common type of thread pool that is frequently used in multi-threaded applications.
+
+* In a fixed thread-pool, the executor service makes sure that the pool always has the specified number of threads running. If any thread dies due to some reason, it is replaced by a new thread immediately.
+
+* When a new task is submitted, the executor service picks one of the available threads from the pool and executes the task on that thread. If we submit more tasks than the available number of threads and all the threads are currently busy executing the existing tasks, then the new tasks will wait for their turn in a queue.
+
+## Thread Pool
+
+* Most of the executor implementations use thread pools to execute tasks. A thread pool is nothing but a bunch of worker threads that exist separately from the Runnable or Callable tasks and is managed by the executor.
+
+* Creating a thread is an expensive operation and it should be minimized. Having worker threads minimizes the overhead due to thread creation because executor service has to create the thread pool only once and then it can reuse the threads for executing any task.
+
+* We already saw an example of a thread pool in the previous section called a fixed thread-pool.
+
+* Tasks are submitted to a thread pool via an internal queue called the Blocking Queue. If there are more tasks than the number of active threads, they are inserted into the blocking queue for waiting until any thread becomes available. If the blocking queue is full than new tasks are rejected.
+
+
+![executor-service-thread-pool-blocking-queue-example](https://www.callicoder.com/assets/images/post/large/executor-service-thread-pool-blocking-queue-example.jpg "executor-service-thread-pool-blocking-queue-example")
+
+## ScheduledExecutorService example
+
+* ScheduledExecutorService is used to execute a task either periodically or after a specified delay.
+
+* In the following example, We schedule a task to be executed after a delay of 5 seconds -
+
+```Java
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
+
+public class ScheduledExecutorsExample {
+    public static void main(String[] args) {
+        ScheduledExecutorService scheduledExecutorService = Executors.newScheduledThreadPool(1);
+        Runnable task = () -> {
+          System.out.println("Executing Task At " + System.nanoTime());
+        };
+
+        System.out.println("Submitting task at " + System.nanoTime() + " to be executed after 5 seconds.");
+        scheduledExecutorService.schedule(task, 5, TimeUnit.SECONDS);
+        
+        scheduledExecutorService.shutdown();
+    }
+}
+```
+```Console
+# Output
+Submitting task at 2909896838099 to be executed after 5 seconds.
+Executing Task At 2914898174612
+```
+
+
+
+
+
+
