@@ -22,7 +22,7 @@
 * To use lambda expression, you need to either create your own functional interface or use the pre defined functional interface provided by Java. An interface with only single abstract method is called functional interface(or Single Abstract method interface), for example: Runnable, callable, ActionListener etc.
 
 * **To use function interface:**
-* Pre Java 8: We create anonymous inner classes.
-* Post Java 8: You can use lambda expression instead of anonymous inner classes.
+  * Pre Java 8: We create anonymous inner classes.
+  * Post Java 8: You can use lambda expression instead of anonymous inner classes.
 
 
