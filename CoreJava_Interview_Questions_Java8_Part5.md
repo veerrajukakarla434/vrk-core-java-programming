@@ -25,4 +25,58 @@
   * Pre Java 8: We create anonymous inner classes.
   * Post Java 8: You can use lambda expression instead of anonymous inner classes.
 
+* **Without using Lambda expression:** Prior to java 8 we used the anonymous inner classe to implement the only abstract method of functional interface.
+
+```Java
+package com.vrk.java8.lambdaexpression;
+
+import java.awt.*;  
+import java.awt.event.*;
+
+public class ButtonListenerOldWay {
+
+	 public static void main(String[] args) {  
+	       Frame frame=new Frame("ActionListener Before Java8");  
+	    
+	       Button b=new Button("Click Here");  
+	       b.setBounds(50,100,80,50);  
+	  
+	       b.addActionListener(new ActionListener(){  
+	          public void actionPerformed(ActionEvent e){  
+	    	     System.out.println("Hello World!"); 
+	          }  
+	       });  
+	       frame.add(b);
+	    
+	       frame.setSize(200,200);  
+	       frame.setLayout(null);  
+	       frame.setVisible(true);   
+	    }  
+	 
+}
+```
+* **By using Lambda expression:** Instead of creating anonymous inner class, we can create a lambda expression like this:
+```Java
+package com.vrk.java8.lamdaexpressions;
+
+import java.awt.*;
+
+public class ButtonListenerNewWay {
+
+	public static void main(String[] args) {  
+	      Frame frame=new Frame("ActionListener java8");  
+	     
+	      Button b=new Button("Click Here");  
+	      b.setBounds(50,100,80,50); 
+	  
+	      b.addActionListener(e -> System.out.println("Hello World!")); 
+	      frame.add(b);
+	  
+	      frame.setSize(200,200);  
+	      frame.setLayout(null);  
+	      frame.setVisible(true);   
+	   }  
+	
+}
+```
 
