@@ -38,3 +38,14 @@ public class StringManiplation1 {
 
 Out Put : a3b3c3d2a2e1
 ```
+##### Explanation :
+
+* **if (i + 1 < str.length() && str.charAt(i) == str.charAt(i + 1))   here** 
+  * i + 1 < str.length()  condition will traverse the loop exact last element
+  * str.charAt(i) == str.charAt(i + 1)  based on above condition there is no chance to get arrayOutofBoundofException
+  * if we remove 1st condition there is a chance to get arrayOutofBoundofException
+  
+  
+  
+
+
