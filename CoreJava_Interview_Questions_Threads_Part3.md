@@ -248,6 +248,89 @@ public class ScheduledExecutorsExample {
 Submitting task at 2909896838099 to be executed after 5 seconds.
 Executing Task At 2914898174612
 ```
+* scheduledExecutorService.schedule() function takes a Runnable, a delay value, and the unit of the delay. The above program executes the task after 5 seconds from the time of submission.
+
+* **Now let’s see an example where we execute the task periodically -**
+
+```Java
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
+
+public class ScheduledExecutorsPeriodicExample {
+    public static void main(String[] args) {
+        ScheduledExecutorService scheduledExecutorService = Executors.newScheduledThreadPool(1);
+
+        Runnable task = () -> {
+          System.out.println("Executing Task At " + System.nanoTime());
+        };
+        
+        System.out.println("scheduling task to be executed every 2 seconds with an initial delay of 0 seconds");
+        scheduledExecutorService.scheduleAtFixedRate(task, 0,2, TimeUnit.SECONDS);
+    }
+}
+```
+```Console
+# Output
+scheduling task to be executed every 2 seconds with an initial delay of 0 seconds
+Executing Task At 2996678636683
+Executing Task At 2998680789041
+Executing Task At 3000679706326
+Executing Task At 3002679224212
+.....
+```
+* scheduledExecutorService.scheduleAtFixedRate() method takes a Runnable, an initial delay, the period of execution, and the time unit. It starts the execution of the given task after the specified delay and then executes it periodically on an interval specified by the period value.
+
+* Note that if the task encounters an exception, subsequent executions of the task are suppressed. Otherwise, the task will only terminate if you either shut down the executor or kill the program.
+
+
+## Java Callable and Future
+
+### Callable
+
+* In the previous tutorials, we used a Runnable object to define the tasks that are executed inside a thread. While defining tasks using Runnable is very convenient, it is limited by the fact that the tasks can not return a result.
+
+* **What if you want to return a result from your tasks?**
+* Well, Java provides a Callable interface to define tasks that return a result. A Callable is similar to Runnable except that it can return a result and throw a checked exception.
+
+* Callable interface has a single method call() which is meant to contain the code that is executed by a thread. Here is an example of a simple Callable -
+
+```Java
+Callable<String> callable = new Callable<String>() {
+    @Override
+    public String call() throws Exception {
+        // Perform some computation
+        Thread.sleep(2000);
+        return "Return some result";
+    }
+};
+```
+* Note that with Callable, you don’t need to surround Thread.sleep() by a try/catch block, because unlike Runnable, a Callable can throw a checked exception.
+
+* You can also use a lambda expression with Callable like this -
+
+```Java
+
+Callable<String> callable = () -> {
+    // Perform some computation
+    Thread.sleep(2000);
+    return "Return some result";
+};
+```
+
+## Executing Callable tasks using ExecutorService and obtaining the result using Future
+
+* Just like Runnable, you can submit a Callable to an executor service for execution. But what about the Callable’s result? How do you access it?
+
+* **The submit() method of executor service submits the task for execution by a thread. However, it doesn’t know when the result of the submitted task will be available. Therefore, it returns a special type of value called a Future which can be used to fetch the result of the task when it is available.**
+
+* The concept of Future is similar to Promise in other languages like Javascript. It represents the result of a computation that will be completed at a later point of time in future.
+
+* Following is a simple example of Future and Callable -
+
+
+
+
 
 
 
