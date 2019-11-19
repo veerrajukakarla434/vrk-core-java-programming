@@ -119,3 +119,47 @@ public class FibonacciExample2 {
 OutPut:
 0 1 1 2 3 5 8 13 21 34
 ```
+* **Problem4:** ->Java Program to count the total number of characters in a string
+* In this program, we need to count the number of characters present in the string: **The best of both worlds**
+* To count the number of characters present in the string, we will iterate through the string and count the characters. In above example, total numbers of characters present in the string are 19.
+
+* For programming, follow the algorithm given below:
+
+```Java
+Algorithm
+STEP 1: START
+STEP 2: DEFINE String string = "The best of both worlds".
+STEP 3: SET count =0.
+STEP 4: SET i=0. REPEAT STEP 5 to STEP 6 UNTIL i<string.length
+STEP 5: IF (string.charAt(i)!= ' ') then count =count +1.
+STEP 6: i=i+1
+STEP 7: PRINT count.
+STEP 8: END
+=================================================================
+
+package com.vrk.core.programs;
+
+public class CountCharacter {
+
+	public static void main(String[] args) {
+		String string = "The best of both worlds";    
+        int count = 0;  
+        
+        for(int i=0; i<string.length(); i++) {
+        	if(string.charAt(i) != ' ') {
+        		count++;
+        	}
+        }
+       System.out.println("Given String charaters count : " + count);
+	}
+
+}
+
+
+Out put : 
+
+Given String charaters count : 19
+
+```
+
+
