@@ -265,3 +265,4 @@ BiConsumer<T,U> | It represents an operation that accepts two input arguments an
 Consumer<T>     | It represents an operation that accepts a single argument and returns no result.
 Function<T,R>   | It represents a function that accepts one argument and returns a result.
 Predicate<T>   | It represents a predicate (boolean-valued function) of one argument.
+etc....        | etc....
