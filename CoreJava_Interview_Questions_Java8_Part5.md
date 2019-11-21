@@ -231,4 +231,37 @@ compile-time error
 ##### Example 4
 
 * In the following example, a functional interface is extending to a non-functional interface.
+```Java
+interface Doable{  
+    default void doIt(){  
+        System.out.println("Do it now");  
+    }  
+}  
+@FunctionalInterface  
+interface Sayable extends Doable{  
+    void say(String msg);   // abstract method  
+}  
+public class FunctionalInterfaceExample3 implements Sayable{  
+    public void say(String msg){  
+        System.out.println(msg);  
+    }  
+    public static void main(String[] args) {  
+        FunctionalInterfaceExample3 fie = new FunctionalInterfaceExample3();  
+        fie.say("Hello there");  
+        fie.doIt();  
+    }  
+} 
 
+``````
+
+#### Java Predefined-Functional Interfaces
+* Java provides predefined functional interfaces to deal with functional programming by using lambda and method references.
+
+* You can also define your own custom functional interface. Following is the list of functional interface which are placed in java.util.function package.
+
+**Interface** | **Description**
+------------| --------------------------
+BiConsumer<T,U> | It represents an operation that accepts two input arguments and returns no result
+Consumer<T>     | It represents an operation that accepts a single argument and returns no result.
+Function<T,R>   | It represents a function that accepts one argument and returns a result.
+Predicate<T>   | It represents a predicate (boolean-valued function) of one argument.
