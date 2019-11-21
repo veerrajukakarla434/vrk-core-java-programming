@@ -287,3 +287,120 @@ etc....        | etc....
   * Stream is lazy and evaluates code only when required.
   * The elements of a stream are only visited once during the life of a stream. Like an Iterator, a new stream must be generated to revisit the same elements of the source.
   * You can use stream to filter, collect, print, and convert from one data structure to other etc. In the following examples, we have apply various operations with the help of stream.
+  
+  
+## Java Stream Filter
+
+* Java stream provides a method filter() to filter stream elements on the basis of given predicate. Suppose you want to get only even elements of your list then you can do this easily with the help of filter method.
+
+* This method takes predicate as an argument and returns a stream of consisting of resulted elements.
+
+#### Signature
+```Java
+Stream<T> filter(Predicate<? super T> predicate)  
+```
+* **Parameter**
+* **predicate:** It takes Predicate reference as an argument. Predicate is a functional interface. So, you can also pass lambda expression here.
+
+* **Return**
+* It returns a new stream.
+
+#### Java Example: Filtering Collection without using Stream
+
+* In the following example, we are filtering data without using stream. This approach we are used before the stream package was released.
+
+```Java
+import java.util.*;  
+class Product{  
+    int id;  
+    String name;  
+    float price;  
+    public Product(int id, String name, float price) {  
+        this.id = id;  
+        this.name = name;  
+        this.price = price;  
+    }  
+}  
+public class JavaStreamExample {  
+    public static void main(String[] args) {  
+        List<Product> productsList = new ArrayList<Product>();  
+        //Adding Products  
+        productsList.add(new Product(1,"HP Laptop",25000f));  
+        productsList.add(new Product(2,"Dell Laptop",30000f));  
+        productsList.add(new Product(3,"Lenevo Laptop",28000f));  
+        productsList.add(new Product(4,"Sony Laptop",28000f));  
+        productsList.add(new Product(5,"Apple Laptop",90000f));  
+        List<Float> productPriceList = new ArrayList<Float>();  
+        for(Product product: productsList){  
+              
+            // filtering data of list  
+            if(product.price<30000){  
+                productPriceList.add(product.price);    // adding price to a productPriceList  
+            }  
+        }  
+        System.out.println(productPriceList);   // displaying data  
+    }  
+}
+
+Output:
+[25000.0, 28000.0, 28000.0]
+```
+
+#### Java Stream Example: Filtering Collection by using Stream
+
+* Here, we are filtering data by using stream. You can see that code is optimized and maintained. Stream provides fast execution.
+
+```Java
+import java.util.*;  
+import java.util.stream.Collectors;  
+class Product{  
+    int id;  
+    String name;  
+    float price;  
+    public Product(int id, String name, float price) {  
+        this.id = id;  
+        this.name = name;  
+        this.price = price;  
+    }  
+}  
+public class JavaStreamExample {  
+    public static void main(String[] args) {  
+        List<Product> productsList = new ArrayList<Product>();  
+        //Adding Products  
+        productsList.add(new Product(1,"HP Laptop",25000f));  
+        productsList.add(new Product(2,"Dell Laptop",30000f));  
+        productsList.add(new Product(3,"Lenevo Laptop",28000f));  
+        productsList.add(new Product(4,"Sony Laptop",28000f));  
+        productsList.add(new Product(5,"Apple Laptop",90000f));  
+        List<Float> productPriceList2 =productsList.stream()  
+                                     .filter(p -> p.price > 30000)// filtering data  
+                                     .map(p->p.price)        // fetching price  
+                                     .collect(Collectors.toList()); // collecting as list  
+        System.out.println(productPriceList2);  
+    }  
+}
+
+OutPut:
+90000.0
+```
+#### Java Stream Iterating Example
+* You can use stream to iterate any number of times. Stream provides predefined methods to deal with the logic you implement. In the following example, we are iterating, filtering and passed a limit to fix the iteration.
+```Java
+import java.util.stream.*;  
+public class JavaStreamExample {  
+    public static void main(String[] args){  
+        Stream.iterate(1, element->element+1)  
+        .filter(element->element%5==0)  
+        .limit(5)  
+        .forEach(System.out::println);  
+    }  
+}  
+```
+OutPut: 
+```Console
+5
+10
+15
+20
+25
+```
