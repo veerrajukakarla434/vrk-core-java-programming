@@ -479,11 +479,12 @@ public class JavaStreamExample {
 } 
 ``` 
 Output:
-``Console
+```Console
 201000.0
 201000.0
 ```
 #### Java Stream Example: Sum by using Collectors Methods
+
 * We can also use collectors to compute sum of numeric values. In the following example, we are using Collectors class and it?s specified methods to compute sum of all the product prices.
 
 ```Java
@@ -522,6 +523,7 @@ Output:
 ```
 #### Java Stream Example: Find Max and Min Product Price
 * Following example finds min and max product price by using stream. It provides convenient way to find values without using imperative approach.
+
 ```Java
 import java.util.*;  
 class Product{  
@@ -564,6 +566,7 @@ Output:
 25000.0
 ```
 #### Java Stream Example: count() Method in Collection
+
 ```Java
 import java.util.*;  
 class Product{  
@@ -600,6 +603,7 @@ Output:
 * **stream allows you to collect your result in any various forms. You can get you result as set, list or map and can perform manipulation on the elements.**
 
 #### Java Stream Example : Convert List into Set
+
 ```Java
 import java.util.*;  
 import java.util.stream.Collectors;  
