@@ -2,6 +2,7 @@
 
 #### 1) Java 8 Lambda Expressions 
 #### 2) Java 8 Java Functional Interfaces
+#### 3) Java 8 Stream
 
 
 
@@ -266,3 +267,23 @@ Consumer<T>     | It represents an operation that accepts a single argument and 
 Function<T,R>   | It represents a function that accepts one argument and returns a result.
 Predicate<T>   | It represents a predicate (boolean-valued function) of one argument.
 etc....        | etc....
+
+#### Java Method References 
+
+* Refer Link https://www.javatpoint.com/java-8-method-reference
+* Refer Link https://howtodoinjava.com/java8/lambda-method-references-example/
+
+
+#### 3) Java 8 Stream
+* Java provides a new additional package in Java 8 called java.util.stream. This package consists of classes, interfaces and enum to allows functional-style operations on the elements. You can use stream by importing java.util.stream package.
+* A Stream in Java can be defined as a sequence of elements from a source that supports aggregate operations on them. The source here refers to a Collections or Arrays who provides data to a Stream.
+
+* Stream keeps the ordering of the data as it is in the source. The aggregate operations or bulk operations are operations which allow us to express common manipulations on stream elements easily and clearly.
+
+* **Stream provides following features:*
+
+  * Stream does not store elements. It simply conveys elements from a source such as a data structure, an array, or an I/O channel, through a pipeline of computational operations.
+  * Stream is functional in nature. Operations performed on a stream does not modify it's source. For example, filtering a Stream obtained from a collection produces a new Stream without the filtered elements, rather than removing elements from the source collection.
+  * Stream is lazy and evaluates code only when required.
+  * The elements of a stream are only visited once during the life of a stream. Like an Iterator, a new stream must be generated to revisit the same elements of the source.
+  * You can use stream to filter, collect, print, and convert from one data structure to other etc. In the following examples, we have apply various operations with the help of stream.
