@@ -1,7 +1,7 @@
 # Java 8 Tutorials
 
 #### 1) Java 8 Lambda Expressions 
-#### 2) Java 8 forEach examples
+#### 2) Java 8 Java Functional Interfaces
 
 
 
@@ -159,3 +159,11 @@ public class Example{
     }  
 }
 ```
+
+## 2) Java 8 Java Functional Interfaces
+
+* An Interface that contains exactly one abstract method is known as functional interface. It can have any number of default, static methods but can contain only one abstract method. It can also declare methods of object class.
+
+* Functional Interface is also known as Single Abstract Method Interfaces or SAM Interfaces. It is a new feature in Java, which helps to achieve functional programming approach.
+
+* Java 8 introduces an annotation i.e. @FunctionalInterface too, which can be used for compiler level errors when the interface you have annotated violates the contracts of exactly one abstract method.
