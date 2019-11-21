@@ -274,7 +274,7 @@ etc....        | etc....
 * Refer Link https://howtodoinjava.com/java8/lambda-method-references-example/
 
 
-#### 3) Java 8 Stream
+## 3) Java 8 Stream
 * Java provides a new additional package in Java 8 called java.util.stream. This package consists of classes, interfaces and enum to allows functional-style operations on the elements. You can use stream by importing java.util.stream package.
 * A Stream in Java can be defined as a sequence of elements from a source that supports aggregate operations on them. The source here refers to a Collections or Arrays who provides data to a Stream.
 
