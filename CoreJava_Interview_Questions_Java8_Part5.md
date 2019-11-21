@@ -167,3 +167,68 @@ public class Example{
 * Functional Interface is also known as Single Abstract Method Interfaces or SAM Interfaces. It is a new feature in Java, which helps to achieve functional programming approach.
 
 * Java 8 introduces an annotation i.e. @FunctionalInterface too, which can be used for compiler level errors when the interface you have annotated violates the contracts of exactly one abstract method.
+
+#### Example 1
+
+```Java
+@FunctionalInterface  
+interface sayable{  
+    void say(String msg);  
+}  
+public class FunctionalInterfaceExample implements sayable{  
+    public void say(String msg){  
+        System.out.println(msg);  
+    }  
+    public static void main(String[] args) {  
+        FunctionalInterfaceExample fie = new FunctionalInterfaceExample();  
+        fie.say("Hello there");  
+    }  
+}  
+
+Output : Hello there
+```
+* **A functional interface can have methods of object class. See in the following example.**
+#### Example 2
+
+```Java
+@FunctionalInterface  
+interface sayable{  
+    void say(String msg);   // abstract method  
+    // It can contain any number of Object class methods.  
+    int hashCode();  
+    String toString();  
+    boolean equals(Object obj);  
+}  
+public class FunctionalInterfaceExample2 implements sayable{  
+    public void say(String msg){  
+        System.out.println(msg);  
+    }  
+    public static void main(String[] args) {  
+        FunctionalInterfaceExample2 fie = new FunctionalInterfaceExample2();  
+        fie.say("Hello there");  
+    }  
+}  
+Output : Hello there
+```
+
+* **Invalid Functional Interface**
+* A functional interface can extends another interface **only when it does not have any abstract method.**
+
+#### Example 3
+
+```Java
+interface sayable{  
+    void say(String msg);   // abstract method  
+}  
+@FunctionalInterface  
+interface Doable extends sayable{  
+    // Invalid '@FunctionalInterface' annotation; Doable is not a functional interface  
+    void doIt();  
+}  
+Output:
+compile-time error
+```
+##### Example 4
+
+* In the following example, a functional interface is extending to a non-functional interface.
+
