@@ -390,8 +390,7 @@ armstrong number
 * **Problem 9:** Java Program to determine whether two strings are the anagram
 
 * Two Strings are called the anagram if they contain the same characters. However, the order or sequence of the characters can be different. 
-*
-First of all, Compare the length of the strings, if they are not equal in the length then print the error message and make an exit, otherwise, convert the string into lower-case for the easy comparisons. Sort both the strings using bubble sort or other sorting methods. If the strings are found to be identical after sorting, then print that strings are anagram otherwise print that strings are not the anagram.
+* First of all, Compare the length of the strings, if they are not equal in the length then print the error message and make an exit, otherwise, convert the string into lower-case for the easy comparisons. Sort both the strings using bubble sort or other sorting methods. If the strings are found to be identical after sorting, then print that strings are anagram otherwise print that strings are not the anagram.
 
 ```Java
 For programming, follow the algorithm given below:
