@@ -95,7 +95,15 @@ apiListingScanner
 ```
 * you can see below all provided URLs from actuator http://localhost:8080/actuator.
 
-![actuator](https://github.com/veerrajukakarla434/vrk-core-java-programming/blob/master/resources/images/actuator.JPG)		  
+![actuator](https://github.com/veerrajukakarla434/vrk-core-java-programming/blob/master/resources/images/actuator.JPG)	
+
+* If you click on actuator URL you can see all created/loaded beans
+	  
+![Beans](https://github.com/veerrajukakarla434/vrk-core-java-programming/blob/master/resources/images/Beans.JPG)	
+
+* If you click on system health to know application health check 
+
+![status](https://github.com/veerrajukakarla434/vrk-core-java-programming/blob/master/resources/images/status.JPG)
   
   
  
