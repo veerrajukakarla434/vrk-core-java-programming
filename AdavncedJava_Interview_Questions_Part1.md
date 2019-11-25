@@ -170,8 +170,9 @@ and to make our intent is clear we should use @ Service  wherever applicable.
 #### 3) What is the difference between @RestController and @Controller
 
 ```Console
-  The @RestController annotation in Spring MVC is nothing but a combination of @Controller and @ResponseBody annotation. 
-  It was added into Spring 4.0 to make the development of RESTful Web Services in Spring framework easier. 
+The @RestController annotation in Spring MVC is nothing but a combination of @Controller and 
+@ResponseBody annotation. It was added into Spring 4.0 to make the development of 
+RESTful Web Services in Spring framework easier. 
 ```  
 
  
