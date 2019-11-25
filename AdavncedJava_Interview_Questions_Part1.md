@@ -6,7 +6,7 @@
   * 1) Using ApplicationContext
   * 2) Using Actuator
   
-* 1) Using ApplicationContext
+* **Using ApplicationContext**
 * Adding ApplicationContent in SpringBoot Main class and In Spring Boot, you can use appContext.getBeanDefinitionNames() to get all the beans loaded by the Spring container.
 
 ```Java
@@ -83,5 +83,19 @@ apiListingScanner
 .....etc.
 
 ``` 
+  
+* **Using Actuator**
+* once you added actuator starter in pom.xml
+
+```Java
+        <dependency>
+		    <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+```
+* you can see below all provided URLs from actuator http://localhost:8080/actuator.
+
+![actuator](https://github.com/veerrajukakarla434/vrk-core-java-programming/resources/images/actuator.JPG)		  
+  
   
  
