@@ -174,7 +174,9 @@ The @RestController annotation in Spring MVC is nothing but a combination of @Co
 @ResponseBody annotation. It was added into Spring 4.0 to make the development of 
 RESTful Web Services in Spring framework easier. 
 ```  
+* The job of @Controller is to create a Map of model object and find a view but @RestController simply return the object and object data is directly written into HTTP response as JSON or XML.
 
+* This can also be done with traditional @Controller and use @ResponseBody annotation but since this is the default behavior of RESTful Web services, Spring introduced @RestController which combined the behavior of @Controller and @ResponseBody together.
  
  
  
