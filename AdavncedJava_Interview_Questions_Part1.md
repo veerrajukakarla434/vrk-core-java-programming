@@ -213,3 +213,12 @@ return book;
 }
 }
 ```
+
+## Spring Boot Annotations
+
+* The spring boot annotations are mostly placed in **org.springframework.boot.autoconfigure** and 
+**org.springframework.boot.autoconfigure.condition** packages. Let’s learn about some frequently used spring boot 
+annotations as well as which work behind the scene.
+
+
+
