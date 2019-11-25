@@ -214,6 +214,29 @@ return book;
 }
 ```
 
+#### 4) How to Disable a Specific Auto-Configuration?
+
+* If we want to disable a specific auto-configuration, we can indicate it using the exclude attribute of the @EnableAutoConfiguration annotation. For instance, this code snippet neutralizes DataSourceAutoConfiguration:
+
+```Java
+// other annotations
+@EnableAutoConfiguration(exclude = DataSourceAutoConfiguration.class)
+public class MyConfiguration { }
+```
+* If we enabled auto-configuration with the @SpringBootApplication annotation — which has @EnableAutoConfiguration as a meta-annotation — we could disable auto-configuration with an attribute of the same name:
+```Java
+// other annotations
+@SpringBootApplication(exclude = DataSourceAutoConfiguration.class)
+public class MyConfiguration { }
+```
+* We can also disable an auto-configuration with the spring.autoconfigure.exclude environment property. This setting in the application.properties file does the same thing as before:
+```Java
+spring.autoconfigure.exclude=org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfigur
+```
+
+
+
+
 ## Spring Boot Annotations
 
 * The spring boot annotations are mostly placed in **org.springframework.boot.autoconfigure** and 
