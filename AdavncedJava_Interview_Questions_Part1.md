@@ -105,7 +105,7 @@ apiListingScanner
 
 ![status](https://github.com/veerrajukakarla434/vrk-core-java-programming/blob/master/resources/images/status.JPG)
   
-#### What happened if I use/put @Component on top of Service layer or repo layer ?
+#### 2) What happened if I use/put @Component on top of Service layer or repo layer ?
 
  * **With Spring’s auto-scanning feature, it automatically detects various beans defined in our application.** We usually annotate our beans using one of the available Spring annotations – @Component, @Repository, @Service, @Controller.
  * On detecting the bean, Spring simply registers it into the ApplicationContext.
