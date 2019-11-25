@@ -233,6 +233,47 @@ public class MyConfiguration { }
 ```Java
 spring.autoconfigure.exclude=org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfigur
 ```
+#### 5)  Why use Spring Boot?
+
+* **A) Spring Boot has many advantages, such as:**
+  * Operate independently
+  * implified configuration
+  * Automatic configuration
+  * No code generation and XML configuration
+  * Application monitoring
+  * Easy to get started
+* Reduce development, testing time and effort.
+* Using JavaConfig helps avoid using XML.
+* Avoid a lot of Maven import and various version conflicts.
+* Provide advice development methods.
+* Start development quickly by providing default values.
+* There is no separate web server required. This means you no longer need to start Tomcat, Glassfish or anything else.
+* Less configuration is required because there is no web.xml file. Just add the class annotated with @Configuration and add the method annotated with @Bean. Spring will automatically load the object and manage it as before. You can even add @Autowired to the bean method to have Spring automatically load the required dependencies.
+* Environment-based configuration Using these properties, you can pass the environment you are using to the application: -Dspring.profiles.active = {enviornment}. After loading the main application properties file, Spring will load the subsequent application properties file in (application{environment} .properties).
+ 
+#### 6) What are the core configuration files for Spring Boot? What is the difference between them?
+
+* A) The core configuration files for Spring Boot are the **application and bootstrap** configuration files.
+
+* The application configuration file is easy to understand and is primarily used for automated configuration of Spring Boot projects.
+
+* The bootstrap configuration file has the following application scenarios.
+
+* When using Spring Cloud Config to configure the hub, you need to add the configuration properties of the connection to the configuration center in the bootstrap configuration file to load the configuration information of the external configuration center.
+* Some fixed attributes that cannot be overridden;
+* Some encryption/decryption scenarios;
+
+#### 7) What is Swagger? Did you implement it with Spring Boot?
+
+* A) Swagger is widely used for visual APIs, using the Swagger UI to provide an online sandbox for front-end developers. Swagger is a tool for generating visual representations of RESTful web services, specifications and full framework implementations.
+
+* It enables documents to be updated at the same speed as the server. When properly defined by Swagger, consumers can use a minimal amount of implementation logic to understand and interact with remote services. Therefore, Swagger eliminates the guesswork when calling the service.
+
+#### 8) What is Spring Profiles?
+
+* A) Spring Profiles allows users to register beans based on configuration files (dev, test, prod, etc.). Therefore, when the application is running in development, only certain beans can be loaded, while in PRODUCTION, some other beans can be loaded.
+
+* Suppose our requirement is that the Swagger document is only for the QA environment and all other documents are disabled. This can be done using a configuration file. Spring Boot makes it easy to use configuration files.
 
 
 
