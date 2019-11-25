@@ -161,9 +161,7 @@ public @interface Service {
   * @Repository is a stereotype used for persistence layer. It translates any persistence related exceptions into a Spring’s DataAccessException
   * @Service is used for the beans at the service layer. Currently, it doesn’t offer any additional functionality over @Component
   * It’s always preferable to use @Repository and @Service annotations over @Component, wherever applicable. It communicates the bean’s intent more clearly
-<div class="bg-yellow mb-2">
-  So Nothing will happens if we declare we can do all operations and we will get results without any exception, But to get persistence related exceptions we shoud use @Repository and to make our intent is clear we should use @ Service  wherever applicable.
-</div>
+
 * **So Nothing will happens if we declare we can do all operations and we will get results without any exception, But to get persistence related exceptions we shoud use @Repository and to make our intent is clear we should use @ Service  wherever applicable.**  
 
 
