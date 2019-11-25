@@ -95,7 +95,7 @@ apiListingScanner
 ```
 * you can see below all provided URLs from actuator http://localhost:8080/actuator.
 
-![actuator](https://github.com/veerrajukakarla434/vrk-core-java-programming/resources/images/actuator.JPG)		  
+![actuator](https://github.com/veerrajukakarla434/vrk-core-java-programming/blob/master/resources/images/actuator.JPG)		  
   
   
  
