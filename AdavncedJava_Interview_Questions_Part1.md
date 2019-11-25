@@ -105,5 +105,71 @@ apiListingScanner
 
 ![status](https://github.com/veerrajukakarla434/vrk-core-java-programming/blob/master/resources/images/status.JPG)
   
+#### What happened if I use/put @Component on top of Service layer or repo layer ?
+
+ * **With Spring’s auto-scanning feature, it automatically detects various beans defined in our application.** We usually annotate our beans using one of the available Spring annotations – @Component, @Repository, @Service, @Controller.
+ * On detecting the bean, Spring simply registers it into the ApplicationContext.
+ 
+* **@Component:**
+  * We can use @Component annotation to mark a bean as a Spring-managed component. **In other words, it’s a generic stereotype for any Spring-managed component.**
+```Java
+
+@Component
+public class Employee {
+   ...
+  
+}
+```
+* **@Repository:**
+* @Repository annotation is a specialization over @Component annotation:  
+
+```Java
+@Component
+public @interface Repository {
+}
+```
+* Since @Repository is a type of @Component, Spring also auto-scans and registers them.
+
+* **@Repository is a stereotype for the persistence layer. Its job is to catch all persistence related exceptions and rethrow them as a Spring DataAccessException.**
+For this, we should configure PersistenceExceptionTranslationPostProcessor in our application context:
+```Java
+<bean class=
+  "org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor"/>
+```Java   
+This bean post processor adds an advisor to all beans marked with @Repository. The advisor’s responsibility is to translate the platform-specific exceptions to the Spring’s unified unchecked exceptions.
+
+* **@Service:**
+* Just like @Repository, @Service is another specialization of @Component:
+
+```Java
+@Component
+public @interface Service {
+}
+```
+
+* Just like @Repository, @Service is also a type of @Component. That means Spring will also automatically detect such beans.
+
+* **The @Service annotation represents that our bean holds some business logic.** Till date, it doesn’t provide any specific behavior over @Component.
+
+* Still, **we should annotate the service-layer beans with the @Service annotation to make our intent clear.** Additionally, we never know if someday Spring chooses to add some specific functionality to it.
+
+#### Differences in NutShell:
+* Let’s quickly sum up the differences between @Component, @Repository and, @Service:
+
+  * @Component is the most generic stereotype and marks a bean as a Spring-managed component
+  * Both @Service and @Repository annotations are the specializations over the @Component annotation
+  * @Repository is a stereotype used for persistence layer. It translates any persistence related exceptions into a Spring’s DataAccessException
+  * @Service is used for the beans at the service layer. Currently, it doesn’t offer any additional functionality over @Component
+  * It’s always preferable to use @Repository and @Service annotations over @Component, wherever applicable. It communicates the bean’s intent more clearly
+
+
+
+
+  
+
+ 
+ 
+ 
+  
   
  
