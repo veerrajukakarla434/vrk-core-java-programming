@@ -186,5 +186,30 @@ RESTful Web Services in Spring framework easier.
 
 * 4. The @Controller is a specialization of @Component annotation while @RestController is a specialization of @Controller annotation. It is actually a convenience controller annotated with @Controller and @ResponseBody as shown below.
 
-  
+* 5. Another key difference between @RestController and @Controller is that you don't need to use @ResponseBody on every handler method once you annotate the class with @RestController as shown below:
  
+#### with @RestControler 
+ ```Java
+@RestController
+public class Book{
+
+@RequestMapping(value={"/book"})
+public Book getBook(){
+//...
+return book;
+}
+}
+```
+#### without @RestController
+```Java
+@Controller
+public class Book{
+
+@RequestMapping(value={"/book"})
+@ResponseBody
+public Book getBook(){
+//...
+return book;
+}
+}
+```
