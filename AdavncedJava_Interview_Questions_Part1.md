@@ -135,7 +135,7 @@ For this, we should configure PersistenceExceptionTranslationPostProcessor in ou
 ```Java
 <bean class=
   "org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor"/>
-```Java   
+```  
 This bean post processor adds an advisor to all beans marked with @Repository. The advisor’s responsibility is to translate the platform-specific exceptions to the Spring’s unified unchecked exceptions.
 
 * **@Service:**
