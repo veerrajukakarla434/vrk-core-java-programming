@@ -60,9 +60,7 @@ Task is executed by pool-1-thread-1
 The difference is quite clear that first is just a thread while later is a pool of threads.
 
 ```
-
 Read more: https://javarevisited.blogspot.com/2016/12/difference-between-thread-and-executor.html#ixzz66Lc5lawu
-
 
 ### Java ExecutorService and Thread Pools Tutorial
  
