@@ -276,13 +276,12 @@ spring.autoconfigure.exclude=org.springframework.boot.autoconfigure.jdbc.DataSou
 * Suppose our requirement is that the Swagger document is only for the QA environment and all other documents are disabled. This can be done using a configuration file. Spring Boot makes it easy to use configuration files.
 
 
-
-
 ## Spring Boot Annotations
 
 * The spring boot annotations are mostly placed in **org.springframework.boot.autoconfigure** and 
 **org.springframework.boot.autoconfigure.condition** packages. Let’s learn about some frequently used spring boot 
 annotations as well as which work behind the scene.
 
-
+#### Spring Boot @SpringBootApplication Annotation
+* Spring Boot @SpringBootApplication annotation is used to mark a configuration class that declares one or more @Bean methods and also triggers auto-configuration and component scanning. It’s same as declaring a class with @Configuration, @EnableAutoConfiguration and @ComponentScan annotations.
 
