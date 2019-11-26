@@ -167,12 +167,122 @@ But to get persistence related exceptions we should use @Repository
 and to make our intent is clear we should use @ Service  wherever applicable.  
 ```
 
+#### 3) What is the difference between @RestController and @Controller
 
-  
+```Console
+The @RestController annotation in Spring MVC is nothing but a combination of @Controller and 
+@ResponseBody annotation. It was added into Spring 4.0 to make the development of 
+RESTful Web Services in Spring framework easier. 
+```  
+* The job of @Controller is to create a Map of model object and find a view but @RestController simply return the object and object data is directly written into HTTP response as JSON or XML.
 
+* This can also be done with traditional @Controller and use @ResponseBody annotation but since this is the default behavior of RESTful Web services, Spring introduced @RestController which combined the behavior of @Controller and @ResponseBody together.
+
+* 1. The @Controller is a common annotation which is used to mark a class as Spring MVC Controller while @RestController is a special controller used in RESTFul web services and the equivalent of @Controller + @ResponseBody.
+
+* 2. The @RestController is relatively new, added only on Spring 4.0 but @Controller is an old annotation, exists since Spring started supporting annotation, officially it was added on Spring 2.5 version.
+
+* 3. The @Controller annotation indicates that the class is a "Controller" like a web controller while @RestController annotation indicates that the class is a controller where @RequestMapping methods assume @ResponseBody semantics by default i.e. servicing REST API.
+
+* 4. The @Controller is a specialization of @Component annotation while @RestController is a specialization of @Controller annotation. It is actually a convenience controller annotated with @Controller and @ResponseBody as shown below.
+
+* 5. Another key difference between @RestController and @Controller is that you don't need to use @ResponseBody on every handler method once you annotate the class with @RestController as shown below:
  
+#### with @RestControler 
+ ```Java
+@RestController
+public class Book{
+
+@RequestMapping(value={"/book"})
+public Book getBook(){
+//...
+return book;
+}
+}
+```
+#### without @RestController
+```Java
+@Controller
+public class Book{
+
+@RequestMapping(value={"/book"})
+@ResponseBody
+public Book getBook(){
+//...
+return book;
+}
+}
+```
+
+#### 4) How to Disable a Specific Auto-Configuration?
+
+* If we want to disable a specific auto-configuration, we can indicate it using the exclude attribute of the @EnableAutoConfiguration annotation. For instance, this code snippet neutralizes DataSourceAutoConfiguration:
+
+```Java
+// other annotations
+@EnableAutoConfiguration(exclude = DataSourceAutoConfiguration.class)
+public class MyConfiguration { }
+```
+* If we enabled auto-configuration with the @SpringBootApplication annotation — which has @EnableAutoConfiguration as a meta-annotation — we could disable auto-configuration with an attribute of the same name:
+```Java
+// other annotations
+@SpringBootApplication(exclude = DataSourceAutoConfiguration.class)
+public class MyConfiguration { }
+```
+* We can also disable an auto-configuration with the spring.autoconfigure.exclude environment property. This setting in the application.properties file does the same thing as before:
+```Java
+spring.autoconfigure.exclude=org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfigur
+```
+#### 5)  Why use Spring Boot?
+
+* **A) Spring Boot has many advantages, such as:**
+  * Operate independently
+  * implified configuration
+  * Automatic configuration
+  * No code generation and XML configuration
+  * Application monitoring
+  * Easy to get started
+* Reduce development, testing time and effort.
+* Using JavaConfig helps avoid using XML.
+* Avoid a lot of Maven import and various version conflicts.
+* Provide advice development methods.
+* Start development quickly by providing default values.
+* There is no separate web server required. This means you no longer need to start Tomcat, Glassfish or anything else.
+* Less configuration is required because there is no web.xml file. Just add the class annotated with @Configuration and add the method annotated with @Bean. Spring will automatically load the object and manage it as before. You can even add @Autowired to the bean method to have Spring automatically load the required dependencies.
+* Environment-based configuration Using these properties, you can pass the environment you are using to the application: -Dspring.profiles.active = {enviornment}. After loading the main application properties file, Spring will load the subsequent application properties file in (application{environment} .properties).
  
- 
-  
-  
- 
+#### 6) What are the core configuration files for Spring Boot? What is the difference between them?
+
+* A) The core configuration files for Spring Boot are the **application and bootstrap** configuration files.
+
+* The application configuration file is easy to understand and is primarily used for automated configuration of Spring Boot projects.
+
+* The bootstrap configuration file has the following application scenarios.
+
+* When using Spring Cloud Config to configure the hub, you need to add the configuration properties of the connection to the configuration center in the bootstrap configuration file to load the configuration information of the external configuration center.
+* Some fixed attributes that cannot be overridden;
+* Some encryption/decryption scenarios;
+
+#### 7) What is Swagger? Did you implement it with Spring Boot?
+
+* A) Swagger is widely used for visual APIs, using the Swagger UI to provide an online sandbox for front-end developers. Swagger is a tool for generating visual representations of RESTful web services, specifications and full framework implementations.
+
+* It enables documents to be updated at the same speed as the server. When properly defined by Swagger, consumers can use a minimal amount of implementation logic to understand and interact with remote services. Therefore, Swagger eliminates the guesswork when calling the service.
+
+#### 8) What is Spring Profiles?
+
+* A) Spring Profiles allows users to register beans based on configuration files (dev, test, prod, etc.). Therefore, when the application is running in development, only certain beans can be loaded, while in PRODUCTION, some other beans can be loaded.
+
+* Suppose our requirement is that the Swagger document is only for the QA environment and all other documents are disabled. This can be done using a configuration file. Spring Boot makes it easy to use configuration files.
+
+
+
+
+## Spring Boot Annotations
+
+* The spring boot annotations are mostly placed in **org.springframework.boot.autoconfigure** and 
+**org.springframework.boot.autoconfigure.condition** packages. Let’s learn about some frequently used spring boot 
+annotations as well as which work behind the scene.
+
+
+
