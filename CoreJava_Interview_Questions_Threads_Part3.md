@@ -1,6 +1,69 @@
 # Java Interview Questions - Threads - Part3
 ## 5) Java Threads
 Reference : https://www.callicoder.com/java-executor-service-and-thread-pool-tutorial/
+
+Reference : https://javarevisited.blogspot.com/2016/12/difference-between-thread-and-executor.html
+### Difference between a Thread and an Executor in Java
+
+* Since creating, starting, and running a thread is a time-consuming and expensive operation, many Java applications create a pool of thread at start-up and leverage that for executing the task in parallel until Java introduced the built-in thread pool.  This thread-pool is known as Executor framework which relieved Java application developers from the responsibility of creating and managing threads
+
+* A Thread is used to run your code in parallel and you can create and start your own thread either by extending java.lang.Thread class or implementing java.lang.Runnable interface. Though both approaches work well in small application, they have their pros and cons, which you can see here. On the other hand, Executor is an interface which also provides parallel execution, but via a thread pool, which is more suitable for large Java application.
+
+  * 1) First and foremost difference between Thread and Executor is that java.lang.Thread is a class in Java while java.util.concurrent.Executor is an interface.
+
+  * 2) The Executor concept is actually an abstraction over parallel computation. It allows concurrent code to be run in managed way. On the other hand, Thread is a concrete way to run the code in parallel.
+
+  * 3) The third difference between an Executor and a Thread class is that former decouples a task (the code which needs to be executed in parallel) from execution, while in the case of a Thread, both task and execution are tightly coupled. You can further read Java Concurrency in Practice by Brian Goetz to learn more about how decoupling a task from execution simplify the design of concurrent applications in Java.
+
+  * 4) The Executor concept allows your task is to be executed by a worker thread from the thread pool, while Thread itself execute your task.
+
+  * 5) Executor provides a execute() method which accepts a Runnable task, while Thread accepts the Runnable task on its constructor.
+
+  * 6) One more key difference between a Thread and an Executor is that a Thread can only execute one Runnable task but an Executor can execute any number of Runnable task.
+
+  * 7) In the case of Thread, the task is executed by the Thread which accepts Runnable instance, but in the case of Execution the command (a Runnable implementation) may be executed in a new thread, a pooled thread or in the calling thread itself, depending upon the implementation of Executor interface.
+
+  * 8) In the case of a thread, it's developer's responsibility to create and start the thread, but in the case of Executor, the framework will create and start threads for you. Though you can control the whole process by giving your implementation of Executor interface. Though, with the improvements in ForkJoinPool in Java 7 and 8, you might want to use that instead of Executor. If ForkJoinPool is a new concept to you, I suggest reading Java 8 in Action to learn more about it
+
+
+  * 7) Now, let's see an example of execution a Runnable task via Executor and via Thread in Java:
+  
+```Java
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
+
+public class Main {
+
+  public static void main(String args[]) {
+
+    Runnable task = new Runnable() {
+      @Override
+      public void run() {
+        System.out.println("Task is executed by : "
+            + Thread.currentThread().getName());
+      }
+    };
+
+    Thread t = new Thread(task, "MY_THREAD");
+    t.start();
+
+    Executor e = Executors.newSingleThreadExecutor();
+    e.execute(task);
+
+  }
+}
+
+Output
+Task is executed by MY_THREAD
+Task is executed by pool-1-thread-1
+
+The difference is quite clear that first is just a thread while later is a pool of threads.
+
+```
+
+Read more: https://javarevisited.blogspot.com/2016/12/difference-between-thread-and-executor.html#ixzz66Lc5lawu
+
+
 ### Java ExecutorService and Thread Pools Tutorial
  
 * We know how to create threads in Java by extending the Thread class or implementing the Runnable interface.
