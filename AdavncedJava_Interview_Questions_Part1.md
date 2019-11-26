@@ -324,7 +324,6 @@ if spring rest
 **3. @RequestParam**
 
 * This is another useful Spring MVC annotation which is used to bind HTTP parameters into method arguments of handler methods. For example, if you send query parameters along with URLlikie for paging or just to supply some key data then you can get them as method arguments in your handler methods.
-* Here is an example of @RequestParam annotation in Spring MVC from my earlier article about the difference between RequestParam and PathVariable annotation:
 
 ```Java
 @RequestMapping("/book")
@@ -414,3 +413,11 @@ public String hello(){
 }
 ```
 * You can see that there is no @ReseponseBody annotation is required to generate RESTful response. Before @RestController, Java developer used @Controller on top of the class and annotated each handler method with @ResponseBody annotation.
+
+#### Differences between @RequestParam and @PathVariable in Spring MVC
+
+```Console
+Both annotations @RequestParam and @PathVariable in Spring MVC are used for fetching the values of request parameters.
+These annotations have similar purpose but some differences in use. 
+The key difference between @RequestParam and @PathVariable is that @RequestParam used for accessing
+the values of the query parameters where as @PathVariable used for accessing the values from the URI template.
