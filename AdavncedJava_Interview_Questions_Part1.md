@@ -342,3 +342,75 @@ public String showBookDetails(
 
 * then above handler method will be called because it is bound to the "/book" URL and the query parameter ISBN will be used to populate the method argument with the same name "ISBN" inside showBookDetails() method.
 
+**4. @PathVariable**
+* This is another annotation which is used to retrieve data from the URL. Unlike @RequestParam annotation which is used to extract query parameters, this annotation enables the controller to handle a request for parameterized URLs like URLs that have variable input as part of their path like:
+
+* http://localhost:8080/books/900083838
+
+* If you want to retrieve the ISBN number "900083838" from the URL as method argument then you can use @PathVariable annotation in Spring MVC as shown below:
+
+```Java
+@RequestMapping(value="/books/{ISBN}",
+                        method= RequestMethod.GET)
+public String showBookDetails(@PathVariable("ISBN") String id,
+Model model){
+   model.addAttribute("ISBN", id);
+   return "bookDetails";
+}
+```
+
+* The Path variable is represented inside curly braces like {ISBN}, which means the part after /books is extracted and populated on method argument id, which is annotated with @PathVaraible.
+
+* In short, this annotation binds placeholder from the URI to a method parameter inside the handler method. This is immensely useful while developing RESTful web services which contains useful data as part of their URL.
+
+**5. @RequestBody**
+
+* This annotation can convert inbound HTTP data into Java objects passed into the controller's handler method. Just as @ResponseBody tells the Spring MVC to use a message converter when sending a response to the client, the @RequestBody annotations tell the Spring to find a suitable message converter to convert a resource representation coming from a client into an object.
+```Java
+Here is an example:
+
+@RequestMapping(method=RequestMethod.POST, consumers= "application/json")
+public @ResponseBody Course saveCourse(@RequestBody Course aCourse){
+   return courseRepository.save(aCourse);
+}
+```
+* This is again a very useful annotation while developing RESTful web service in Java using Spring framework and one of the reasons why I love to write RESTful API using Spring.
+
+* If you are also interested in developing RESTful application in Java then I suggest going through Eugen Parachiv's REST with Spring Certification class on Baeldung. He has shared his years of experience in developing REST-based applications using Spring in this course.
+
+
+**6. @ResponseBody**
+* The @ResponseBody annotation is one of the most useful annotations for developing RESTful web service using Spring MVC. This annotation is used to transform a Java object returned from he a controller to a resource representation requested by a REST client. It can completely bypass the view resolution part.
+
+* Here is an example of @ResponseBody annotation in Spring MVC:
+```Java
+@RequestMapping(method=RequestMethod.POST,consumers= "application/json")
+public @ResponseBody Course saveCourse(@RequestBody Course aCourse){
+  return courseRepository.save(aCourse);
+}
+```
+* This is the same as the previous example but the @ResponseBody is used to indicate that the response returned by this method will be converted into a resource which the client can consume.
+
+* If you have created any RESTful web service with Spring MVC then you know that we need to annotate each method which generates REST response with the @ResponseBody annotation but with the introduction of @RestController, we can avoid this.
+
+
+
+
+**7. @RestController**
+* This is convenience annotation for developing RESTful web service with Spring MVC framework. The @RestController is a combination of @Controller and @ResponseBody, which was introduced in the Spring 3.4 version.
+
+* When you annotate a controller class with @RestController it does two purposes, first, it says that the controller class is handling a request for REST APIs and second you don't need to annotate each method with the @ResposneBody annotation to signal that the response will be converted into a Resource using various HttpMessageConverers.
+
+* Here is an example of @RestController annotation in Spring MVC:
+```Java
+@RestController
+class HelloControler{
+
+@RequestMapping("/")
+public String hello(){
+  return "Hello Spring Booot";
+}
+
+}
+```
+* You can see that there is no @ReseponseBody annotation is required to generate RESTful response. Before @RestController, Java developer used @Controller on top of the class and annotated each handler method with @ResponseBody annotation.
