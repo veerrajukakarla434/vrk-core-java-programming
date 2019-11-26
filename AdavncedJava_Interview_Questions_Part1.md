@@ -299,3 +299,28 @@ public class HelloController{
 // handler methods
 }
 ```
+
+* **2. @RequestMapping**
+
+* The Controller class contains several handler methods to handle different HTTP request but how does Spring map a particular request to a particular handler method? Well, that's done with the help of the @RequestMapping annotation. It's a method level annotation which is specified over a handler method.
+
+* It provides the mapping between the request path and handler method. It also supports some advanced option which can be used to specify separate handler methods for different types of request on the same URI like you can specify a method to handle GET request and another to handle POST request on same URI.
+
+* Here is an example of @RequestMapping annotation in Spring MVC:
+
+```Java
+@Controller
+public class HelloControler{
+
+  @RequestMapping("/")
+  public String hello(){
+    return "Hello Spring MVC";
+  }
+}
+
+if spring rest
+@RequestMapping(value = "/saveEmployee", method = RequestMethod.POST, produces = "application/json")
+```
+
+
+
