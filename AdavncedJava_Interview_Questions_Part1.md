@@ -287,7 +287,7 @@ annotations as well as which work behind the scene.
 
 #### 10 Spring MVC and REST annotations for Java developers
 
-* **1. @Controller**
+**1. @Controller**
 
 * This annotation is used to make a class as web controller, which can handle client requests and send a response back to the client. This is a class level annotation, which is put on top of your controller class. Similar to @Service and @Repository it is also a stereotype annotation. If you are wondering what is the difference between them then you can also see this article to learn more about their differences.
 
@@ -300,7 +300,7 @@ public class HelloController{
 }
 ```
 
-* **2. @RequestMapping**
+**2. @RequestMapping**
 
 * The Controller class contains several handler methods to handle different HTTP request but how does Spring map a particular request to a particular handler method? Well, that's done with the help of the @RequestMapping annotation. It's a method level annotation which is specified over a handler method.
 
@@ -321,6 +321,24 @@ public class HelloControler{
 if spring rest
 @RequestMapping(value = "/saveEmployee", method = RequestMethod.POST, produces = "application/json")
 ```
+**3. @RequestParam**
 
+* This is another useful Spring MVC annotation which is used to bind HTTP parameters into method arguments of handler methods. For example, if you send query parameters along with URLlikie for paging or just to supply some key data then you can get them as method arguments in your handler methods.
+* Here is an example of @RequestParam annotation in Spring MVC from my earlier article about the difference between RequestParam and PathVariable annotation:
 
+```Java
+@RequestMapping("/book")
+public String showBookDetails(
+
+@RequestParam("ISBN") String ISBN, Model model){
+  model.addAttribute("ISBN", ISBN);
+  return "bookDetails";
+}
+```
+
+* If you access your web application which provides book details with a query parameter like below:
+
+* http://localhost:8080/book?ISBN=900848893
+
+* then above handler method will be called because it is bound to the "/book" URL and the query parameter ISBN will be used to populate the method argument with the same name "ISBN" inside showBookDetails() method.
 
