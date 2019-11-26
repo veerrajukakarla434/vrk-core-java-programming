@@ -285,3 +285,17 @@ annotations as well as which work behind the scene.
 #### Spring Boot @SpringBootApplication Annotation
 * Spring Boot @SpringBootApplication annotation is used to mark a configuration class that declares one or more @Bean methods and also triggers auto-configuration and component scanning. It’s same as declaring a class with @Configuration, @EnableAutoConfiguration and @ComponentScan annotations.
 
+#### 10 Spring MVC and REST annotations for Java developers
+
+* **1. @Controller**
+
+* This annotation is used to make a class as web controller, which can handle client requests and send a response back to the client. This is a class level annotation, which is put on top of your controller class. Similar to @Service and @Repository it is also a stereotype annotation. If you are wondering what is the difference between them then you can also see this article to learn more about their differences.
+
+* Here is an example of @Controller annotation in Spring MVC:
+
+```Java
+@Controller
+public class HelloController{
+// handler methods
+}
+```
