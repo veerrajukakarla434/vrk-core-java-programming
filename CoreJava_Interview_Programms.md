@@ -574,7 +574,7 @@ Out Put :
 ```Console
 Time Complexity : O(n^2) {v=1, e=2, r=2, a=1, j=1, u=1}
 ```
-#### 2nd Approach it will five Time Complexity 
+#### 2nd Approach it will give Time Complexity 
 ```Java
 package com.vrk.core.programs;
 
