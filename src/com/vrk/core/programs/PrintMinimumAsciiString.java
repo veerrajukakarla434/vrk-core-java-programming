@@ -7,7 +7,7 @@ public class PrintMinimumAsciiString {
 
 	public static void main(String[] abc) {
 
-		String str = "hanuma";
+		String str = "arp";
 		StringBuilder sb = null;
 		String[] array = new String[str.length()];
 		Map<Integer, String> map = new TreeMap<>();
@@ -24,8 +24,9 @@ public class PrintMinimumAsciiString {
 			map.put(charAscii, array[i]);
 
 		}
-		System.out.println("Actual values from map with ascii calues  : " + map);
+		System.out.println("Actual values from map with ascii values  : " + map);
 		System.out.println("min Ascii value of element : " + map.values().toArray()[0]);
+		System.out.println("max Ascii value of element : " + map.values().toArray()[map.size()-1]);
 
 	}
 

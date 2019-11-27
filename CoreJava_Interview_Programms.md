@@ -488,5 +488,129 @@ OutPut:
 Max Element : 405
 Min Element : -499
 ```
+* **Problem 10** : 
+input String str = "arp";
+take input as from given str like ar,rp,ap and pring min ascii value of string
+
+```Java
+package com.vrk.core.programs;
+
+import java.util.Map;
+import java.util.TreeMap;
+
+public class PrintMinimumAsciiString {
+
+	public static void main(String[] abc) {
+
+		String str = "arp";
+		StringBuilder sb = null;
+		String[] array = new String[str.length()];
+		Map<Integer, String> map = new TreeMap<>();
+
+		for (int i = 0; i < str.length(); i++) {
+			sb = new StringBuilder(str);
+			array[i] = sb.deleteCharAt(i).toString();
+
+			String s = array[i];
+			int charAscii = 0;
+			for (int j = 0; j < s.length(); j++) {
+				charAscii += (int) s.charAt(j);
+			}
+			map.put(charAscii, array[i]);
+
+		}
+		System.out.println("Actual values from map with ascii values  : " + map);
+		System.out.println("min Ascii value of element : " + map.values().toArray()[0]);
+		System.out.println("max Ascii value of element : " + map.values().toArray()[map.size()-1]);
+
+	}
+
+}
+```
+OutPut:
+
+```Console
+Time Complexity O(n^2)
+
+Actual values from map with ascii values  : {209=ap, 211=ar, 226=rp}
+min Ascii value of element : ap
+max Ascii value of element : rp
+
+```
+
+* **Problem 11** : Count Duplicate Characters from a given String
+
+```Java
+blic class CountDuplicateCharactersFromString {
+
+	public static void main(String[] args) {
+		
+		String str = "veerraju";
+		Map<Character,Integer>map = new LinkedHashMap<>();
+		int count=1;
+		
+		for(int i=0; i<str.length(); i++) {
+			
+			for(int j=i+1; j<str.length(); j++) {
+				
+				if(str.charAt(i)==str.charAt(j)) {
+					count++;
+				}
+			}
+			if(!map.containsKey(str.charAt(i))) {
+				map.put(str.charAt(i), count);
+				count=1;
+			}
+			
+		}
+        System.out.println("Time Complexity : O(n^2) "+map);
+	
+	
+	}
+}
+```
+Out Put :
+
+```Console
+Time Complexity : O(n^2) {v=1, e=2, r=2, a=1, j=1, u=1}
+```
+#### 2nd Approach it will five Time Complexity 
+```Java
+package com.vrk.core.programs;
+
+import java.util.LinkedHashMap;
+import java.util.Map;
+
+public class CountDuplicateCharactersFromString1 {
+
+	public static void main(String[] args) {
+
+		String str = "veerraju";
+		Map<Character,Integer> charMap = new LinkedHashMap<>();
+
+		char[]crr = str.toCharArray();
+
+		for(Character ch : crr) {
+
+			if(charMap.containsKey(ch)) {
+
+				charMap.put(ch, charMap.get(ch)+1);
+
+			}else {
+				charMap.put(ch,1);
+			}
+
+		}
+
+		System.out.println("Time Complexity : O(n) "+charMap);
+	}
+}
+```
+Out Put:
+```Console
+Time Complexity : O(n) {v=1, e=2, r=2, a=1, j=1, u=1}
+```
+
+
 
 
