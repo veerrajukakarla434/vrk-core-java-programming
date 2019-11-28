@@ -605,11 +605,101 @@ public class CountDuplicateCharactersFromString1 {
 		System.out.println("Time Complexity : O(n) "+charMap);
 	}
 }
-```
+```Console
 Out Put:
 ```Console
 Time Complexity : O(n) {v=1, e=2, r=2, a=1, j=1, u=1}
 ```
+
+* **Problem 12** : write a program given number is prime number or not
+
+* prime number program without recursion 
+
+```Java
+package com.vrk.core.programs;
+
+public class ValidatePrimeNumber {
+
+	public static void main(String[] args) {
+
+		int num = 13, flag = 0;
+
+		if (num == 0 || num == 1) {
+			System.out.println("given number is not prime :" + num);
+		}
+
+		for (int i = 2; i < num / 2; i++) {
+
+			if (num % i == 0) {
+
+				System.out.println("given number is not prime :" + num);
+				flag = 1;
+				break;
+			}
+		}
+
+		if (flag == 0) {
+			System.out.println("given numer is prime :" + num);
+		}
+
+	}
+
+}
+```
+Output:
+
+```Console
+given numer is prime :13
+```
+
+* prime number program using recursion 
+
+```Java
+package com.vrk.core.programs;
+
+public class ValidatePrimeNumber2 {
+	
+	static int count=0,i=1;
+
+	public static void main(String[] args) {
+		 
+		int number=4;
+
+		int c=primeOrNot(number);
+		
+		if(c==2) {
+			System.out.println("given numenr is primve");
+		}else {
+			System.out.println("given numenr is not primve");
+		}
+
+	}
+	
+	
+	public static int primeOrNot(int num) {
+		
+		if(i<=num)
+		{
+		   if(num%i==0)
+		   {
+		        count++;                
+		   }
+		  i++;
+		primeOrNot(num);
+		}
+	     return count;
+		
+	}
+
+}
+
+```
+Output:
+
+```Console
+given numenr is not primve
+```
+
 
 
 
