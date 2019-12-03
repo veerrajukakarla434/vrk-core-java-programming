@@ -421,3 +421,4 @@ Both annotations @RequestParam and @PathVariable in Spring MVC are used for fetc
 These annotations have similar purpose but some differences in use. 
 The key difference between @RequestParam and @PathVariable is that @RequestParam used for accessing
 the values of the query parameters where as @PathVariable used for accessing the values from the URI template.
+```
