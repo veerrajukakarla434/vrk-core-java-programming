@@ -446,9 +446,38 @@ the values of the query parameters where as @PathVariable used for accessing the
  
 ```Java
 PathParam example
-GET http://base-url/students/{roll-number}
+GET http://base-url/students/{roll-number}  OR
+
+@RequestMapping(path = “/base-url/students/{roll-number}”  == @Path(“/base-url/students/{roll-number}”)
 
 QueryParam example
-GET http://base-url/students?grade=10
+GET http://base-url/students?grade=10    OR
+
+@RequestMapping(path = “/base-url/students/{roll-number}”  == @Path(“/base-url/students/{roll-number}”)
+```
+
+* **When to use @PathParam vs @QueryParam**
+* This is not a standard, you can use anyone for designing restful api.
+
+* However, the commonly used convention is :
+
+  * Any required or mandatory attributes should be added as path param
+  * Any optional attributes should be added as query param
+  * params used for filtering data are usually used as query param
+ 
+Java
+Path param example
+Finding employee with ID = 12345
+
+GET http://base-url/employees/{12345}
+
+
+Query param example
+Finding active employees with title as developer
+
+GET http://base-url/employees?title=developer&status=active
+
+
+
 ```
 
