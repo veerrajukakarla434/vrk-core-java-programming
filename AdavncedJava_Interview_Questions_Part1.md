@@ -422,3 +422,14 @@ These annotations have similar purpose but some differences in use.
 The key difference between @RequestParam and @PathVariable is that @RequestParam used for accessing
 the values of the query parameters where as @PathVariable used for accessing the values from the URI template.
 ```
+
+## That is the different annotations from Spring and JAX-RS
+
+**SPRING ANNOTATION**|**JAX-RS ANNOTATION**
+--------------------|------------------
+@RequestMapping(path = “/troopers” | @Path(“/troopers”)
+
+
+
+
+

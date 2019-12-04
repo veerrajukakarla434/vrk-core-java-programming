@@ -19,6 +19,9 @@ https://howtodoinjava.com/design-patterns/creational/
   * A more sophisticated approach is to make the constructor private and construct instances in factory methods.    
 
 
+
+
+
 ## Singleton Design pattern:
 
 * Before going to singleton you should know about volatile keyword.
