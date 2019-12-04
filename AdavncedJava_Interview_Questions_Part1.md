@@ -440,6 +440,15 @@ the values of the query parameters where as @PathVariable used for accessing the
 @RequestMapping(produces = {“application/json”}) | 	@Produces(“application/json”)
 @RequestMapping(consumes = {“application/json”}) |	@Consumes(“application/json”)
 
+#### Diff between PathParam and QueryParam ?
 
+* Path params are part of the url where as query parameters are added after the ? mark symbol and separated from other query parameters by & symbol.
+ 
+```Java
+PathParam example
+GET http://base-url/students/{roll-number}
 
+QueryParam example
+GET http://base-url/students?grade=10
+```
 
