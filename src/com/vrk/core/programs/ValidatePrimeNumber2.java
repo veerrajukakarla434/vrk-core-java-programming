@@ -19,7 +19,7 @@ public class ValidatePrimeNumber2 {
 	}
 	
 	
-	public static int primeOrNot(int num) {
+	public static int primeOrNot(int num) { 
 		
 		if(i<=num)
 		{

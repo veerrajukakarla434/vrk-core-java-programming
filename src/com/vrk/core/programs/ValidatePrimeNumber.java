@@ -4,13 +4,13 @@ public class ValidatePrimeNumber {
 
 	public static void main(String[] args) {
 
-		int num = 15, flag = 0;
+		int num = 5, flag = 0;
 
 		if (num == 0 || num == 1) {
 			System.out.println("given number is not prime :" + num);
 		}
 
-		for (int i = 2; i < num / 2; i++) {
+		for (int i = 2; i <=num/2 ; i++) {
 
 			if (num % i == 0) {
 
