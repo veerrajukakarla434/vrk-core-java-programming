@@ -605,6 +605,7 @@ public class CountDuplicateCharactersFromString1 {
 		System.out.println("Time Complexity : O(n) "+charMap);
 	}
 }
+```
 ```Console
 Out Put:
 ```Console
