@@ -606,8 +606,9 @@ public class CountDuplicateCharactersFromString1 {
 	}
 }
 ```
-```Console
+
 Out Put:
+
 ```Console
 Time Complexity : O(n) {v=1, e=2, r=2, a=1, j=1, u=1}
 ```
