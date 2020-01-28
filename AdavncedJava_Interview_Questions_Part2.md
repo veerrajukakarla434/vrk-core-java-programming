@@ -427,6 +427,15 @@ pom.xml
 </dependency>
 ```
 
+* We will create the following components and see how the whole eco system coordinates in distributed environment.
 
+* Two microservices using Spring boot. One needs to invoke another as per business requirement
+* Eureka service registry server
+* Ribbon in the invoking microservice to call the other service in load balanced fashion WITH service discovery
+* Invoking service in load balanced manner WITHOUT service discovery
+* **4.2. Create backend microservice**
+* We will create a simple microservice using Spring boot and will expose oe simple REST endpoint. Create one simple spring boot project named ribbon-server with spring-boot-web and service discovery client dependency for hosting this in web server and expose one Rest Controller to test.
+
+* To do this we need to go to https://start.spring.io/ and give the maven coordinates and select dependencies. Download the zip file containing the skeleton project. Then we need to import that in eclipse once unzipped in suitable folder.
 
 
