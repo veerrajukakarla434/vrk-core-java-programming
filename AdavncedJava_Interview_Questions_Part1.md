@@ -489,17 +489,6 @@ GET http://base-url/employees?title=developer&status=active
 * Fault Tolerance with Hystrix
 
 
-#### Overview of Netflix components-
-* Spring Cloud Netflix provides Netflix OSS integrations for Spring Boot apps through autoconfiguration and binding to the Spring Environment and other Spring programming model idioms. With a few simple annotations you can quickly enable and configure the common patterns inside your application and build large distributed systems with battle-tested Netflix components. The patterns provided include Service Discovery (Eureka), Circuit Breaker (Hystrix), Intelligent Routing (Zuul) and Client Side Load Balancing (Ribbon).
-
-**Netflix Component Name** |	**Functionality**
------------ | -----------
-
-Eureka	| Service Registration and Discovery
-Ribbon	| Dynamic Routing and Load Balancer
-Hystrix	| Circuit Breaker
-Zuul	| Edge Server
-
 ### What is Spring Cloud? & Why Spring cloud is required?
 
 * Spring Cloud Stream App Starters are Spring Boot based Spring Integration applications that provide integration with external systems.
@@ -534,6 +523,19 @@ Zuul	| Edge Server
 
 
 
+#### Overview of Netflix components-
+
+* Spring Cloud Netflix provides Netflix OSS integrations for Spring Boot apps through autoconfiguration and binding to the Spring Environment and other Spring programming model idioms. With a few simple annotations you can quickly enable and configure the common patterns inside your application and build large distributed systems with battle-tested Netflix components. The patterns provided include Service Discovery (Eureka), Circuit Breaker (Hystrix), Intelligent Routing (Zuul) and Client Side Load Balancing (Ribbon).
+
+**Netflix Component Name** |	**Functionality**
+----------- | -----------
+Eureka	| Service Registration and Discovery
+Ribbon	| Dynamic Routing and Load Balancer
+Hystrix	| Circuit Breaker
+Zuul	| Edge Server
+
+* In this post we develop 2 spring boot microservices named as employee-producer and employee-consumer.
+As the name suggests employee-producer will be exposing REST APIs which will be consumed by the employee-consumer.
 
 
 
