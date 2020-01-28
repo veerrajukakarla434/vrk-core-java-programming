@@ -537,6 +537,200 @@ Zuul	| Edge Server
 * In this post we develop 2 spring boot microservices named as employee-producer and employee-consumer.
 As the name suggests employee-producer will be exposing REST APIs which will be consumed by the employee-consumer.
 
+![sprcloud_1-5](https://www.javainuse.com/sprcloud_1-5.jpg "sprcloud_1-5") 
+
+#### Lets Begin-
+* Develop employee-producer as follows- The maven project we will be creating is as follows-
+
+* **pom.xml**
+
+```Java
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.javainuse</groupId>
+	<artifactId>employee-producer</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.4.1.RELEASE</version>
+		<relativePath /> <!-- lookup parent from repository -->
+	</parent>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+
+</project>
+
+```
+* Define the domain class Employee
+
+``` Java
+public class Employee {
+	private String empId;
+	private String name;
+	private String designation;
+	private double salary;
+
+	public Employee() {
+	}
+	
+	---- setters and getters
+}
+```
+* 
+Expose the service using the Controller as-
+
+``` Java
+@RestController
+public class TestController {
+
+	@RequestMapping(value = "/employee", method = RequestMethod.GET)
+	public Employee firstPage() {
+
+		Employee emp = new Employee();
+		emp.setName("emp1");
+		emp.setDesignation("manager");
+		emp.setEmpId("1");
+		emp.setSalary(3000);
+
+		return emp;
+	}
+
+}
+```
+* Finally define the Spring Boot Main class
+
+```Java
+mport org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class SpringBootHelloWorldApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(SpringBootHelloWorldApplication.class, args);
+	}
+}
+
+```
+
+* Compile and the run the SpringBootHelloWorldApplication.java as a Java application.	
+	
+![spring-boot-junit-example](https://www.javainuse.com/spring-boot-junit-example.jpg "spring-boot-junit-example")
+
+*  Develop employee-consumer as follows- The maven project we will be creating is as follows-
+
+* Same above POM.xml file we can use
+* Define the controller to consume the service exposed by employee-producer above using the RESTTemplate as follows-
+
+```Java
+import java.io.IOException;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.client.RestClientException;
+import org.springframework.web.client.RestTemplate;
+
+public class ConsumerControllerClient {
+
+	public void getEmployee() throws RestClientException, IOException {
+
+		String baseUrl = "http://localhost:8080/employee";
+		RestTemplate restTemplate = new RestTemplate();
+		ResponseEntity<String> response=null;
+		try{
+		response=restTemplate.exchange(baseUrl,
+				HttpMethod.GET, getHeaders(),String.class);
+		}catch (Exception ex)
+		{
+			System.out.println(ex);
+		}
+		System.out.println(response.getBody());
+	}
+
+	private static HttpEntity<?> getHeaders() throws IOException {
+		HttpHeaders headers = new HttpHeaders();
+		headers.set("Accept", MediaType.APPLICATION_JSON_VALUE);
+		return new HttpEntity<>(headers);
+	}
+}
+```
+* Finally create the Bean for the above controller, load it and call the getEmployee() Method.
+
+```Java
+import java.io.IOException;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.Bean;
+import org.springframework.web.client.RestClientException;
+
+import com.javainuse.controllers.ConsumerControllerClient;
+
+@SpringBootApplication
+public class SpringBootHelloWorldApplication {
+
+	public static void main(String[] args) throws RestClientException, IOException {
+		ApplicationContext ctx = SpringApplication.run(
+				SpringBootHelloWorldApplication.class, args);
+		
+		ConsumerControllerClient consumerControllerClient=ctx.getBean(ConsumerControllerClient.class);
+		System.out.println(consumerControllerClient);
+		consumerControllerClient.getEmployee();
+		
+	}
+	
+	@Bean
+	public  ConsumerControllerClient  consumerControllerClient()
+	{
+		return  new ConsumerControllerClient();
+	}
+}
+```
+* **NOTE :** We can use getAPI method instead of getbean
+
+
+* Running the Rest Client we get the output as
+
+![sprcloud_1-3](https://www.javainuse.com/sprcloud_1-3.jpg "sprcloud_1-3")
+
 
 
 
