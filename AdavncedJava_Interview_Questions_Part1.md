@@ -465,7 +465,7 @@ GET http://base-url/students?grade=10    OR
   * Any optional attributes should be added as query param
   * params used for filtering data are usually used as query param
  
-Java
+```Java
 Path param example
 Finding employee with ID = 12345
 
@@ -477,9 +477,8 @@ Finding active employees with title as developer
 
 GET http://base-url/employees?title=developer&status=active
 
-
-
 ```
+
 ## Spring-Cloud: Mcroservices
 
 * Spring Cloud Config Server and Bus
