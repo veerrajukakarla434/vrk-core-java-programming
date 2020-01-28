@@ -389,11 +389,43 @@ spring.application.name=employee-producer
 
 ####  What does one mean by Load Balancing ? How is it implemented in Spring Cloud?
 
-*  In computing, load balancing improves the distribution of workloads across multiple computing resources, such as computers, a computer cluster, network links, central processing units, or disk drives. Load balancing aims to optimize resource use, maximize throughput, minimize response time, and avoid overload of any single resource. Using multiple components with load balancing instead of a single component may increase reliability and availability through redundancy. Load balancing usually involves dedicated software or hardware, such as a multilayer switch or a Domain Name System server process.
-In SpringCloud this can be implemented using Netflix Ribbon.
+* **1. Traditional server side load balancing** 
+* Server side load balancing is involved in monolithic applications where we have limited number of application instances behind the load load balancer. We deploy our war/ear files into multiple server instances which are basically a pool of server having the same application deployed and we put a load balancer in front of it.
 
-* In previous posts we developed two services employee-producer and employee-consumer. Suppose other modules are also calling and consuming employee-producer module services. So the load at employee-producer is high. To deal with this we this we deploy multiple instances of employee-producer. Suppose two in this case. Now we will have to use a Load Balancer to route any incoming requests to either one of these two services.
-![sprcloud_5-1](https://www.javainuse.com/sprcloud_5-1.jpg "sprcloud_5-1")
+* Load balancer has a public IP and DNS. The client makes a request using that public IP/DNS. Load balancer decides to which internal application server request will be forwarded to. It mainly use round robin or sticky session algorithm. We call it server side load balancing.
+
+  * 1.1. Problems in microservices architecture
+* Mostly server side load balancing is a manual effort and we need to add/remove instances manually to the load balancer to work. So ideally we are loosing the today’s on demand scalability to auto-discover and configure when any new instances will be spinned of.
+
+* Another problem is to have a fail-over policy to provide the client a seamless experience. Finally we need a separate server to host the load balancer instance which has the impact on cost and maintenance.
+
+
+* **2. Client side load balancing**
+* To overcome the problems of traditional load balancing, client side load balancing came into picture. They reside in the application as inbuilt component and bundled along with the application, so we don’t have to deploy them in separate servers.
+
+* Now let’s visualize the big picture. In microservice architecture, we will have to develop many microservices and each microservice may have multiple instances in the ecosystem. To overcome this complexity we have already one popular solution to use service discovery pattern. In spring boot applications, we have couple of options in the service discovery space such as eureka, consoul, zookeeper etc.
+
+* Now if one microservice wants to communicate with another microservice, it generally looks up the service registry using discovery client and Eureka server returns all the instances of that target microservice to the caller service. Then it is the responsibility of the caller service to choose which instance to send request.
+
+* Here the client side load balancing comes into picture and automatically handles the complexities around this situation and delegates to proper instance in load balanced fashion. Note that we can specify the load balancing algorithm to use.
+
+
+* **3. Netflix ribbon – Client side load balancer**
+* Netflix ribbon from Spring Cloud family provides such facility to set up client side load balancing along with the service registry component. Spring boot has very nice way of configuring ribbon client side load balancer with minimal effort. It provides the following features
+
+* Load balancing
+* Fault tolerance
+* Multiple protocol (HTTP, TCP, UDP) support in an asynchronous and reactive model
+* Caching and batching
+* To get ribbon binaries, go to maven central. Here is an example to add dependency in Maven:
+```Java
+pom.xml
+<dependency>
+    <groupId>com.netflix.ribbon</groupId>
+    <artifactId>ribbon</artifactId>
+    <version>2.2.2</version>
+</dependency>
+```
 
 
 
