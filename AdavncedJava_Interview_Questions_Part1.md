@@ -480,4 +480,11 @@ GET http://base-url/employees?title=developer&status=active
 
 
 ```
-Veer
+## Spring-Cloud: Mcroservices
+
+* Spring Cloud Config Server and Bus
+* Load Balancing with Ribbon and Feign
+* Implementing Naming Server with Eureka
+* Implementing API Gateway with Zuul
+* Distributed Tracing with Zipkin
+* Fault Tolerance with Hystrix
