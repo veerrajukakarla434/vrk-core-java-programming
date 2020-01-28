@@ -384,10 +384,16 @@ eureka.client.serviceUrl.defaultZone=http://localhost:8090/eureka
 ```Java
 spring.application.name=employee-producer
 ```
-* We can now see the sevice registered as-
+* We can now see the service registered as-
 ![sprcloud_3-6](https://www.javainuse.com/sprcloud_3-6.jpg "sprcloud_3-6")
 
+####  What does one mean by Load Balancing ? How is it implemented in Spring Cloud?
 
+*  In computing, load balancing improves the distribution of workloads across multiple computing resources, such as computers, a computer cluster, network links, central processing units, or disk drives. Load balancing aims to optimize resource use, maximize throughput, minimize response time, and avoid overload of any single resource. Using multiple components with load balancing instead of a single component may increase reliability and availability through redundancy. Load balancing usually involves dedicated software or hardware, such as a multilayer switch or a Domain Name System server process.
+In SpringCloud this can be implemented using Netflix Ribbon.
+
+* In previous posts we developed two services employee-producer and employee-consumer. Suppose other modules are also calling and consuming employee-producer module services. So the load at employee-producer is high. To deal with this we this we deploy multiple instances of employee-producer. Suppose two in this case. Now we will have to use a Load Balancer to route any incoming requests to either one of these two services.
+![sprcloud_5-1](https://www.javainuse.com/sprcloud_5-1.jpg "sprcloud_5-1")
 
 
 
