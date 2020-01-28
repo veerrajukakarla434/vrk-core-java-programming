@@ -337,3 +337,58 @@ public class EurekaServerApplication {
 * We can see the Eureka Server page as follows-
 
 ![sprcloud_3-3](https://www.javainuse.com/sprcloud_3-3.jpg "sprcloud_3-3")
+
+* Next we modify the **employee-producer module** we defined previously to register to the Eureka server.
+
+* Add the Spring cloud dependencies to the pom.xml as follows-
+
+```Java
+<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-eureka</artifactId>
+</dependency>
+	
+<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>Camden.SR6</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+</dependencyManagement>		
+```
+* Next define the Spring Boot class with annotations @SpringBootApplication and @EnableDiscoveryClient.		
+```Java
+@SpringBootApplication
+@EnableDiscoveryClient
+public class SpringBootHelloWorldApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(SpringBootHelloWorldApplication.class, args);
+	}
+}
+```
+* In the application.properties specify the url on which the Eureka server is up and running.
+```Java
+eureka.client.serviceUrl.defaultZone=http://localhost:8090/eureka
+```
+* Now start this employee-producer by running this as a Java Application and go to url. http://localhost:8090/
+* We can see the Eureka Server page with the **employee-producer** module registered as follows-
+
+![sprcloud_3-4](https://www.javainuse.com/sprcloud_3-4.jpg "sprcloud_3-4")
+
+* **We can see here that the registered application name is coming as UNKNOWN. To change this create in resources a file named bootstrap.properties**
+```Java
+spring.application.name=employee-producer
+```
+* We can now see the sevice registered as-
+![sprcloud_3-6](https://www.javainuse.com/sprcloud_3-6.jpg "sprcloud_3-6")
+
+
+
+
+
+
