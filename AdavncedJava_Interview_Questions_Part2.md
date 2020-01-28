@@ -314,10 +314,7 @@ public class SpringBootHelloWorldApplication {
 			</plugin>
 		</plugins>
 	</build>
-
-
 </project>
-
 
 ```
 * **Define the Spring Boot class with annotations @SpringBootApplication and @EnableEurekaServer.**
@@ -333,10 +330,10 @@ public class EurekaServerApplication {
 }
 ```
 
-
 * Finally specify the port on which the eureka application will get started -
 * Next define the batch configuration for creating the tasklet as follows-
 * **server.port=8090**
 * Run this as java application. Go to URL-  http://localhost:8090/
 * We can see the Eureka Server page as follows-
+
 ![sprcloud_3-3](https://www.javainuse.com/sprcloud_3-3.jpg "sprcloud_3-3")
