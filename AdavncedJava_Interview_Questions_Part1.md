@@ -489,7 +489,18 @@ GET http://base-url/employees?title=developer&status=active
 * Fault Tolerance with Hystrix
 
 
-#### What is Spring Cloud? & Why Spring cloud is required?
+#### Overview of Netflix components-
+* Spring Cloud Netflix provides Netflix OSS integrations for Spring Boot apps through autoconfiguration and binding to the Spring Environment and other Spring programming model idioms. With a few simple annotations you can quickly enable and configure the common patterns inside your application and build large distributed systems with battle-tested Netflix components. The patterns provided include Service Discovery (Eureka), Circuit Breaker (Hystrix), Intelligent Routing (Zuul) and Client Side Load Balancing (Ribbon).
+
+**Netflix Component Name** |	**Functionality**
+----------- | -----------
+
+Eureka	| Service Registration and Discovery
+Ribbon	| Dynamic Routing and Load Balancer
+Hystrix	| Circuit Breaker
+Zuul	| Edge Server
+
+### What is Spring Cloud? & Why Spring cloud is required?
 
 * Spring Cloud Stream App Starters are Spring Boot based Spring Integration applications that provide integration with external systems.
 
@@ -509,5 +520,21 @@ GET http://base-url/employees?title=developer&status=active
   * Performance issues due to various operational overheads.
 * **Deployment complexities-**
   * Requirement of Devops skills.
+
+### What does one mean by Service Registration and Discovery? How is it implemented in Spring Cloud?
+
+
+ * When we start a project, we usally have all the configurations in the properties file. As more and more services are developed and deployed, adding and modifying these properties become more complex. Some services might go down, while some the location might change. This manual changing of properties may create issues.
+ 
+* Eureka Service Registration and Discovery helps in such scenarios. As all services are registered to the Eureka server and lookup done by calling the Eureka Server, any change in service locations need not be handled and is taken care of
+
+* **Microservice Registration and Discovery with Spring cloud using Netflix Eureka.**
+
+* Microservice Registration with Spring cloud using Netflix Eureka
+
+
+
+
+
 
 
