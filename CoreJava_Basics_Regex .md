@@ -46,8 +46,33 @@
   * Another example can be to allow capitalization of a word’s first letter e.g. [Ss]mith will allow the words smith and Smith both.
 
   * Similarly, <[hH][123456]> will match all heading tags i.e. H1, H2, H3, H4, H5 and H6.
+ 
+  * **Range of characters**
+  * A dash " - " indicates a range of characters. <[hH][1-6]> is similar to <[hH][123456]>. Other useful character ranges are [0-9] and [a-z] which match digits and English lowercase letters.
+
+  * We can specify multiple ranges in single construct e.g. [0123456789abcdefABCDEF] can be written as [0-9a-fA-F]. Note that order in which ranges are given doesn’t matter.
+
+  * Note that a dash is a metacharacter only within a character class, otherwise it matches the normal dash character. Also, if it is the first character listed in the range, it can’t possibly indicate a range, so it will not be meta character in this case. 
   
+  * **Negated character classes**
+  * If we use negation sign ( ^ ) in a character class then the class matches any character that isn’t listed. e.g. [^1-6] matches a character that’s not 1 through 6.
   
+  * **Matching Any Character with Dot**
+  * The metacharacter ' . ' is a shorthand for a character class that matches any character. Note that dots are not metacharacters when they are used within character classes. Within character class, it is a simple character only.
+
+  * For example, 06.24.2019 will match 06/24/2019 or 06-24-2019 or 06.24.2019. But
+06[.]24[.]2019 will match only 06.24.2019.
+
+  * **Matching Alternation – any one of several sub-expressions**
+  
+  * Pipe symbol '|' allows you to combine multiple expressions into a single expression that matches any of the individual ones.
+
+  * For example, “Alex” and “Brian” are separate expressions, but "Alex|Brian" is one expression that matches either of both.
+
+  * Similar to dot, pipe is not metacharacter when it is used within character class. Within character class, it is a simple character only.
+
+  * For example, to match the words “First” or “1st”, we can write regex – “(First|1st)” or in shorthand "(Fir|1)st".
+
   
 #### Example of Java Regular Expressions
 
