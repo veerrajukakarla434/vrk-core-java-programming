@@ -114,5 +114,7 @@ Start index: 20 End index: 25  - Brian
 6	| [a-z&&[^bc]]	| a through z, except for b and c: [ad-z] (subtraction)
 7	| [a-z&&[^m-p]]	| a through z, and not m through p: [a-lq-z](subtraction)
 
+#### Regular Expression Metacharacters Example
+
  
   
