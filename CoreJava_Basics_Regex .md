@@ -38,7 +38,17 @@
 
   * Similarly, “cat$” matches only if the ‘cat’ is at the end of the line. e.g. words like ‘scat’.
 
+  * **Character Classes**
+  * The regular-expression construct "[···]", usually called a character class, lets us list the characters we want to allow at that point in the match. Character classes are useful in creating spell-checkers.
 
+  * For example, while “e” matches just an e, and “a” matches just an a, the regular expression [ea] matches either. e.g. sep[ea]r[ea]te will match all the words “seperate” “separate” and “separete”.
+
+  * Another example can be to allow capitalization of a word’s first letter e.g. [Ss]mith will allow the words smith and Smith both.
+
+  * Similarly, <[hH][123456]> will match all heading tags i.e. H1, H2, H3, H4, H5 and H6.
+  
+  
+  
 #### Example of Java Regular Expressions
 
 
