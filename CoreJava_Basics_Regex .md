@@ -131,8 +131,9 @@ System.out.println(Pattern.matches("[amn]", "ammmna"));//false (m and a comes mo
 #### Regex Quantifiers
 
 * The quantifiers specify the number of occurrences of a character.
+
 **Regex** | **Description**
------------|---------------
+----------- | ---------------
 X?	| X occurs once or not at all
 X+	| X occurs once or more times
 X*	| X occurs zero or more times
