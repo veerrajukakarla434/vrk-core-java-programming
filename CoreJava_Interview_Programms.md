@@ -746,6 +746,63 @@ Out Put:
 Maximum Repeated Element is :20  Repeated Count is :8
 ```
 
+* **problem 14 count the vovels in a words if that word having t from given String**
+
+```Java
+package com.vrk.core.programs.I2020;
+
+import java.util.Scanner;
+
+public class CountVovelsIfWordHavingt {
+
+	public static void main(String[] args) {
+		
+		Scanner in = new Scanner(System.in); 
+		System.out.print("Enter your name: ");  
+		String str = in.nextLine(); 
+		
+		//String str = "teaste the sswdeddt thundar";
+		String[]namesArray = null;
+		
+		namesArray = str.split(" "); 
+		int vCount = 0;
+		
+        for(int i= 0; i<namesArray.length; i++) {
+        	
+        	String str1 = null;
+        	str1 = namesArray[i];
+        	str1 = str1.toLowerCase(); 
+        	
+        	if(str1.contains("t")) {
+        		
+        		for(int j=0; j<str1.length(); j++) {
+                	if(str1.charAt(j)=='a' ||str1.charAt(j)=='e'||str1.charAt(j)=='i'||str1.charAt(j)=='o' ||str1.charAt(j)=='u') {
+                		vCount++;
+                	}
+        		
+        	}
+        	
+        	System.out.println(str1 +" "+vCount);	
+        	vCount=0;
+        	
+        }
+        
+
+	}
+
+}
+}
+
+```
+Out Put:
+
+```Console
+Enter your name: taste the thunder
+taste 2
+the 1
+thunder 2
+```
+
 
 
 
