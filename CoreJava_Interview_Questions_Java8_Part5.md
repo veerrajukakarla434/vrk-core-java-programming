@@ -189,7 +189,60 @@ Output is:
 ```Console
 [A, B, C, D]
 ```
+Example 2 :
 
+```java
+public static void main(String[] args) 
+    { 
+  
+        // Creating a list of integers 
+        List<Integer> list = Arrays.asList(1, 1, 2, 3, 3, 4, 5, 5); 
+  
+        System.out.println("The distinct elements are :"); 
+  
+        // Displaying the distinct elements in the list 
+        // using Stream.distinct() method 
+        list.stream().distinct().forEach(System.out::println); 
+    } 
+```
+Output :
+
+```Console
+The distinct elements are :
+1
+2
+3
+4
+5
+```
+Example 3:
+
+```java
+// Driver code 
+    public static void main(String[] args) 
+    { 
+  
+        // Creating a list of strings 
+        List<String> list = Arrays.asList("Geeks", "for", "Geeks", 
+                                          "GeeksQuiz", "for", "GeeksforGeeks"); 
+  
+        System.out.println("The distinct elements are :"); 
+  
+        // Displaying the distinct elements in the list 
+        // using Stream.distinct() method 
+        list.stream().distinct().forEach(System.out::println); 
+    } 
+```
+Output:
+
+```Console
+The distinct elements are :
+Geeks
+for
+GeeksQuiz
+GeeksforGeeks
+```
+        
 
 
 
