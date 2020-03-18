@@ -43,9 +43,6 @@ class::methodname
 
 * For Detailed description please refer : https://www.javainuse.com/java/metaspace https://dzone.com/articles/permgen-and-metaspace
 
-
-
-
 ####  What is the difference between Predicate and Function?
 
 * Both are functional interfaces.
@@ -68,7 +65,40 @@ Performance: Java 8 ‘s new APIs are better in performance than old Java APIs.
 More Readable: Old APIs such Calendar and Date are poorly designed and hard to understand. Java 8 Date and Time APIs are easy to understand and comply with ISO standards.
 
 
+#### What is the difference between Collection API and Stream API?
 
+* Differences between Collection API and Stream API are as follow :
+
+* 1. Collection API was introduced in jdk 1.2 while Stream API is introduced in jdk 1.8
+* 2. Collection objects are created eagerly while Stream API objects are created lazily.
+* 3. Iterate and Consume elements at any number of times for Collection object while iterate and consume elements only one time for Stream object.
+
+
+### What is a default method in Java 8 ? When to use it ? 
+
+* Default method is also known as defender methods or virtual extension methods. It is a  non abstract method i.e have body, which can be declared inside interface.
+
+* Default method is introduced in Java 8 for backward compatibility. That is if you add a new abstract method to the interface, all the implementing classes shall break. Implementing classes need to implement the added abstract method. This problem is solved by default method of java 8.
+
+#### What is the difference between Iterator and Spliterator ?
+
+* Difference between Iterator and Spliterator  are as follow:
+
+* 1. Introduction : Iterator was introduced in jdk 1.2 while Spliterator  is introduced in jdk 1.8
+* 2. Use in API  : Iterator is used for Collection API while Spliterator is used for Stream API
+* 3. Parallel programming : Iterator can be used for iterating the elements in Collection in sequential order while  Spliterator can be used for iterating the Stream elements in parallel or sequential order.
+* 4. Universal Iterator : Iteartor is universal iterator while Spliterator is not a universal iterator.
+
+#### What is the difference and similarities between Function and Predicate in java 8?
+
+* **Difference:**
+
+* 1. Return Type : Function returns an Object and it is a single argument function.
+* Predicate return type is boolean (i.e true or false) and it is also a single argument function.
+
+* **Similarities:**
+
+* 1. Both are functional interfaces i.e both contain single abstract method.
 
 
 #### 1) Java 8 Lambda Expressions with examples
