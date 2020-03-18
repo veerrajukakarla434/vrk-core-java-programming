@@ -56,13 +56,13 @@ class::methodname
 #### Are you aware of Date and Time API introduced in Java 8? What the issues with Old Date and time API?
 
 
-Issues with old Date and TIme API:
+* Issues with old Date and TIme API:
 
-Thread Safety: You might be already aware that java.util.Date is mutable and not thread safe. Even java.text.SimpleDateFormat is also not Thread-Safe. New Java 8 date and time APIs are thread safe.
+* **Thread Safety:** You might be already aware that java.util.Date is mutable and not thread safe. Even java.text.SimpleDateFormat is also not Thread-Safe. New Java 8 date and time APIs are thread safe.
 
-Performance: Java 8 ‘s new APIs are better in performance than old Java APIs.
+* **Performance:** Java 8 ‘s new APIs are better in performance than old Java APIs.
 
-More Readable: Old APIs such Calendar and Date are poorly designed and hard to understand. Java 8 Date and Time APIs are easy to understand and comply with ISO standards.
+* **More Readable:**  Old APIs such Calendar and Date are poorly designed and hard to understand. Java 8 Date and Time APIs are easy to understand and comply with ISO standards.
 
 
 #### What is the difference between Collection API and Stream API?
