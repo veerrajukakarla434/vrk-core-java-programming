@@ -242,6 +242,30 @@ for
 GeeksQuiz
 GeeksforGeeks
 ```
+Example 4:
+
+```java
+public static void main(String[] args) 
+    { 
+  
+        // Creating a list of strings 
+        List<String> list = Arrays.asList("Geeks", "for", "Geeks", 
+                                          "GeeksQuiz", "for", "GeeksforGeeks"); 
+  
+        // Storing the count of distinct elements 
+        // in the list using Stream.distinct() method 
+        long Count = list.stream().distinct().count(); 
+  
+        // Displaying the count of distinct elements 
+        System.out.println("The count of distinct elements is : " + Count); 
+    } 
+ ```
+ Ourput :
+ 
+ ```Console
+ The count of distinct elements is : 4
+ ```
+    
         
 
 
