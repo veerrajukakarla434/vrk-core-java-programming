@@ -289,7 +289,7 @@ List result = names.stream().filter(s->s.startsWith("S")).collect(Collectors.toL
 List names = Arrays.asList("Reflection","Collection","Stream");
 List result = names.stream().sorted().collect(Collectors.toList());
 
-* Terminal Operations:
+* **Terminal Operations:**
 * **collect:** The collect method is used to return the result of the intermediate operations performed on the stream.
 List number = Arrays.asList(2,3,4,5,3);
 Set square = number.stream().map(x->x*x).collect(Collectors.toSet());
@@ -301,7 +301,65 @@ The reduce method takes a BinaryOperator as a parameter.
 List number = Arrays.asList(2,3,4,5);
 int even = number.stream().filter(x->x%2==0).reduce(0,(ans,i)-> ans+i);
 
+* Program to demonstrate the use of Stream
 
+```java
+public static void main(String args[]) 
+  { 
+  
+    // create a list of integers 
+    List<Integer> number = Arrays.asList(2,3,4,5); 
+  
+    // demonstration of map method 
+    List<Integer> square = number.stream().map(x -> x*x). 
+                           collect(Collectors.toList()); 
+    System.out.println(square); 
+  
+    // create a list of String 
+    List<String> names = 
+                Arrays.asList("Reflection","Collection","Stream"); 
+  
+    // demonstration of filter method 
+    List<String> result = names.stream().filter(s->s.startsWith("S")). 
+                          collect(Collectors.toList()); 
+    System.out.println(result); 
+  
+    // demonstration of sorted method 
+    List<String> show = 
+            names.stream().sorted().collect(Collectors.toList()); 
+    System.out.println(show); 
+  
+    // create a list of integers 
+    List<Integer> numbers = Arrays.asList(2,3,4,5,2); 
+  
+    // collect method returns a set 
+    Set<Integer> squareSet = 
+         numbers.stream().map(x->x*x).collect(Collectors.toSet()); 
+    System.out.println(squareSet); 
+  
+    // demonstration of forEach method 
+    number.stream().map(x->x*x).forEach(y->System.out.println(y)); 
+  
+    // demonstration of reduce method 
+    int even = 
+       number.stream().filter(x->x%2==0).reduce(0,(ans,i)-> ans+i); 
+  
+    System.out.println(even); 
+  }
+```
+Output:
+
+```Console
+[4, 9, 16, 25]
+[Stream]
+[Collection, Reflection, Stream]
+[16, 4, 9, 25]
+4
+9
+16
+25
+6
+```
 
 
 
