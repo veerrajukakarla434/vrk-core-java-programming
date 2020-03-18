@@ -1,8 +1,77 @@
 # Java 8 Tutorials
 
-#### 1) Java 8 Lambda Expressions 
-#### 2) Java 8 Java Functional Interfaces
-#### 3) Java 8 Stream
+Interview Questions :
+
+#### What is lambda expression?
+
+* Lambda expression is anonymous function which have set of parameters and a lambda (->) and a function body .You can call it function without name.
+
+* Refer below examplese about this (#### 1) Java 8 Lambda Expressions with examples)
+
+#### What is method reference in java 8?
+
+* Method reference is used refer method of functional interface. It is nothing but compact way of lambda expression.You can simply replace lambda expression with method reference.
+
+Syntax:
+class::methodname
+
+#### What is Optional? Why and how can you use it?
+
+* Java 8 has introduced new class Called Optional. This class is basically introduced to avoid NullPointerException in java.
+
+* Optional is a container object used to contain not-null objects. Optional object is used to represent null with absent value.
+
+* Optional class encapsulates optional value which is either present or not.
+* It is a wrapper around object and can be use to avoid NullPointerExceptions.
+
+#### What is the difference between PermGenSpace and MetaSpace?
+
+* In jdk 8 onwards PermGenSpace is removed. Earlier PermGenSpace is used for storing the metadata. Metadata means storing the information about classes like bytecodes, names and JIT information.
+
+* Java classes metadata now stored in native heap and this space is called MetaSpace. Metaspace grows automatically by default and will be garbage collected.
+
+* So the major difference between PermGenSpace and MetaSpace is that PermGenSpace was fixed in size and did not grow automatically, but MetaSpace does not have any size constraints.
+
+
+**JVM** | **Default maximum PermGen size (MB)** | **Default maximum Metaspace size**
+------------------ | -------------------------- | -----------------------------
+
+32-bit client JVM| 64| unlimited
+
+32-bit server JVM| 64| unlimited
+
+64-bit JVM |82	| unlimited
+
+
+
+
+![java14_1](https://www.javainuse.com/java14_1.jpg "java14_1")
+
+* For Detailed description please refer : https://www.javainuse.com/java/metaspace https://dzone.com/articles/permgen-and-metaspace
+
+
+
+####  What is the difference between Predicate and Function?
+
+* Both are functional interfaces.
+* Predicate<T> is single argument function and either it returns true or false.This can be used as the assignment target for a lambda expression or method reference.
+
+* Function<T,R> is also single argument function but it returns an Object.Here T denotes type of input to the function and R denotes type of Result.
+
+* This can also be used as the assignment target for a lambda expression or method reference.
+
+
+#### Are you aware of Date and Time API introduced in Java 8? What the issues with Old Date and time API?
+
+
+Issues with old Date and TIme API:
+
+Thread Safety: You might be already aware that java.util.Date is mutable and not thread safe. Even java.text.SimpleDateFormat is also not Thread-Safe. New Java 8 date and time APIs are thread safe.
+
+Performance: Java 8 ‘s new APIs are better in performance than old Java APIs.
+
+More Readable: Old APIs such Calendar and Date are poorly designed and hard to understand. Java 8 Date and Time APIs are easy to understand and comply with ISO standards.
+
 
 
 

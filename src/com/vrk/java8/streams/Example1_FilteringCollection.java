@@ -3,7 +3,11 @@ package com.vrk.java8.streams;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
-
+/**
+ * 
+ * @author veerr
+ * This class is introduction about filters using for loop
+ */
 public class Example1_FilteringCollection {
 	
 	int id;  
@@ -45,7 +49,7 @@ public class Example1_FilteringCollection {
        //Enhanced For loop
         for(Example1_FilteringCollection product: productsList) {
         	System.out.println();
-        	System.out.println(product);
+        	//System.out.println(product);
         	System.out.println();
         }
         
@@ -57,7 +61,7 @@ public class Example1_FilteringCollection {
         			.map(p->p.price)
         			.collect(Collectors.toList());
         	
-        	System.out.println("******** > : "+productPriceList2 );
+        	System.out.println("******** List using Streams > : "+productPriceList2 );
         }
         
         
