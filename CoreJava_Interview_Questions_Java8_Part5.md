@@ -35,19 +35,18 @@ class::methodname
 
 **JVM** | **Default maximum PermGen size (MB)** | **Default maximum Metaspace size**
 ------------------ | -------------------------- | -----------------------------
-
 32-bit client JVM| 64| unlimited
 
 32-bit server JVM| 64| unlimited
 
 64-bit JVM |82	| unlimited
 
-
-
-
 ![java14_1](https://www.javainuse.com/java14_1.jpg "java14_1")
 
 * For Detailed description please refer : https://www.javainuse.com/java/metaspace https://dzone.com/articles/permgen-and-metaspace
+
+
+
 
 
 
