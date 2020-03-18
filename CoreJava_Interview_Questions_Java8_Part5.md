@@ -169,6 +169,31 @@ List<String> items = new ArrayList<>();
 		  });
 ```
 
+#### Java Stream Distinct Examples
+
+* 1. Find All Distinct Elements
+
+* In this example, we have list of strings and we will find all distinct strings, collect them into another list using collect() which is java stream terminal operations. After collecting the distinct elements, we will verify it by printing them to console.
+
+```Java
+Collection<String> list = Arrays.asList("A", "B", "C", "D", "A", "B", "C");
+ 
+// Get collection without duplicate i.e. distinct only
+List<String> distinctElements = list.stream().distinct().collect(Collectors.toList());
+ 
+//Let's verify distinct elements
+System.out.println(distinctElements);
+```
+Output is:
+
+```Console
+[A, B, C, D]
+```
+
+
+
+
+
 #### 1) Java 8 Lambda Expressions with examples
 
 * **Lambda expression** is a new feature which is introduced in Java 8. A lambda expression is an anonymous function. A function that doesn’t have a name and doesn’t belong to any class. The concept of lambda expression was first introduced in LISP programming language.
