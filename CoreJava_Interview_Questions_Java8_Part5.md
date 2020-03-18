@@ -101,6 +101,74 @@ class::methodname
 * 1. Both are functional interfaces i.e both contain single abstract method.
 
 
+#### Java 8-Internal vs. External Iteration
+
+* Before we understand forEach statement, let us first look at the concept of Internal Iterators vs External Iterators.
+
+* **External Iterators-** This Iterator is also known as active iterator or explicit iterator. For this type of iterator the control over iteration of elements is with the programmer. Which means that the programmer define when and how the next element of iteration is called.
+
+```java
+List<String> items = new ArrayList<>();
+		items.add("test1");
+		items.add("test2");
+		items.add("test3");
+		items.add("test4");
+		items.add("test5");
+		
+		//Traditional java for-each iterator which is an External Iterator.
+		for (String item : items) {
+			System.out.println(item);
+		}
+```
+
+```java
+	
+	Map<String, String> map = new HashMap<>();
+		map.put("1", "test1");
+		map.put("2", "test2");
+		map.put("3", "test3");
+		map.put("4", "test4");
+		map.put("5", "test5");
+		map.put("6", "test6");
+
+		//Traditional way of iterating map elements using external iterator.
+		 for(Map.Entry<String, String> entry :map.entrySet()) {
+		  System.out.println(entry.getKey());
+		  System.out.println(entry.getValue()); }
+```
+* **Internal Iterators-** This Iterator is also known as passive iterator, implicit iterator or callback iterator. For this type of iterator the control over the iteration of elements lies with the iterator itself. The programmer only tells the iterator "What operation is to be performed on the elements of the collection". Thus the programmer only declares what is to be done and does not manage and control how the iteration of individual elements take place.
+
+```java
+
+	List<String> items = new ArrayList<>();
+		items.add("test1");
+		items.add("test2");
+		items.add("test3");
+		items.add("test4");
+		items.add("test5");
+		
+		//iterate over list items
+		//Java 8 forEach iterator which is an Internal Iterator.
+		items.forEach(item -> System.out.println(item));
+```
+```java	
+	Map<String, String> map = new HashMap<>();
+		map.put("1", "test1");
+		map.put("2", "test2");
+		map.put("3", "test3");
+		map.put("4", "test4");
+		map.put("5", "test5");
+		map.put("6", "test6");
+
+		  //iterate over map items
+		  //Java 8 forEach iterator which is an Internal Iterator.
+		 map.forEach((key,value)->{ 
+		  System.out.println(key);
+		  System.out.println(value);
+		  
+		  });
+```
+
 #### 1) Java 8 Lambda Expressions with examples
 
 * **Lambda expression** is a new feature which is introduced in Java 8. A lambda expression is an anonymous function. A function that doesn’t have a name and doesn’t belong to any class. The concept of lambda expression was first introduced in LISP programming language.
