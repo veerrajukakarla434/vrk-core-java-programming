@@ -803,8 +803,90 @@ the 1
 thunder 2
 ```
 
+* **Problem 15 :**
 
+```Java
+package com.vrk.core.programs.I2020;
 
+public class ReverseEachWordInString {
+
+	public static void main(String[] args) {
+		
+		String str = "Hai how are you veerraju";
+		String reverse="";
+		
+		String [] w = str.split("//s");
+		for(String s:w) {
+			
+			StringBuffer sb = new StringBuffer(s);
+			sb.reverse();
+			reverse +=sb.toString()+" ";
+			
+		}
+		
+		System.out.println("Reverse String is : " + reverse);
+		
+		// TODO Auto-generated method stub
+
+	}
+
+}
+
+Our put is :
+Reverse String is : ujarreev uoy era woh iaH 
+
+```
+witout using buil in functions :
+
+```Java
+package com.vrk.core.programs.I2020;
+
+import java.util.Scanner;
+
+public class ReverseEachWordInString2 {
+
+	public static void main(String[] args) {
+		
+		
+		/*
+		 * Scanner scanner = new Scanner(System.in);
+		 * System.out.print("Original string : ");
+		 * 
+		 * String originalStr = scanner.nextLine();
+		 * scanner.close();
+		 */
+        
+		
+		String str = "Hai how are you veerraju";
+		String reverse="";
+		
+		String [] w = str.split("//s");
+		
+		for(int i=0; i<w.length; i++) {
+			
+			String word = w[i];
+			String rword="";
+			for(int j=word.length()-1; j>=0; j--) {
+				
+				rword =rword +word.charAt(j);
+				
+			}
+			
+			reverse += rword+" ";
+			
+		}
+		
+		System.out.println("Reverse String is witout using buil in functions : " + reverse);
+		
+		// TODO Auto-generated method stub
+
+	}
+
+}
+
+Out put is : 
+Reverse String is witout using buil in functions : ujarreev uoy era woh iaH 
+```
 
 
 
