@@ -138,7 +138,6 @@ class TestMain
   * java.util.Locale
   * java.util.UUID
 
-
 ## Singleton Design pattern:
 
 * Before going to singleton you should know about volatile keyword.
