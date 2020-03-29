@@ -119,12 +119,14 @@ class TestMain
 }
 
 ```
+
 #### Program output:
 
 ```Console
 100 - test - Tue Oct 30 21:34:08 IST 2012
 100 - test - Tue Oct 30 21:34:08 IST 2012
 ```
+
 * As it can be seen that even changing the instance variables using their references does not change their value, so the class is immutable.
 
 * **Immutable classes in JDK**
