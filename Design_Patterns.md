@@ -29,3 +29,6 @@ Temp1truefriend
 # 2 Factory Design Pattern:
 In Java, factory pattern is used to create instances of different classes of the same type.
 Factory pattern introduces loose coupling between classes which is the most important principle one should consider and apply while designing the application architecture.
+
+
+* veeeeeeeeeeeeeeeee  rrrrrrrrrrrrrrrr aaaaaaaa jjjjjjjj uuuuuuuuuuuu
