@@ -877,6 +877,8 @@ public class StringPool {
         
         System.out.println("s1 == s2 :"+(s1==s2));
         System.out.println("s1 == s3 :"+(s1==s3));
+        System.out.println("s1.equals(s3) :"+(s1.equals(s3)));
+        System.out.println("s1.equals(s2) :"+(s1.equals(s2)));
     }
 
 }
@@ -887,6 +889,8 @@ Output of the above program is:
 ```Console
 s1 == s2 :true
 s1 == s3 :false
+s1.equals(s3) :true
+s1.equals(s2) :true
 ```
 
 #### How many Strings are getting Created in the String Pool?
