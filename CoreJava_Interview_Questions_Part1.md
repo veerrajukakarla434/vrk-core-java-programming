@@ -1209,3 +1209,22 @@ Program output:
   * java.util.UUID
   
  
+ #### BDD vs TDD vs ATDD : Key Differences
+ 
+ * Ref: https://www.browserstack.com/guide/tdd-vs-bdd-vs-atdd
+ 
+ **Note: Acceptance Test-Driven Development is very similar to Behavioral-Driven Development. However, a key difference between them is: BDD focuses more on the behavior of the feature, whereas ATDD focuses on capturing the accurate requirements.**
+
+**Parameters** | **TDD** | **BDD** | **ATDD**
+------------|------------|-----------|-----------
+Definition|	TDD is a development technique that focuses more on the implementation of a  feature|BDD is a development technique that focuses on the system’s behavior|ATDD is a technique similar to BDD focusing more on capturing the requirements
+
+
+
+
+Participants	Developer	Developers, Customer, QAs	Developers, Customers, QAs
+Language used	Written in a language similar to the one used for feature development (Eg. Java, Python, etc)	Simple English, (Gherkin) 	Simple English, Gherkin 
+Main Focus	Unit Tests	Understanding Requirements	Writing Acceptance Tests
+Tools used	JDave, Cucumber, JBehave, Spec Flow, BeanSpec, Gherkin Concordian, FitNesse	Gherkin, Dave, Cucumber, JBehave, Spec Flow, BeanSpec, Concordian	TestNG, FitNesse, EasyB, Spectacular, Concordian, Thucydides  
+ 
+ 
