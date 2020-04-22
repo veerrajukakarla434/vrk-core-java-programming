@@ -342,4 +342,43 @@ class ThrowAndThrowsExample
 * Garbage collector thread does not come to heap memory whenever an object becomes abandoned. It comes once in a while to the heap memory and at that time if it sees any abandoned objects, it sweeps out those objects after calling finalize() method on them. Garbage collector thread calls finalize() method only once for one object.
 
 
+## What to Do About Java Memory Leaks: Tools, Fixes, and More ?
+
+* **==> Weak, Soft, and Phantom References in Java (and Why They Matter)**
+
+* This breakdown of weak, soft, and phantom references explains how they impact GC and memory allocation as well as some ideal use cases.
+
+* Almost every Java programmer knows there are Soft and Weak references, but usually, they are not fully understood. Phantom ones are even less well-known.
+
+
+* SoftReference object: Garbage collector is required to clear all SoftReference objects when memory runs low.
+* WeakReference object: When garbage collector senses a weakly referenced object, all references to it are cleared and ultimately taken out of memory.
+* PhantomReference object: Garbage collector would not be able to automatically clean up PhantomReference objects, you would need to clean it up manually by clearing all references to it.
+
+
+**SoftReference:**
+*  Soft reference objects are cleared at the discretion of the garbage collector in response to memory demand. Soft references are most often used to implement memory-sensitive caches. All soft references to softly reachable objects are guaranteed to have been cleared before the virtual machine throws an OutOfMemoryError.
+
+**WeakReference:**
+*  Weak reference objects do not prevent their referents from being made finalizable, finalized, and then reclaimed. Weak references are most often used to implement canonicalizing mappings. (Here, Canonicalizing mappings means mapping only reachable object instances.)
+
+**PhantomReference:**
+*  Phantom reference objects are enqueued after the collector determines that their referents may otherwise be reclaimed. Phantom references are most often used for scheduling pre-mortem cleanup actions in a more flexible way than is possible with the Java finalization mechanism. Unlike soft and weak references, phantom references are not automatically cleared by the garbage collector as they are enqueued. An object that is reachable via phantom references will remain so until all such references are cleared or themselves become unreachable.
+
+
+**2. Avoid Memory Leaks Related to a WebApp Classloader**
+* If you are using Jetty 7.6.6. or higher, you can prevent WebApp classloader pinning. When your code keeps referring to a webapp classloader, memory leaks can easily happen. There are two types of leaks in this case: daemon threads and static fields.
+
+* Static fields are started with the classloader’s value. Even as Jetty stops deploying and then redeploys your webapp, the static reference persists and so the object cannot be cleared from memory.
+* Daemon threads that are started outside the lifecycle of a Web application are prone to memory leaks because these threads have references to the classloader that started the threads.
+* With Jetty, you can use preventers to help you address problems associated with WebApp classloaders. For instance, app context leak preventer, such as appcontext.getappcontext() helps you keep the static references within the context classloader. Other preventers you can use are the following:
+
+  * AWT leak preventer
+  * DOM leak preventer
+  * Driver manager leak preventer
+  * GC thread leak preventer
+  * Java2D leak preventer
+  * LDAP leak preventer
+  * Login configuration leak preventer
+  * Security provider leak preventer
 
