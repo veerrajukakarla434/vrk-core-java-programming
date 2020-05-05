@@ -1,6 +1,16 @@
 ## Java Design Patterns - Creational 
 
-https://howtodoinjava.com/design-patterns/creational/
+
+All Design Patterns refer below links
+
+
+* https://howtodoinjava.com/gang-of-four-java-design-patterns/
+
+* https://www.javatpoint.com/design-patterns-in-java
+
+* https://refactoring.guru/design-patterns/java
+
+* https://www.journaldev.com/1827/java-design-patterns-example-tutorial
 
 #### How to create immutable class in Java
 
@@ -143,3 +153,61 @@ class TestMain
 ## Singleton Design pattern:
 
 * Before going to singleton you should know about volatile keyword.
+
+Refer For Volatile :-> http://tutorials.jenkov.com/java-concurrency/volatile.html , https://javarevisited.blogspot.com/2011/06/volatile-keyword-java-example-tutorial.html
+
+#### Important points on Volatile keyword in Java
+
+* 1. The volatile keyword in Java is only application to a variable and using volatile keyword with class and method is illegal.
+
+* 2. volatile keyword in Java guarantees that value of the volatile variable will always be read from main memory and not from Thread's local cache.
+
+* 3. In Java reads and writes are atomic for all variables declared using Java volatile keyword (including long and double variables).
+
+* **4. Using the volatile keyword in Java on variables reduces the risk of memory consistency errors because any write to a volatile variable in Java establishes a happens-before relationship with subsequent reads of that same variable.**
+
+* 5. From Java 5 changes to a volatile variable are always visible to other threads. What's more, it also means that when a thread reads a volatile variable in Java, it sees not just the latest change to the volatile variable but also the side effects of the code that led up the change.
+
+* 6. Reads and writes are atomic for reference variables are for most primitive variables (all types except long and double) even without the use of volatile keyword in Java.
+
+* **7. An access to a volatile variable in Java never has a chance to block, since we are only doing a simple read or write, so unlike a synchronized block we will never hold on to any lock or wait for any lock.**
+
+* 8. Java volatile variable that is an object reference may be null.
+
+* **9. Java volatile keyword doesn't mean atomic, its common misconception that after declaring volatile ++ will be atomic, to make the operation atomic you still need to ensure exclusive access using synchronized method or block in Java.**
+
+* 10. If a variable is not shared between multiple threads, you don't need to use volatile keyword with that variable.
+
+
+ 
+#### Difference between synchronized and volatile keyword in Java
+
+* **What is the difference between volatile and synchronized is another popular core Java question asked on multi-threading and concurrency interviews. Remember volatile is not a replacement of synchronized keyword but can be used as an alternative in certain cases. Here are few differences between volatile and synchronized keyword in Java.**
+
+* 1. The volatile keyword in Java is a field modifier while synchronized modifies code blocks and methods.
+
+* 2. Synchronized obtains and releases the lock on monitor’s Java volatile keyword doesn't require that.
+
+* 3. Threads in Java can be blocked for waiting for any monitor in case of synchronized, that is not the case with the volatile keyword in Java.
+
+* 4. Synchronized method affects performance more than a volatile keyword in Java.
+
+* 5. Since volatile keyword in Java only synchronizes the value of one variable between Thread memory and "main" memory while synchronized synchronizes the value of all variable between thread memory and "main" memory and locks and releases a monitor to boot. Due to this reason synchronized keyword in Java is likely to have more overhead than volatile.
+
+* 6. You can not synchronize on the null object but your volatile variable in Java could be null.
+
+* 7. From Java 5 writing into a volatile field has the same memory effect as a monitor release, and reading from a volatile field has the same memory effect as a monitor acquire
+
+
+* **In short, volatile keyword in Java is not a replacement of synchronized block or method but in some situation is very handy and can save performance overhead which comes with use of synchronization in Java.**
+
+
+
+
+
+
+
+
+
+
+

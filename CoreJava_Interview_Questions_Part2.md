@@ -379,6 +379,17 @@ class ThrowAndThrowsExample
   * GC thread leak preventer
   * Java2D leak preventer
   * LDAP leak preventer
-  * Login configuration leak preventer
+  * Login configuration leak preventer5
   * Security provider leak preventer
+
+Refer : https://www.toptal.com/java/hunting-memory-leaks-in-java
+
+
+#### 6) Java Generics
+
+Refer : https://howtodoinjava.com/java/generics/complete-java-generics-tutorial/
+Refer : http://tutorials.jenkov.com/java-generics/index.html
+Refer: : https://www.baeldung.com/java-generics
+
+
 
