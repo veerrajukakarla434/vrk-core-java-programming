@@ -232,5 +232,90 @@ Ref : https://www.journaldev.com/1377/java-singleton-design-pattern-best-practic
 * **Private constructor:**  It will prevent to instantiate the Singleton class from outside the class.
 * **Static factory method:** This provides the global point of access to the Singleton object and returns the instance to the caller.
 
+### Singleton with lazy initialization
+
+Ref : https://howtodoinjava.com/design-patterns/creational/singleton-design-pattern-in-java/
+ Ref : https://www.journaldev.com/171/thread-safety-in-java-singleton-classes-with-example-code
+
+**Approach 1**
+
+```java
+public class ASingleton {
+
+	private static ASingleton instance = null;
+
+	private ASingleton() {
+	}
+
+	public static ASingleton getInstance() {
+		if (instance == null) {
+			instance = new ASingleton();
+		}
+		return instance;
+	}
+
+}
+```
+**Approach 2**
+
+```Java
+public class LazySingleton {
+    private static volatile LazySingleton instance = null;
+ 
+    // private constructor
+    private LazySingleton() {
+    }
+ 
+    public static LazySingleton getInstance() {
+        if (instance == null) {
+            synchronized (LazySingleton.class) {
+                // Double check
+                if (instance == null) {
+                    instance = new LazySingleton();
+                }
+            }
+        }
+        return instance;
+    }
+}
+```
+
+* **There are three ways through which we can achieve thread safety.**
+
+* **Create the instance variable at the time of class loading.**
+**Pros:**
+
+* Thread safety without synchronization
+* Easy to implement
+**Cons:**
+
+* Early creation of resource that might not be used in the application.
+* The client application can’t pass any argument, so we can’t reuse it. For example, having a generic singleton class for database connection where client application supplies database server properties.
+
+**Synchronize the getInstance() method**
+* Pros:
+
+  * Thread safety is guaranteed.
+  * Client application can pass parameters
+  
+**Lazy initialization achieved**
+* Cons:
+
+  * Slow performance because of locking overhead.
+  * Unnecessary synchronization that is not required once the instance variable is initialized.
+
+**Use synchronized block inside the if loop and volatile variable**
+* Pros:
+
+  * Thread safety is guaranteed
+  * Client application can pass arguments
+  * Lazy initialization achieved
+ * Synchronization overhead is minimal and applicable only for first few threads when the variable is null.
+* Cons:
+
+  * Extra if condition
+
+
+
 
 
