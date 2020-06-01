@@ -316,6 +316,11 @@ public class LazySingleton {
   * Extra if condition
 
 
+#### Prototype design pattern in Java
+
+
+
+
 
 
 
