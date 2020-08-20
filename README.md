@@ -75,6 +75,8 @@ char a;
 
 To initialize a variable, you must assign it a valid value.
 
+![java-varibale-initialization](https://www.guru99.com/images/uploads/2012/07/java-varibale-initialization.jpg)
+
 Example of other Valid Initializations are 
 
 ```console
@@ -90,9 +92,13 @@ char a=’v’;
 #### Types of variables
 
 * In Java, there are three types of variables: 
+
 **1.Local Variables**
+
 **2.Instance Variables**
+
 **3. Static Variables**
+
 
 #### 1) Local Variables
 
@@ -117,20 +123,44 @@ class Demo {
 }
 ```
 
-## Data Types in Java
 
-Data types specify the different sizes and values that can be stored in the variable. There are two types of data types in Java: 
+#### What is Data Types in Java?
 
-1.Primitive data types: 
-               The primitive data types include boolean, char, byte, short, int, long, float and double.
-			   
-2.Non-primitive data types:
-             The non-primitive data types include Classes, Interfaces, and Arrays.
-      
-       
+* Data Types in Java are defined as specifiers that allocate different sizes and types of values that can be stored in the variable or an identifier. Java has a rich set of data types. 
+* Data types in Java can be divided into two parts : 
+* **1.Primitive Data Types :-**  which include integer, character, boolean, and float 
+* **2.Non-primitive Data Types :-**  which include classes, arrays and interfaces. 
 
-#### Java Data Types
+![DataTypes](https://www.guru99.com/images/java/DataTypes.png)
 
+Primitive Data Types
+
+Primitive Data Types are predefined and available within the Java language. Primitive values do not share state with other primitive values.
+
+There are 8 primitive types: byte, short, int, long, char, float, double, and boolean Integer data types 
+
+```Console
+byte (1 byte)
+short (2 bytes)
+int (4 bytes)
+long (8 bytes)
+```
+![java-varaibles](https://www.guru99.com/images/uploads/2012/07/java-varaibles.jpg)
+
+#### Floating Data Type 
+```Console
+float (4 bytes)
+
+double (8 bytes)
+```
+* char 
+```java
+(2 bytes)
+```
+* Logical
+```java
+boolean (1 byte) (true/false)
+```
 
 **Data Type** | **Default Value**  | **Default size**
 ----------|--------------|---------------
