@@ -39,13 +39,25 @@
 * Exception Handling
 * Unit Testing (Junits) Mokito
 * Spring cloud
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 ## Java Variables and Data Type
 
 #### Variable Declaration:
 
+* What is a Variable in Java?
+
+ * Variable in Java is a data container that stores the data values during Java program execution. Every variable is assigned data type which designates the type and quantity of value it can hold. Variable is a memory location name of the data. The Java variables have mainly three types : Local, Instance and Static. 
+ 
+* In order to use a variable in a program you to need to perform 2 steps 
+**1. Variable Declaration**
+**2. Variable Initialization**
+
+#### Variable Declaration:
+
 * To declare a variable, you must specify the data type & give the variable a unique name.
+
+![VriableTypeNameDeclaration](https://www.guru99.com/images/uploads/2012/07/VriableTypeNameDeclaration.jpg, "VriableTypeNameDeclaration")
 
 * Examples of other Valid Declarations are 
 .../java
