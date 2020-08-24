@@ -173,6 +173,55 @@ double   |  0.0d      |      8 bytes
 boolean  |  false     |      1 bit  
 char    |  '\u0000'    |     2 bytes  
 
+## Object Oriented Programming (OOPs) Concept in Java
+
+* **Object-oriented programming System(OOPs)** is a programming paradigm based on the concept of “objects” that contain data and methods. The primary purpose of object-oriented programming is to increase the flexibility and maintainability of programs. Object oriented programming brings together data and its behaviour(methods) in a single location(object) makes it easier to understand how a program works. We will cover each and every feature of OOPs in detail so that you won’t face any difficultly understanding OOPs Concepts.
+
+![Object-Oriented-Programming-Concepts](https://media.geeksforgeeks.org/wp-content/cdn-uploads/20190717114649/Object-Oriented-Programming-Concepts.jpg)
+
+#### OOPs Concepts – Table of Contents
+
+* 1.What is an Object
+* 2.What is a class
+* 3.Constructor in Java
+* 4.Object Oriented Programming Features •Abstraction
+  * Encapsulation
+  * Inheritance
+  * Polymorphism
+
+* 5.Abstract Class and Methods
+* 6.Interfaces in Java
 
 
+* **What is an Object ?**
+
+* Object is an instance of a class (which means one class can have at least in ine instance or more)
+
+* Object: is a bundle of data and its behaviour(often known as methods).
+
+* Objects have two characteristics: They have states and behaviors.
+```java
+Examples of states and behaviors
+Example 1:
+Object: House
+State: Address, Color, Area
+Behavior: Open door, close door
+```
+* So if I had to write a class based on states and behaviours of House. I can do it like this: States can be represented as instance variables and behaviours as methods of the class. We will see how to create classes in the next section of this guide.
+
+```java
+class House {
+   String address;
+   String color;
+   double are;
+   void openDoor() {
+      //Write code here
+   }
+   void closeDoor() {
+      //Write code here
+   }
+ ...
+ ...
+}
+```
 
