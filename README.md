@@ -193,7 +193,7 @@ char    |  '\u0000'    |     2 bytes
 * 6.Interfaces in Java
 
 
-* **What is an Object ?**
+### What is an Object ?
 
 * Object is an instance of a class (which means one class can have at least in ine instance or more)
 
@@ -223,5 +223,52 @@ class House {
  ...
  ...
 }
+```
+* **Note:** As we have seen above, the states and behaviors of an object, can be represented by variables and methods in the class respectively.
+
+#### Characteristics of Objects:
+
+* If you find it hard to understand Abstraction and Encapsulation, do not worry as I have covered these topics in detail with examples in the next section of this guide.
+  * 1.Abstraction
+  * 2.Encapsulation
+  * 3.Message passing
+
+* **Abstraction:** Abstraction is a process where you show only “relevant” data and “hide” unnecessary details of an object from the user.
+
+* **Encapsulation:**  Encapsulation simply means binding object state(fields) and behaviour(methods) together. If you are creating class, you are doing encapsulation.
+
+* **Message passing :**
+  * A single object by itself may not be very useful. An application contains many objects. One object interacts with another object by invoking methods on that object. It is also referred to as Method Invocation. 
+
+* **What is a Class in OOPs Concepts**
+
+* A class can be considered as a blueprint using which you can create as many objects as you like. For example, here we have a class Website that has two data members (also known as fields, instance variables and object states). This is just a blueprint, it does not represent any website, however using this we can create Website objects (or instances) that represents the websites. We have created two objects, while creating objects we provided separate properties to the objects using constructor.
+
+```java
+public class Website {
+   //fields (or instance variable)
+   String webName;
+   int webAge;
+
+   // constructor
+   Website(String name, int age){
+      this.webName = name;
+      this.webAge = age;
+   }
+   public static void main(String args[]){
+      //Creating objects
+      Website obj1 = new Website("beginnersbook", 5);
+      Website obj2 = new Website("google", 18);
+
+     //Accessing object data through reference
+     System.out.println(obj1.webName+" "+obj1.webAge);
+     System.out.println(obj2.webName+" "+obj2.webAge);
+   }
+}
+```
+**Output:**
+```java
+beginnersbook 5
+google 18
 ```
 
