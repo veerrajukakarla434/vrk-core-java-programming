@@ -272,3 +272,45 @@ beginnersbook 5
 google 18
 ```
 
+#### What is a Constructor ?
+
+* Constructor looks like a method but it is in fact not a method. It’s name is same as class name and it does not return any value. You must have seen this statement in almost all the programs I have shared above:
+```java
+MyClass obj = new MyClass();
+```
+* If you look at the right side of this statement, we are calling the default constructor of class myClass to create a new object (or instance).
+
+* We can also have parameters in the constructor, such constructors are known as parametrized constructors.
+
+* Example of constructor
+```java
+public class ConstructorExample {
+
+   int age;
+   String name;
+	
+   //Default constructor
+   ConstructorExample(){
+	this.name="Chaitanya";
+	this.age=30;
+   }
+	
+   //Parameterized constructor
+   ConstructorExample(String n,int a){
+	this.name=n;
+	this.age=a;
+   }
+   public static void main(String args[]){
+	ConstructorExample obj1 = new ConstructorExample();
+	ConstructorExample obj2 = 
+		       new ConstructorExample("Steve", 56);
+	System.out.println(obj1.name+" "+obj1.age);
+	System.out.println(obj2.name+" "+obj2.age);
+   }
+}
+```
+**Output:**
+```java
+Chaitanya 30
+Steve 56
+```
