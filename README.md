@@ -336,4 +336,149 @@ abstract class Shape {
 } 
 ```
 
+#### Abstract Class 
 
+* **Points to Remember**
+
+* A class which contains the abstract keyword in its declaration is known as abstract class.
+* Abstract classes may or may not contain abstract methods, i.e., methods without body ( public void get(); )
+* But, if a class has at least one abstract method, then the class must be declared abstract.
+* If a class is declared abstract, it cannot be instantiated.
+* To use an abstract class, you have to inherit it from another class, provide implementations to the abstract methods in it.
+* If you inherit an abstract class, you have to provide implementations to all the abstract methods in it.
+* It can have constructors and static methods also.
+* It can have final methods which will force the subclass not to change the body of the method.
+
+#### Ways to achieve Abstraction
+* There are two ways to achieve abstraction in java
+  * 1.Abstract class (0 to 100%)
+  * 2.Interface (100%)
+
+* Abstract class in Java
+
+A class which is declared as abstract is known as an abstract class. It can have abstract and non-abstract methods. It needs to be extended and its method implemented. It cannot be instantiated.
+
+#### 1) Example of Abstract class that has an abstract method
+
+* In this example, Bike is an abstract class that contains only one abstract method run. Its implementation is provided by the Honda class.
+
+```java
+abstract class Bike{  
+	abstract void run();  
+} 
+
+class Honda4 extends Bike { 
+  void run()
+  {
+  System.out.println("running safely");
+  }  
+
+public static void main(String args[]){  
+  Bike obj = new Honda4();  
+  obj.run();  
+ }  
+}  
+```
+OutPut
+```Console
+running safely
+```
+#### 2) Understanding the real scenario of Abstract class
+
+* In this example, Shape is the abstract class, and its implementation is provided by the Rectangle and Circle classes.
+
+* Mostly, we don't know about the implementation class (which is hidden to the end user), and an object of the implementation class is provided by the **factory method.**
+
+* A **factory method** is a method that returns the instance of the class. We will learn about the factory method later.
+
+* In this example, if you create the instance of Rectangle class, draw() method of Rectangle class will be invoked.
+
+```java
+
+abstract class Shape{  
+ abstract void draw();  
+ }  
+ 
+ //In real scenario, implementation is provided by others i.e. unknown by end user  
+ class Rectangle extends Shape{  
+ void draw(){
+ System.out.println("drawing rectangle");
+ }  
+ }
+
+
+class Circle1 extends Shape{  
+void draw(){
+System.out.println("drawing circle");
+}  
+}  
+//In real scenario, method is called by programmer or user  
+class TestAbstraction1{  
+public static void main(String args[]){  
+Shape s=new Circle1();//In a real scenario, object is provided through method, e.g., getShape() method  
+s.draw();  
+}  
+}
+```
+```Console
+drawing circle
+```
+#### 3) Another example of Abstract class in java
+
+```java
+abstract class Bank{    
+abstract int getRateOfInterest();    
+} 
+
+class SBI extends Bank{    
+int getRateOfInterest(){return 7;}    
+}   
+
+class PNB extends Bank{    
+int getRateOfInterest(){return 8;}    
+}    
+
+    
+class TestBank{    
+public static void main(String args[]){    
+Bank b;  
+b=new SBI();  
+System.out.println("Rate of Interest is: "+b.getRateOfInterest()+" %");    
+b=new PNB();  
+System.out.println("Rate of Interest is: "+b.getRateOfInterest()+" %");    
+}}    
+```
+```Console
+Rate of Interest is: 7 %
+Rate of Interest is: 8 %
+```
+#### 4) Abstract class having constructor, data member and methods
+
+```java
+//Example of an abstract class that has abstract and non-abstract methods  
+abstract class Bike{  
+   Bike(){System.out.println("bike is created");}  
+   abstract void run();  
+   void changeGear(){System.out.println("gear changed");}  
+ }  
+//Creating a Child class which inherits Abstract class  
+ class Honda extends Bike{  
+ void run(){System.out.println("running safely..");}  
+ }  
+
+//Creating a Test class which calls abstract and non-abstract methods  
+class TestAbstraction2{  
+ public static void main(String args[]){  
+ Bike obj = new Honda();  
+obj.run();  
+ obj.changeGear();  
+ }  
+}  
+
+```
+Output
+```Console
+ bike is created
+ running safely..
+ gear changed
+```
