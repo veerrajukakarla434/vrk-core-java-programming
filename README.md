@@ -314,3 +314,26 @@ public class ConstructorExample {
 Chaitanya 30
 Steve 56
 ```
+
+## Object Oriented Programming features
+
+* **OOPS is about developing an application around its data, i.e. objects which provides the access to their properties and the possible operations in their own way.**
+
+##### 1) Abstraction
+
+* Abstraction is a process where you show only “relevant” data and “hide” unnecessary details of an object from the user. 
+* For example, when you login to your bank account online, you enter your user_id and password and press login, what happens when you press login, how the input data sent to server, how it gets verified is all abstracted away from the you. 
+
+* Another example of abstraction: A car in itself is a well-defined object, which is composed of several other smaller objects like a gearing system, steering mechanism, engine, which are again have their own subsystems. But for humans car is a one single object, which can be managed by the help of its subsystems, even if their inner details are unknown.
+
+Example:
+```java
+// An example abstract class in Java 
+abstract class Shape { 
+    int color; 
+  
+    abstract void draw();  
+} 
+```
+
+
