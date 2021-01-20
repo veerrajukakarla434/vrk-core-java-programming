@@ -493,8 +493,12 @@ Output
 * The interface in Java is a mechanism to achieve abstraction. There can be only abstract methods in the Java interface, not method body. It is used to achieve abstraction and multiple inheritance in Java.
 
 * It cannot be instantiated just like the abstract class.
-
 * **Since Java 8, we can have default and static methods in an interface.**
-
 * **Since Java 9, we can have private methods in an interface.**
 
+##### Why use Java interface?
+
+* There are mainly three reasons to use interface. They are given below.
+  * It is used to achieve abstraction.
+  * By interface, we can support the functionality of multiple inheritance.
+  * It can be used to achieve loose coupling.
