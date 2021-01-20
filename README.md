@@ -17,6 +17,7 @@
        Collection
        List, Set, Map
        Generics
+       Java I/O
        JDBC - MYSQL
 
 #### Advanced Java: (Mysql)
@@ -184,7 +185,8 @@ char    |  '\u0000'    |     2 bytes
 * 1.What is an Object
 * 2.What is a class
 * 3.Constructor in Java
-* 4.Object Oriented Programming Features •Abstraction
+* 4.Object Oriented Programming Features 
+  * Abstraction
   * Encapsulation
   * Inheritance
   * Polymorphism
@@ -482,3 +484,17 @@ Output
  running safely..
  gear changed
 ```
+##### 2) Interface
+
+* Interface looks like a class but it is not a class. 
+* An interface can have methods and variables just like the class but the methods declared in interface are by default abstract.
+* The variables declared in an interface are public, static & final by default. 
+
+* The interface in Java is a mechanism to achieve abstraction. There can be only abstract methods in the Java interface, not method body. It is used to achieve abstraction and multiple inheritance in Java.
+
+* It cannot be instantiated just like the abstract class.
+
+* **Since Java 8, we can have default and static methods in an interface.**
+
+* **Since Java 9, we can have private methods in an interface.**
+
