@@ -848,11 +848,6 @@ ctrl+c
 ```
 #### Java For Loop
 * The Java for loop is used to iterate a part of the program several times. If the number of iteration is fixed, it is recommended to use for loop.
-* There are three types of for loops in java.
-  * Simple For Loop
-  * For-each or Enhanced For Loop
-  * Labeled For Loop
-  
 * Syntax:
 
 ```java
@@ -863,3 +858,100 @@ for (initialization condition; testing condition;
 }
 ```
 ![loop2](https://media.geeksforgeeks.org/wp-content/uploads/loop2.png "loop2")
+
+* **Initialization condition:** Here, we initialize the variable in use. It marks the start of a for loop. An already declared variable can be used or a variable can be declared, local to loop only.
+* **Testing Condition:** It is used for testing the exit condition for a loop. It must return a boolean value. It is also an Entry Control Loop as the condition is checked prior to the execution of the loop statements.
+* **Statement execution:** Once the condition is evaluated to true, the statements in the loop body are executed.
+* **Increment/ Decrement:** It is used for updating the variable for next iteration.
+* **Loop termination:** When the condition becomes false, the loop terminates marking the end of its life cycle.
+
+#### Examples:
+
+```java
+class forLoopDemo 
+{ 
+    public static void main(String args[]) 
+    { 
+        // for loop begins when x=2 
+        // and runs till x <=4 
+        for (int x = 2; x <= 4; x++) 
+            System.out.println("Value of x:" + x); 
+    } 
+} 
+
+OutPut:
+
+Value of x:2
+Value of x:3
+Value of x:4
+*****************************
+
+public class ForEachExample {  
+public static void main(String[] args) {  
+    //Declaring an array  
+    int arr[]={12,23,44,56,78};  
+    //Printing array using for-each loop  
+    for(int i:arr){  
+        System.out.println(i);  
+    }  
+}  
+}  
+
+OutPut: 
+12
+23
+44
+56
+78
+
+**********************************************
+```
+#### Enhanced For loop
+* Enhanced for loop is useful when you want to iterate Array/Collections, it is easy to write and understand.
+```java
+class ForLoopExample3 {
+   public static void main(String args[]){
+      int arr[]={2,11,45,9};
+      for (int num : arr) {
+         System.out.println(num);
+      }
+   }
+}
+
+OutPut:
+2
+11
+45
+9
+
+*******************
+String arr[]={"hi","hello","bye"};
+for (String str : arr) {
+         System.out.println(str);
+}
+
+OutPut:
+hi
+hello
+bye
+
+```
+### Java do-while Loop
+
+* The Java do-while loop is used to iterate a part of the program several times. If the number of iteration is not fixed and you must have to execute the loop at least once, it is recommended to use do-while loop.
+
+* The Java do-while loop is executed at least once because condition is checked after loop body.
+```java
+Syntax:
+do
+{
+    statements..
+}
+while (condition);
+```
+![](https://media.geeksforgeeks.org/wp-content/uploads/loop3.png "loop3")
+
+* do while loop starts with the execution of the statement(s). There is no checking of any condition for the first time.
+* After the execution of the statements, and update of the variable value, the condition is checked for true or false value. If it is evaluated to true, next iteration of loop starts.
+* When the condition becomes false, the loop terminates which marks the end of its life cycle.
+* It is important to note that the do-while loop will execute its statements atleast once before any condition is checked, and therefore is an example of exit control loop.
