@@ -774,5 +774,27 @@ class TestBird {
 This animal eats insects.
 This bird eats seeds.
 ```
+#### Java Loops:
+
+* Looping in programming languages is a feature which facilitates the execution of a set of instructions/functions repeatedly while some condition evaluates to true.
+Java provides three ways for executing the loops. While all the ways provide similar basic functionality, they differ in their syntax and condition checking time.
+
+#### While Loop:
+ * The Java while loop is used to iterate a part of the program several times. If the number of iteration is not fixed, it is recommended to use while loop.
+ 
+ ```Console
+ Syntax :
+while (boolean condition)
+{
+   loop statements...
+}
+```
+![Loop1](https://media.geeksforgeeks.org/wp-content/uploads/Loop1.png "Loop1")
+
+
+
+ 
+
+
 
 
