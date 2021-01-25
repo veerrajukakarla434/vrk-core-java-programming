@@ -791,10 +791,61 @@ while (boolean condition)
 ```
 ![Loop1](https://media.geeksforgeeks.org/wp-content/uploads/Loop1.png "Loop1")
 
+* Examples
+```java
+public class WhileExample {  
+public static void main(String[] args) {  
+    int i=1;  
+    while(i<=10){  
+        System.out.println(i);  
+    i++;  
+    }  
+}  
+} 
+```
+**OutPut:**
 
+```Console
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+```
+##### Java Infinitive While Loop
+* If you pass true in the while loop, it will be infinitive while loop.
 
- 
+Syntax:
+```java
+while(true){  
+//code to be executed  
+} 
+```
+* Example:
+```java
+public class WhileExample2 {  
+public static void main(String[] args) {  
+    while(true){  
+        System.out.println("infinitive while loop");  
+    }  
+}  
+}  
+```
+**Output:**
 
+```Console
+infinitive while loop
+infinitive while loop
+infinitive while loop
+infinitive while loop
+infinitive while loop
+ctrl+c 
+```
 
 
 
