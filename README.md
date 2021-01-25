@@ -846,6 +846,20 @@ infinitive while loop
 infinitive while loop
 ctrl+c 
 ```
+#### Java For Loop
+* The Java for loop is used to iterate a part of the program several times. If the number of iteration is fixed, it is recommended to use for loop.
+* There are three types of for loops in java.
+  * Simple For Loop
+  * For-each or Enhanced For Loop
+  * Labeled For Loop
+  
+* Syntax:
 
-
-
+```java
+for (initialization condition; testing condition; 
+                              increment/decrement)
+{
+    statement(s)
+}
+```
+![loop2](https://media.geeksforgeeks.org/wp-content/uploads/loop2.png "loop2")
