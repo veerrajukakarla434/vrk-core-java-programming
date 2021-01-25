@@ -846,6 +846,45 @@ infinitive while loop
 infinitive while loop
 ctrl+c 
 ```
+### Java do-while Loop
+
+* The Java do-while loop is used to iterate a part of the program several times. If the number of iteration is not fixed and you must have to execute the loop at least once, it is recommended to use do-while loop.
+
+* The Java do-while loop is executed at least once because condition is checked after loop body.
+```java
+Syntax:
+do
+{
+    statements..
+}
+while (condition);
+```
+![](https://media.geeksforgeeks.org/wp-content/uploads/loop3.png "loop3")
+
+* do while loop starts with the execution of the statement(s). There is no checking of any condition for the first time.
+* After the execution of the statements, and update of the variable value, the condition is checked for true or false value. If it is evaluated to true, next iteration of loop starts.
+* When the condition becomes false, the loop terminates which marks the end of its life cycle.
+* It is important to note that the do-while loop will execute its statements atleast once before any condition is checked, and therefore is an example of exit control loop.
+```java
+public class DoWhileExample2 {  
+public static void main(String[] args) {  
+    do{  
+        System.out.println("infinitive do while loop");  
+    }while(true);  
+}  
+}  
+
+Output:
+
+infinitive do while loop
+infinitive do while loop
+infinitive do while loop
+ctrl+c
+```
+* **what is difference between while and do while loop**
+
+* do-while loop is similar to while loop, however there is a difference between them: In while loop, condition is evaluated first and then the statements inside loop body gets executed, on the other hand in do-while loop, statements inside do-while gets executed first and then the condition is evaluated.
+
 #### Java For Loop
 * The Java for loop is used to iterate a part of the program several times. If the number of iteration is fixed, it is recommended to use for loop.
 * Syntax:
@@ -936,22 +975,6 @@ hello
 bye
 
 ```
-### Java do-while Loop
 
-* The Java do-while loop is used to iterate a part of the program several times. If the number of iteration is not fixed and you must have to execute the loop at least once, it is recommended to use do-while loop.
 
-* The Java do-while loop is executed at least once because condition is checked after loop body.
-```java
-Syntax:
-do
-{
-    statements..
-}
-while (condition);
-```
-![](https://media.geeksforgeeks.org/wp-content/uploads/loop3.png "loop3")
 
-* do while loop starts with the execution of the statement(s). There is no checking of any condition for the first time.
-* After the execution of the statements, and update of the variable value, the condition is checked for true or false value. If it is evaluated to true, next iteration of loop starts.
-* When the condition becomes false, the loop terminates which marks the end of its life cycle.
-* It is important to note that the do-while loop will execute its statements atleast once before any condition is checked, and therefore is an example of exit control loop.
