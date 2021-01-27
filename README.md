@@ -1093,3 +1093,125 @@ java
 strings
 example
 ```
+#### Why String is Immutable or Final in Java ?
+
+* String pool is possible only because String is immutable in Java. This way Java Runtime saves a lot of heap space because different String variables can refer to the same String variable in the pool. If String would not have been immutable, then String interning would not have been possible because if any variable would have changed the value, it would have been reflected in the other variables too.
+
+* If String is not immutable then it would cause a severe security threat to the application. For example, database username, password are passed as String to get database connection and in socket programming host and port details passed as String. Since String is immutable, its value can’t be changed otherwise any hacker could change the referenced value to cause security issues in the application.
+
+* Since String is immutable, it is safe for multithreading. A single String instance can be shared across different threads. This avoids the use of synchronization for thread safety. Strings are implicitly thread-safe.
+
+* Strings are used in java classloader and immutability provides security that correct class is getting loaded by Classloader. For example, think of an instance where you are trying to load java.sql.Connection class but the referenced value is changed to myhacked.Connection class that can do unwanted things to your database.
+
+* Since String is immutable, its hashcode is cached at the time of creation and it doesn’t need to be calculated again. This makes it a great candidate for the key in a Map and its processing is faster than other HashMap key objects. This is why String is the most widely used as HashMap keys.
+
+#### What is String Pool in Java ?
+
+* As the name suggests, String Pool in java is a pool of Strings stored in Java Heap Memory. We know that String is special class in java and we can create String object using new operator as well as providing values in double quotes.
+
+* Here is a diagram which clearly explains how String Pool is maintained in java heap space and what happens when we use different ways to create Strings.
+![String-Pool-Java1](https://cdn.journaldev.com/wp-content/uploads/2012/11/String-Pool-Java1.png "String-Pool-Java1")
+
+* String Pool is possible only because String is immutable in Java and its implementation of String interning concept. String pool is also example of Flyweight design pattern.
+
+* However using new operator, we force String class to create a new String object in heap space. We can use intern() method to put it into the pool or refer to another String object from the string pool having the same value.
+
+
+```Java
+package com.journaldev.util;
+
+public class StringPool {
+
+    /**
+     * Java String Pool example
+     * @param args
+     */
+    public static void main(String[] args) {
+        String s1 = "Cat";
+        String s2 = "Cat";
+        String s3 = new String("Cat");
+        
+        System.out.println("s1 == s2 :"+(s1==s2));
+        System.out.println("s1 == s3 :"+(s1==s3));
+        System.out.println("s1.equals(s3) :"+(s1.equals(s3)));
+        System.out.println("s1.equals(s2) :"+(s1.equals(s2)));
+    }
+
+}
+```
+
+Output of the above program is:
+
+```Console
+s1 == s2 :true
+s1 == s3 :false
+s1.equals(s3) :true
+s1.equals(s2) :true
+```
+
+#### How many Strings are getting Created in the String Pool?
+
+* Sometimes in java interview, you will be asked a question around String pool. For example, how many strings are getting created in the below statement;
+
+```Java
+String str = new String("Cat");
+```
+
+* In the above statement, either 1 or 2 string will be created. If there is already a string literal “Cat” in the pool, then only one string “str” will be created in the pool. If there is no string literal “Cat” in the pool, then it will be first created in the pool and then in the heap space, so a total of 2 string objects will be created.
+
+#### final vs Immutability in Java
+
+* **final :** In Java, final is a modifier which is used for class, method and variable also. When a variable is declared with final keyword, it’s value can’t be modified, essentially, a constant.
+
+* **Immutability :** In simple terms, immutability means unchanging over time or unable to be changed. In Java, we know that String objects are immutable means we cant change anything to the existing String objects.
+
+* final means that you can’t change the object’s reference to point to another reference or another object, but you can still mutate its state (using setter methods e.g). Whereas immutable means that the object’s actual value can’t be changed, but you can change its reference to another one.
+* final modifier is applicable for variable but not for objects, Whereas immutability applicable for an object but not for variables.
+* By declaring a reference variable as final, we won’t get any immutability nature, Even though reference variable is final. We can perform any type of change in the corresponding Object. But we cant perform reassignment for that variable.
+* final ensures that the address of the object remains the same whereas the Immutable suggests that we can’t change the state of the object once created.
+
+```Java
+// Java program to illustrate 
+// difference between final 
+// and immutability 
+  
+class Geeks { 
+    public static void main(String[] args) 
+    { 
+        final StringBuffer sb = new StringBuffer("Hello"); 
+  
+        // Even though reference varibale sb is final 
+        // We can perform any changes 
+        sb.append("GFG"); 
+  
+        System.out.println(sb); 
+  
+        // Here we will get Compile time error 
+        // Because reassignment is not possible for final variable 
+        sb = new StringBuffer("Hello World"); 
+  
+        System.out.println(sb); 
+    } 
+} 
+```
+Output:
+
+```Console
+Geeks.java:14: error: cannot assign a value to final variable sb
+        sb = new StringBuffer("Hello World");
+        ^
+1 error
+
+```
+* **Pictorial Representation of the above Program**
+![Untitled-32](https://media.geeksforgeeks.org/wp-content/uploads/Untitled-32.png "Untitled-32")
+
+* **Explanation:** In the above picture, we can see that we are creating an object of StringBuffer class by making reference final.
+
+* Declaring reference variable as final, does not mean that the object is immutable.
+* In the next line we are performing append() operation on the created object and it is successfully changed.
+* If the object is immutable, then the above append operation can’t be done.
+* But it is executed successfully as we declare reference variable as final. final means we can’t reassign anything to that reference variable again.
+* Therefore when we try to create a new object of BufferedReader then it wont created any object by throwing an error to the console.
+
+
