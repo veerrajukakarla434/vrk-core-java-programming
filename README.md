@@ -1214,4 +1214,126 @@ Geeks.java:14: error: cannot assign a value to final variable sb
 * But it is executed successfully as we declare reference variable as final. final means we can’t reassign anything to that reference variable again.
 * Therefore when we try to create a new object of BufferedReader then it wont created any object by throwing an error to the console.
 
+#### Java String Oerations:
 
+#### Java String intern()
+
+* Let’s try to understand intern() method with a simple program.
+
+```Java
+package com.journaldev.string;
+
+public class StringIntern {
+
+	public static void main(String args[]) {
+
+		String s1 = new String("abc"); // goes to Heap Memory, like other objects
+		String s2 = "abc"; // goes to String Pool
+		String s3 = "abc"; // again, goes to String Pool
+
+		// Let's check out above theories by checking references
+		System.out.println("s1==s2? " + (s1 == s2)); // should be false
+		System.out.println("s2==s3? " + (s2 == s3)); // should be true
+
+		// Let's call intern() method on s1 now
+		s1 = s1.intern(); // this should return the String with same value, BUT from String Pool
+
+		// Let's run the test again
+		System.out.println("s1==s2? " + (s1 == s2)); // should be true now
+
+	}
+}
+```
+
+Output:
+
+```Console
+s1==s2? false
+s2==s3? true
+s1==s2? true
+```
+**String intern() Example Explanation**
+* When we are using new operator, the String is created in the heap space. So “s1” object is created in the heap memory with value “abc”.
+* When we create string literal, it’s created in the string pool. So “s2” and “s3” are referring to string object in the pool having value “abc”.
+* In the first print statement, s1 and s2 are referring to different objects. Hence s1==s2 is returning false.
+* In the second print statement, s2 and s3 are referring to the same object in the pool. Hence s2==s3 is returning true.
+* Now, when we are calling s1.intern(), JVM checks if there is any string in the pool with value “abc” is present? Since there is a string object in the pool with value “abc”, its reference is returned.
+* Notice that we are calling s1 = s1.intern(), so the s1 is now referring to the string pool object having value “abc”.
+* At this point, all the three string objects are referring to the same object in the string pool. Hence s1==s2 is returning true now.
+
+#### Get Length of a String
+* To find the length of a string, we use the length() method of the String. For example,
+```java
+class Main {
+  public static void main(String[] args) {
+
+    // create a string
+    String greet = "Hello! World";
+    System.out.println("String: " + greet);
+
+    // get the length of greet
+    int length = greet.length();
+    System.out.println("Length: " + length);
+  }
+}
+Output
+
+String: Hello! World
+Length: 12
+```
+##### Join two Strings
+* We can join two strings in Java using the concat() method. For example,
+```java
+class Main {
+  public static void main(String[] args) {
+
+    // create first string
+    String first = "Java ";
+    System.out.println("First String: " + first);
+
+    // create second
+    String second = "Programming";
+    System.out.println("Second String: " + second);
+
+    // join two strings
+    String joinedString = first.concat(second);
+    System.out.println("Joined String: " + joinedString);
+  }
+}
+Output
+
+First String: Java 
+Second String: Programming     
+Joined String: Java Programming
+```
+#### Compare two Strings
+* In Java, we can make comparisons between two strings using the equals() method. For example,
+```java
+class Main {
+  public static void main(String[] args) {
+
+    // create 3 strings
+    String first = "java programming";
+    String second = "java programming";
+    String third = "python programming";
+
+    // compare first and second strings
+    boolean result1 = first.equals(second);
+    System.out.println("Strings first and second are equal: " + result1);
+
+    // compare first and third strings
+    boolean result2 = first.equals(third);
+    System.out.println("Strings first and third are equal: " + result2);
+  }
+}
+Output
+
+Strings first and second are equal: true
+Strings first and third are equal: false
+```
+* In the above example, we have created 3 strings named first, second, and third. Here, we are using the equal() method to check if one string is equal to another.
+
+* The equals() method checks the content of strings while comparing them. 
+```Console
+Note: We can also compare two strings using the == operator in Java. However, this approach is different than the equals() method. To learn more, visit Java String == vs equals().
+```
