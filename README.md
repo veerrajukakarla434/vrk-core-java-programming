@@ -1334,6 +1334,51 @@ Strings first and third are equal: false
 * In the above example, we have created 3 strings named first, second, and third. Here, we are using the equal() method to check if one string is equal to another.
 
 * The equals() method checks the content of strings while comparing them. 
-```Console
-Note: We can also compare two strings using the == operator in Java. However, this approach is different than the equals() method. To learn more, visit Java String == vs equals().
+
+#### Java String compare
+* we can compare string in java on the basis of content and reference.
+
+* It is used in authentication (by equals() method), sorting (by compareTo() method), reference matching (by == operator) etc.
+
+* There are three ways to compare string in java:
+
+  * By equals() method
+  * By = = operator
+  * By compareTo() method
+#### 1) String compare by equals() method
+* The String equals() method compares the original content of the string. It compares values of string for equality. String class provides two methods:
+
+  * **public boolean equals(Object another)*  compares this string to the specified object.
+  * **public boolean equalsIgnoreCase(String another)** compares this String to another string, ignoring case.
+```java
+class Teststringcomparison1{  
+ public static void main(String args[]){  
+   String s1="Sachin";  
+   String s2="Sachin";  
+   String s3=new String("Sachin");  
+   String s4="Saurav";  
+   System.out.println(s1.equals(s2));//true  
+   System.out.println(s1.equals(s3));//true  
+   System.out.println(s1.equals(s4));//false  
+ }  
+}  
+
+Output:true
+       true
+       false
+ ************************************************      
+class Teststringcomparison2{  
+ public static void main(String args[]){  
+   String s1="Sachin";  
+   String s2="SACHIN";  
+  
+   System.out.println(s1.equals(s2));//false  
+   System.out.println(s1.equalsIgnoreCase(s2));//true  
+ }  
+}  
+
+Output:
+
+false
+true
 ```
