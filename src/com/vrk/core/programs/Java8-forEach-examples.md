@@ -9,6 +9,15 @@
 ### External vs Internal Iterators
 
 * Based on who controls iterations, Java Iterators can be classified into external and internal iterators.
-
-+ addition
-- deletion
+* External iterators are also known as active or explicit iterators. 
+* When using an external iterator, the client code performing the iteration controls the iteration. 
+* The client creates the iterator and instructs it when to advance to the next element. 
+* The client also checks whether or not all the element has been visited, and so on.
+* **Enumerations, iterators, and enhanced for-loop are all examples of external iterators.**
+* The enhanced for loop introduced in Java 5 is another example of external iterator. 
+```java
+An example of the enhanced for loop is this.
+for (String name : names) {
+    System.out.println(name);
+}
+```
