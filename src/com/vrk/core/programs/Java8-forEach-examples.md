@@ -70,8 +70,7 @@ public static void iterateThroughList(List<String> list){
 }
 ```
 
-
-
-
-
-
+* This code uses an anonymous class to instantiate a Consumer implementation. The Consumer instance is then passed as an argument to forEach. This code will produce the same result as the lambda expression we wrote.
+```java
+list.forEach(name->System.out.println(name));
+```
