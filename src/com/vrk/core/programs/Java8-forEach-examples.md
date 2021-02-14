@@ -54,6 +54,10 @@ public static void iterateThroughList(List<String> list){
 ```java
 default void forEach(Consumer<? super T> action)
 ```
+```java
+void forEachOrdered(Consumer<? super T> action)  
+```
+
 * The forEach method performs the given action for each element of the Iterable until all elements have been processed or the action throws an exception. 
 * The Consumer parameter of forEach is a **functional interface with the accept(Object) method.**
 
