@@ -29,13 +29,15 @@
   return "Veerraju"
   }
 ```
+
 * **A lambda expression in Java has these main parts:**
-  * Lambda expression only has body and parameter list.
+* Lambda expression only has body and parameter list.
   * 1. No name – function is anonymous so we don’t care about the name
   * 2. Parameter list
   * 3. Body – This is the main part of the function.
   * 4. No return type – The java 8 compiler is able to infer the return type by checking the code. you need not to mention it explicitly.
-  ```java
+ 
+```java
   () -> {  
    System.out.println("Welcom to Lambda Expression")
 }  
