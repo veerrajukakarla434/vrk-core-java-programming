@@ -10,6 +10,10 @@
 * Java lambda expressions are Java's first step into functional programming.
 * Lambda expression provides implementation of functional interface.
 
+* **To use function interface:**
+* **Pre Java 8: We create anonymous inner classes.**
+* **Post Java 8: You can use lambda expression instead of anonymous inner classes.**
+
 #### Why use Lambda Expression OR Advantages 
 
 * One of the benefits of using lambda expression is the reduced amount of code.
@@ -43,3 +47,41 @@
    System.out.println("Welcom to Lambda Expression")
 }  
 ```
+
+#### Java Lambda Expression Syntax
+
+```java
+(argument-list) -> {body}  
+```
+* Java lambda expression is consisted of three components.
+
+* **1) Argument-list: It can be empty or non-empty as well.**
+```java
+No Parameter Syntax
+() -> {  
+//Body of no parameter lambda  
+}  
+```
+
+* **2) Arrow-token: It is used to link arguments-list and body of expression.**
+```java
+One Parameter Syntax
+(p1) -> {  
+//Body of single parameter lambda  
+}  
+```
+
+* **3) Body: It contains expressions and statements for lambda expression.**
+```java
+Two Parameter Syntax
+
+(p1,p2) -> {  
+//Body of multiple parameter lambda  
+}  
+```
+
+
+
+
+
+
