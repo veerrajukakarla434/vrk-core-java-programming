@@ -116,8 +116,10 @@ public class LambdaExpressionExample2 {
     }  
 }  
 ```
-
-
+```Console
+OutPut:
+Drawing 10
+```
 
 
 
