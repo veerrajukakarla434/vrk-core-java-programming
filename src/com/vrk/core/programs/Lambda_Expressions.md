@@ -97,7 +97,7 @@ public class LambdaExpressionExample {
     }  
 }  
 ```
-
+* **Java Lambda Expression Example**
 ```java
 @FunctionalInterface  //It is optional  
 interface Drawable{  
