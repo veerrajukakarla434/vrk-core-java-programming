@@ -23,13 +23,14 @@
   * 3. Body
   * 4. return type.
   
-  ```java
+```java
+  
   Example :
   public String getName(){
   return "Veerraju"
   }
+  
 ```
-
 * **A lambda expression in Java has these main parts:**
 * Lambda expression only has body and parameter list.
   * 1. No name – function is anonymous so we don’t care about the name
