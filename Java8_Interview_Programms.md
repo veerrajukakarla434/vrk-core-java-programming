@@ -47,5 +47,21 @@ Lowest prime number in List : 2
 Sum of all prime numbers : 129
 Average of all prime numbers : 12.9
 ```
-    
+## Q3 Merge arraylists – Java 8 
+```java
+ ArrayList<String> listOne = new ArrayList<>(Arrays.asList("a", "b", "c", "d", "e"));
+         
+	         ArrayList<String> listTwo = new ArrayList<>(Arrays.asList("a", "b", "c", "f", "g"));
+	         
+	         ArrayList<String> listthree = new ArrayList<>(Arrays.asList("h", "i", "j", "k", "l"));
+	         
+	         
+	         List<String> combinedList = Stream.of(listOne, listTwo, listthree)
+                     .flatMap(x -> x.stream())
+                     .collect(Collectors.toList());
+	         
+	         System.out.println("Final list :" +combinedList );
+```		 
+	         
+		 
 
