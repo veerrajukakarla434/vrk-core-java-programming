@@ -2,27 +2,28 @@
 
 #### Q1) Squarate given list of intergers using Java8
 ##### List<Integer> numbers = Arrays.asList(1,2,2,3,5,4,6);
-
-* ans1
+  
+```console
+* Ans1
 ```java
 List<Integer> squeres = numbers.stream().map(i->i*i).collect(Collectors.toList());                      
 ```
-* ans2 : Distinct squareroot values
+* Ans2 : Distinct squareroot values
 
 ```java
 List<Integer> squeres = numbers.stream().map(i->i*i).distinct().collect(Collectors.toList()); 
 ```
 
-* ans3 :- Using Functional interface
+* Ans3 :- Using Functional interface
 ```java
 Function<Integer, Integer> square = x -> x * x;	
 List<Integer> sqrs1 = numbers.stream().map(square).distinct().collect(Collectors.toList());
 ```
-* ans4 :- using math function
+* Ans4 :- using math function
 ```java
 numbers.stream().distinct().forEach(n -> System.out.println(n + (int)Math.pow(n, 2)));
 ```
-* ans5 :- using math function
+* Ans5 :- using math function
 ```java
 numbers.stream().distinct().forEach(n -> System.out.println(n + "\t" +(int)Math.sqrt(n)));
 ```
