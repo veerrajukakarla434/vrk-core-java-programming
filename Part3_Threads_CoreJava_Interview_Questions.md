@@ -68,7 +68,7 @@ Read more: https://javarevisited.blogspot.com/2016/12/difference-between-thread-
 
 * While it is easy to create one or two threads and run them, it becomes a problem when your application requires creating 20 or 30 threads for running tasks concurrently.
 
-* Also, it won’t be exaggerating to say that large multi-threaded applications will have hundreds, if not thousands of threads running simultaneously. So, it makes sense to separate thread creation and management from the rest of the application.
+* Also, it wonâ€™t be exaggerating to say that large multi-threaded applications will have hundreds, if not thousands of threads running simultaneously. So, it makes sense to separate thread creation and management from the rest of the application.
 
 #### Executors, A framework for creating and managing threads.
 
@@ -78,7 +78,7 @@ Read more: https://javarevisited.blogspot.com/2016/12/difference-between-thread-
   * It provides various methods for creating threads, more specifically a pool of threads, that your application can use to run tasks concurrently.
 
 * **Thread Management:** 
-  * It manages the life cycle of the threads in the thread pool. You don’t need to worry about whether the threads in the thread pool are active or busy or dead before submitting a task for execution.
+  * It manages the life cycle of the threads in the thread pool. You donâ€™t need to worry about whether the threads in the thread pool are active or busy or dead before submitting a task for execution.
 
 * **Task submission and execution:** 
   * Executors framework provides methods for submitting tasks for execution in the thread pool, and also gives you the power to decide when the tasks will be executed. For example, You can submit a task to be executed now or schedule them to be executed later or make them execute periodically.
@@ -104,14 +104,14 @@ Read more: https://javarevisited.blogspot.com/2016/12/difference-between-thread-
 
 ### Callable and Future
 
-* Another important advantage of the Executor framework was the Callable interface. It’s similar to the Runnable interface with two benefits:
+* Another important advantage of the Executor framework was the Callable interface. Itâ€™s similar to the Runnable interface with two benefits:
 
-  * It’s call() method returns a result after the thread execution is complete.
-  * When we send a Callable object to an executor, we get a Future object’s reference. We can use this object to query the status of thread and the result of the Callable object.
+  * Itâ€™s call() method returns a result after the thread execution is complete.
+  * When we send a Callable object to an executor, we get a Future objectâ€™s reference. We can use this object to query the status of thread and the result of the Callable object.
 
 ### Creating ExecutorService instances
 
-* ExecutorService is an interface and it’s implementations can execute a Runnable or Callable class in an asynchronous way. Note that invoking the run() method of a Runnable interface in a synchronous way is simply calling a method.
+* ExecutorService is an interface and itâ€™s implementations can execute a Runnable or Callable class in an asynchronous way. Note that invoking the run() method of a Runnable interface in a synchronous way is simply calling a method.
 
 * We can create an instance of ExecutorService in following ways:
 
@@ -176,7 +176,7 @@ Inside : pool-1-thread-1
 
 * **shutdownNow()** - this method interrupts the running task and shuts down the executor immediately.
 
-* Let’s add shutdown code at the end of our program so that it exits gracefully -
+* Letâ€™s add shutdown code at the end of our program so that it exits gracefully -
 
 ```Java
 System.out.println("Shutting down the executor");
@@ -311,7 +311,7 @@ Executing Task At 2914898174612
 ```
 * scheduledExecutorService.schedule() function takes a Runnable, a delay value, and the unit of the delay. The above program executes the task after 5 seconds from the time of submission.
 
-* **Now let’s see an example where we execute the task periodically -**
+* **Now letâ€™s see an example where we execute the task periodically -**
 
 ```Java
 import java.util.concurrent.Executors;
@@ -366,7 +366,7 @@ Callable<String> callable = new Callable<String>() {
     }
 };
 ```
-* Note that with Callable, you don’t need to surround Thread.sleep() by a try/catch block, because unlike Runnable, a Callable can throw a checked exception.
+* Note that with Callable, you donâ€™t need to surround Thread.sleep() by a try/catch block, because unlike Runnable, a Callable can throw a checked exception.
 
 * You can also use a lambda expression with Callable like this -
 
@@ -381,9 +381,9 @@ Callable<String> callable = () -> {
 
 ## Executing Callable tasks using ExecutorService and obtaining the result using Future
 
-* Just like Runnable, you can submit a Callable to an executor service for execution. But what about the Callable’s result? How do you access it?
+* Just like Runnable, you can submit a Callable to an executor service for execution. But what about the Callableâ€™s result? How do you access it?
 
-* **The submit() method of executor service submits the task for execution by a thread. However, it doesn’t know when the result of the submitted task will be available. Therefore, it returns a special type of value called a Future which can be used to fetch the result of the task when it is available.**
+* **The submit() method of executor service submits the task for execution by a thread. However, it doesnâ€™t know when the result of the submitted task will be available. Therefore, it returns a special type of value called a Future which can be used to fetch the result of the task when it is available.**
 
 * The concept of Future is similar to Promise in other languages like Javascript. It represents the result of a computation that will be completed at a later point of time in future.
 
