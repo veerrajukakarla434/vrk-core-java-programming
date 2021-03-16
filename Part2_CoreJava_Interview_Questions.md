@@ -72,7 +72,7 @@ public class ExceptionHandling
 * Now, come to hierarchy of exceptions in java.
 
 * java.lang.Throwable :
-  *java.lang.Throwable is the super class of all errors and exceptions in java. Throwable class extends java.lang.Object class. The only argument of catch block must be itís type or itís sub class type. You can check the documentation of Throwable class here. It has two sub classes.
+  *java.lang.Throwable is the super class of all errors and exceptions in java. Throwable class extends java.lang.Object class. The only argument of catch block must be it‚Äôs type or it‚Äôs sub class type. You can check the documentation of Throwable class here. It has two sub classes.
   
    * 1)java.lang.Error
    * 2)java.lang.Exception
@@ -107,7 +107,7 @@ public class ExceptionHandling
 #### ClassNotFoundException In Java :
 * ClassNotFoundException is a run time exception which is thrown when an application tries to load a class at run time using Class.forName() or loadClass() or findSystemClass() methods and the class with specified name are not found in the classpath. For example, you may have come across this exception when you try to connect to MySQL or Oracle databases and you have not updated the classpath with required JAR files. In most of time, this exception occurs when you try to run an application without updating the classpath with required JAR files.
 
-* For example, below program will throw ClassNotFoundException if the mentioned class ìoracle.jdbc.driver.OracleDriverî is not found in the classpath.
+* For example, below program will throw ClassNotFoundException if the mentioned class ‚Äúoracle.jdbc.driver.OracleDriver‚Äù is not found in the classpath.
 
 ```Java
 public class MainClass
@@ -170,7 +170,7 @@ Caused by: java.lang.ClassNotFoundException: A
 **ClassNotFoundException** | **NoClassDefFoundError**
 ------------ | ------------
 It is an exception. It is of type java.lang.Exception.	|It is an error. It is of type java.lang.Error.
-It occurs when an application tries to load a class at run time which is not updated in the classpath. |	It occurs when java runtime system doesnít find a class definition, which is present at compile time, but missing at run time.
+It occurs when an application tries to load a class at run time which is not updated in the classpath. |	It occurs when java runtime system doesn‚Äôt find a class definition, which is present at compile time, but missing at run time.
 It is thrown by the application itself. It is thrown by the methods like Class.forName(), loadClass() and findSystemClass().	|It is thrown by the Java Runtime System.
 It occurs when classpath is not updated with required JAR files.	|It occurs when required class definition is missing at run time. 
 
@@ -207,9 +207,9 @@ Final is a keyword.|	Finally is a block.|	Finalize is a method.
 
 #### final keyword :
 
-* final is a keyword which is used to make a variable or a method or a class as ìunchangeableì. In simple terms,
+* final is a keyword which is used to make a variable or a method or a class as ‚Äúunchangeable‚Äú. In simple terms,
 
-A variable which is declared as final, itís value can not be changed once it is initialized.
+A variable which is declared as final, it‚Äôs value can not be changed once it is initialized.
 
 ```Java
 final int i = 10;    //final variable
@@ -291,7 +291,7 @@ System.gc();
 #### What is the difference between throw, throws and throwable in java?
 **throw In Java :**
 
-* throw is a keyword in java which is used to throw an exception manually. Using throw keyword, you can throw an exception from any method or block. But, that exception must be of type java.lang.Throwable class or itís sub classes. Below example shows how to throw an exception using throw keyword.
+* throw is a keyword in java which is used to throw an exception manually. Using throw keyword, you can throw an exception from any method or block. But, that exception must be of type java.lang.Throwable class or it‚Äôs sub classes. Below example shows how to throw an exception using throw keyword.
 
 ```Java
 class ThrowAndThrowsExample
@@ -314,7 +314,7 @@ return_type method_name(parameter_list) throws exception_list
 }
 ```
 #### Throwable In Java :
-* Throwable is a super class for all types of errors and exceptions in java. This class is a member of java.lang package. Only instances of this class or itís sub classes are thrown by the java virtual machine or by the throw statement. The only argument of catch block must be of this type or itís sub classes. If you want to create your own customized exceptions, then your class must extend this class. 
+* Throwable is a super class for all types of errors and exceptions in java. This class is a member of java.lang package. Only instances of this class or it‚Äôs sub classes are thrown by the java virtual machine or by the throw statement. The only argument of catch block must be of this type or it‚Äôs sub classes. If you want to create your own customized exceptions, then your class must extend this class. 
 
 * Below example shows how to create customized exceptions by extending java.lang.Throwable class.
 
@@ -369,7 +369,7 @@ class ThrowAndThrowsExample
 **2. Avoid Memory Leaks Related to a WebApp Classloader**
 * If you are using Jetty 7.6.6. or higher, you can prevent WebApp classloader pinning. When your code keeps referring to a webapp classloader, memory leaks can easily happen. There are two types of leaks in this case: daemon threads and static fields.
 
-* Static fields are started with the classloaderís value. Even as Jetty stops deploying and then redeploys your webapp, the static reference persists and so the object cannot be cleared from memory.
+* Static fields are started with the classloader‚Äôs value. Even as Jetty stops deploying and then redeploys your webapp, the static reference persists and so the object cannot be cleared from memory.
 * Daemon threads that are started outside the lifecycle of a Web application are prone to memory leaks because these threads have references to the classloader that started the threads.
 * With Jetty, you can use preventers to help you address problems associated with WebApp classloaders. For instance, app context leak preventer, such as appcontext.getappcontext() helps you keep the static references within the context classloader. Other preventers you can use are the following:
 
