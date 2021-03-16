@@ -70,7 +70,7 @@ class::methodname
 
 * **Thread Safety:** You might be already aware that java.util.Date is mutable and not thread safe. Even java.text.SimpleDateFormat is also not Thread-Safe. New Java 8 date and time APIs are thread safe.
 
-* **Performance:** Java 8 ‘s new APIs are better in performance than old Java APIs.
+* **Performance:** Java 8 â€˜s new APIs are better in performance than old Java APIs.
 
 * **More Readable:**  Old APIs such Calendar and Date are poorly designed and hard to understand. Java 8 Date and Time APIs are easy to understand and comply with ISO standards.
 
@@ -279,10 +279,10 @@ public static void main(String[] args)
  #### Stream In Java
  
  * Introduced in Java 8, the Stream API is used to process collections of objects. A stream is a sequence of objects that supports various methods which can be pipelined to produce the desired result.
-* The features of Java stream are –
+* The features of Java stream are â€“
 
 * A stream is not a data structure instead it takes input from the Collections, Arrays or I/O channels.
-* Streams don’t change the original data structure, they only provide the result as per the pipelined methods.
+* Streams donâ€™t change the original data structure, they only provide the result as per the pipelined methods.
 * Each intermediate operation is lazily executed and returns a stream as a result, hence various intermediate operations can be pipelined. Terminal operations mark the end of the stream and return the result.
     
         
@@ -375,7 +375,7 @@ Output:
 
 #### 1) Java 8 Lambda Expressions with examples
 
-* **Lambda expression** is a new feature which is introduced in Java 8. A lambda expression is an anonymous function. A function that doesn’t have a name and doesn’t belong to any class. The concept of lambda expression was first introduced in LISP programming language.
+* **Lambda expression** is a new feature which is introduced in Java 8. A lambda expression is an anonymous function. A function that doesnâ€™t have a name and doesnâ€™t belong to any class. The concept of lambda expression was first introduced in LISP programming language.
 
 * Java Lambda Expression Syntax :
 * To create a lambda expression, we specify input parameters (if there are any) on the left side of the lambda operator ->, and place the expression or block of statements on the right side of lambda operator. For example, the lambda expression (x, y) -> x + y specifies that lambda expression takes two arguments x and y and returns the sum of these.
