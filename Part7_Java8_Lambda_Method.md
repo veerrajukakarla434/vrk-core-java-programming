@@ -19,6 +19,38 @@
  * To provide the implementation of Functional interface.
  * Less coding.
 
+#### Java Lambda Expression Syntax
+```java
+(argument-list) -> {body} 
+```
+* Java lambda expression is consisted of three components.
+
+  * 1) **Argument-list:** It can be empty or non-empty as well.
+
+  * 2) **Arrow-token:** It is used to link arguments-list and body of expression.
+
+  * 3) **Body:** It contains expressions and statements for lambda expression.
+
+* No Parameter Syntax
+```java
+() -> {  
+//Body of no parameter lambda  
+} 
+```
+* One Parameter Syntax
+```java
+(p1) -> {  
+//Body of single parameter lambda  
+}
+```
+* Two Parameter Syntax
+```java
+(p1,p2) -> {  
+//Body of multiple parameter lambda  
+} 
+```
+
+
 #### What is method reference in java 8?
 
 * Method reference is used refer method of functional interface. 
