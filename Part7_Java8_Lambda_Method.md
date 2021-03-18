@@ -19,6 +19,10 @@
  * To provide the implementation of Functional interface.
  * Less coding.
 
+#### Where to use the Lambdas in Java
+* To use lambda expression, you need to either create your own functional interface or use the pre defined functional interface provided by Java. 
+* An interface with only single abstract method is called functional interface(or Single Abstract method interface), for example: Runnable, callable, ActionListener etc.
+
 #### Java Lambda Expression Syntax
 ```java
 (argument-list) -> {body} 
@@ -49,8 +53,6 @@
 //Body of multiple parameter lambda  
 } 
 ```
-
-
 #### What is method reference in java 8?
 
 * Method reference is used refer method of functional interface. 
