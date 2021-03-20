@@ -66,4 +66,10 @@ str -> System.out.println(str)
 ```java
 System.out::println
 ```
-
+#### Types of Method References
+**METHOD REFERENCE** |	**DESCRIPTION** |	**METHOD REFERENCE EXAMPLE**
+---------------------|---------------------|---------------------
+Reference to **static method**|	Used to refer static methods from a class |	Math::max equivalent to Math.max(x,y)
+Reference to **instance method from instance** |	Refer to an instance method using a reference to the supplied object	|System.out::println equivalent to System.out.println(x)
+Reference to **instance method from class type**	|Invoke the instance method on a reference to an object supplied by the context|	String::length equivalent to str.length()
+Reference to **constructor** |	Reference to a constructor|	ArrayList::new equivalent to new ArrayList()
