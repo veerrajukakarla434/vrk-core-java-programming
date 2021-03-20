@@ -184,3 +184,82 @@ Reference to **static method**|	Used to refer static methods from a class |	Math
 Reference to **instance method from instance** |	Refer to an instance method using a reference to the supplied object	|System.out::println equivalent to System.out.println(x)
 Reference to **instance method from class type**	|Invoke the instance method on a reference to an object supplied by the context|	String::length equivalent to str.length()
 Reference to **constructor** |	Reference to a constructor|	ArrayList::new equivalent to new ArrayList()
+
+#### Examples
+* 1. Method reference to static method – Class::staticMethodName
+* An example to use Math.max() which is static method.
+
+```java
+List<Integer> integers = Arrays.asList(1,12,433,5);
+         
+Optional<Integer> max = integers.stream().reduce( Math::max ); 
+ 
+max.ifPresent(value -> System.out.println(value)); 
+
+---------------------------------------------------
+class Multiplication{  
+   public static int multiply(int a, int b){  
+	return a*b;  
+   }  
+}  
+public class Example {  
+   public static void main(String[] args) {  
+	BiFunction<Integer, Integer, Integer> product = Multiplication::multiply;  
+	int pr = product.apply(11, 5);  
+	System.out.println("Product of given number is: "+pr);  
+   }  
+}
+Output:
+
+Product of given number is: 55
+--------------------------------------------------------------
+
+=========================================================
+2. Method reference to instance method from instance – ClassInstance::instanceMethodName
+In above example, we use System.out.println(value) to print the max value found. We can use System.out::println to print the value.
+
+List<Integer> integers = Arrays.asList(1,12,433,5);
+         
+Optional<Integer> max = integers.stream().reduce( Math::max ); 
+ 
+max.ifPresent( System.out::println ); 
+=============================================================
+3.Method reference to instance method from class type – Class::instanceMethodName
+In this example, s1.compareTo(s2) is referred as String::compareTo.
+
+List<String> strings = Arrays
+        .asList("how", "to", "do", "in", "java", "dot", "com");
+ 
+List<String> sorted = strings
+        .stream()
+        .sorted((s1, s2) -> s1.compareTo(s2))
+        .collect(Collectors.toList());
+ 
+System.out.println(sorted);
+ 
+List<String> sortedAlt = strings
+        .stream()
+        .sorted(String::compareTo)
+        .collect(Collectors.toList());
+ 
+System.out.println(sortedAlt);
+Output:
+
+[com, do, dot, how, in, java, to]
+[com, do, dot, how, in, java, to]
+===========================================================================
+4. Reference to constructor – Class::new
+The first method can be updated to create a list of integers from 1 to 100. Using lambda expression is rather easy. To create a new instance of ArrayList, we have use ArrayList::new.
+
+List<Integer> integers = IntStream
+                .range(1, 100)
+                .boxed()
+                .collect(Collectors.toCollection( ArrayList::new ));
+ 
+Optional<Integer> max = integers.stream().reduce(Math::max); 
+ 
+max.ifPresent(System.out::println); 
+Output:
+
+99
+```
