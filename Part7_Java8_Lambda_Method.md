@@ -53,6 +53,114 @@
 //Body of multiple parameter lambda  
 } 
 ```
+#### Examples
+
+#### Example 1: Java Lambda Expression with no parameter
+
+```java
+Example 1: Java Lambda Expression with no parameter
+@FunctionalInterface
+interface MyFunctionalInterface {
+
+	//A method with no parameter
+    public String sayHello();
+}
+public class Example {
+
+   public static void main(String args[]) {
+        // lambda expression
+    	MyFunctionalInterface msg = () -> {
+    		return "Hello";
+    	};
+        System.out.println(msg.sayHello());
+    }
+}
+
+=========================================================================
+Example 2: Java Lambda Expression with single parameter
+@FunctionalInterface
+interface MyFunctionalInterface {
+
+	//A method with single parameter
+    public int incrementByFive(int a);
+}
+public class Example {
+
+   public static void main(String args[]) {
+        // lambda expression with single parameter num
+    	MyFunctionalInterface f = (num) -> num+5;
+        System.out.println(f.incrementByFive(22));
+    }
+}
+=============================================================================
+Example 3: Java Lambda Expression with Multiple Parameters
+interface StringConcat {
+
+    public String sconcat(String a, String b);
+}
+public class Example {
+
+   public static void main(String args[]) {
+        // lambda expression with multiple arguments
+    	StringConcat s = (str1, str2) -> str1 + str2;
+        System.out.println("Result: "+s.sconcat("Hello ", "World"));
+    }
+}
+Output:
+
+Result: Hello World
+==================================================================================
+Example 4: Iterating collections (List) using foreach loop
+import java.util.*;  
+public class Example{  
+    public static void main(String[] args) {       
+       List<String> list=new ArrayList<String>();  
+       list.add("Rick");         
+       list.add("Negan");       
+       list.add("Daryl");         
+       list.add("Glenn");         
+       list.add("Carl");                
+       list.forEach(          
+           // lambda expression        
+           (names)->System.out.println(names)         
+       );     
+    }  
+}
+
+===========================================================================
+Example 5: Iterating Map in Java 8 using Lambda expression
+package com.beginnersbook;
+import java.util.HashMap;
+import java.util.Map;
+public class IterateMapUsingLambda {
+	public static void main(String[] args) {
+		Map<String, Integer> prices = new HashMap<>();
+		prices.put("Apple", 50);
+		prices.put("Orange", 20);
+		prices.put("Banana", 10);
+		prices.put("Grapes", 40);
+		prices.put("Papaya", 50);
+		
+		/* Iterate without using Lambda
+		   for (Map.Entry<String, Integer> entry : prices.entrySet()) {
+		   System.out.println("Fruit: " + entry.getKey() + ", Price: " + entry.getValue());
+		   }
+		*/ 
+		
+		prices.forEach((k,v)->System.out.println("Fruit: " + k + ", Price: " + v));
+
+	}
+}
+Output:
+
+Fruit: Apple, Price: 50
+Fruit: Grapes, Price: 40
+Fruit: Papaya, Price: 50
+Fruit: Orange, Price: 20
+Fruit: Banana, Price: 10
+```
+
+
 #### Method reference in java 8
 
 * Method reference is a shorthand notation of a lambda expression to call a method. 
