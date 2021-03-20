@@ -53,10 +53,17 @@
 //Body of multiple parameter lambda  
 } 
 ```
-#### What is method reference in java 8?
+#### Method reference in java 8
 
-* Method reference is used refer method of functional interface. 
+* Method reference is a shorthand notation of a lambda expression to call a method. 
 * It is nothing but compact way of lambda expression.
-* You can simply replace lambda expression with method reference.
-Syntax:
-class::methodname
+#### Example:
+* If your lambda expression is like this:
+```java
+str -> System.out.println(str)
+```
+* then you can replace it with a method reference like this:
+```java
+System.out::println
+```
+
