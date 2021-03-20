@@ -67,6 +67,9 @@ str -> System.out.println(str)
 System.out::println
 ```
 #### Types of Method References
+
+* Four types of method references
+  
 **METHOD REFERENCE** |	**DESCRIPTION** |	**METHOD REFERENCE EXAMPLE**
 ---------------------|---------------------|---------------------
 Reference to **static method**|	Used to refer static methods from a class |	Math::max equivalent to Math.max(x,y)
