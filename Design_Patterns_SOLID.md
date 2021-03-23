@@ -1,10 +1,10 @@
 # SOLID Principles in Java
 
-#### Ref1: https://java2blog.com/solid-principles-java/
-#### Ref2: https://www.edureka.co/blog/solid-principles-in-java/
-#### Ref3: https://stackify.com/solid-design-principles/
 
-* Robert C. Martin gave five objected oriented design principles, and the acronym S.O.L.I.D is used for it. Each letter of this acronym talks about principles in Java. When you use all the principles of S.O.L.I.D in a combined manner, it becomes easier for you to develop software that can be managed easily. The other features of using S.O.L.I.D are:
+* Robert C. Martin gave five objected oriented design principles, and the acronym S.O.L.I.D is used for it. 
+* Each letter of this acronym talks about principles in Java. 
+* When you use all the principles of S.O.L.I.D in a combined manner, it becomes easier for you to develop software that can be managed easily. 
+* The other features of using S.O.L.I.D are:
 
 * **It avoids code smells**
 * **Quickly refractor code**
