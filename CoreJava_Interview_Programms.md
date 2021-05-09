@@ -1,5 +1,70 @@
 ## Java Coding Programms
 
+#### How to find highest repeating word from a text File in Java - Word Count Problem ?
+
+``` java
+public class CountHighestRepeatingWordsFromText {
+	public static void main(String args[]) {
+
+		String str = "hai how are you you you you you you you you hai are are are how are you veer";
+
+		Map<String, Integer> wordMap = new HashMap<>();
+		String[] words = str.split(" ");
+
+		for (String word : words) {
+			if (wordMap.containsKey(word)) {
+				wordMap.put(word, wordMap.get(word) + 1);
+			} else {
+				wordMap.put(word, 1);
+			}
+		}
+		List<Entry<String, Integer>> list = sortByValueInDecreasingOrder(wordMap);
+		for (Entry<String, Integer> map : list) {
+
+			System.out.println(map.getKey() + " => " + map.getValue()); 
+
+		}
+
+	}
+	
+	public static List<Entry<String, Integer>> sortByValueInDecreasingOrder( Map<String, Integer> wordMap) {
+
+		Set<Entry<String, Integer>> entries = wordMap.entrySet();
+		
+		List<Entry<String, Integer>> list = new ArrayList<>(entries);
+		
+		Collections.sort(list, new Comparator<Map.Entry<String, Integer>>()
+		{
+			public int compare(Map.Entry<String, Integer> o1, Map.Entry<String, Integer> o2) 
+			{ 
+				return (o2.getValue()).compareTo(o1.getValue()); 
+			} 
+		}); 
+		
+		return list;
+
+	}
+	
+}
+
+```
+**Output**
+```Console
+you => 9
+are => 5
+hai => 2
+how => 2
+veer => 1
+
+```
+
+
+
+
+
+
+
+
 * **Problem 1 :**
 given input String str = "aaabbbcccddaae";
 reuired out put String output=a3b3c3d2a2e1
