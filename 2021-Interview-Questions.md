@@ -176,6 +176,10 @@ public class KafkaConfig {
 
 #### Java8 Programms
 
+* **Refenrence**
+* https://www.javaguides.net/2020/04/java-8-stream-sorting-with-comparator.html
+* https://mkyong.com/java8/java-8-how-to-sort-a-map/
+
 * **Different ways to sort List of String objects in Ascending order using Java 8 Stream APIs:**
  
 ``` java
