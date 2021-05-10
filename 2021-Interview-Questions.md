@@ -152,6 +152,7 @@ public class KafkaConfig {
 * Replication ensures that published messages are not lost and can be consumed in the event of any machine error, program error or frequent software upgrades.
 
 #### References :
+* https://dzone.com/articles/magic-of-kafka-with-spring-boot
 * https://data-flair.training/blogs/kafka-interview-questions/
 * https://www.edureka.co/blog/interview-questions/top-apache-kafka-interview-questions-for-beginners/
 * https://www.zeolearn.com/interview-questions/kafka
