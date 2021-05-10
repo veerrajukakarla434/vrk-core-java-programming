@@ -158,3 +158,6 @@ public class KafkaConfig {
 * https://www.knowledgehut.com/interview-questions/kafka
 * https://career.guru99.com/top-14-kafka-interview-questions/
 * https://intellipaat.com/blog/interview-question/kafka-interview-questions/
+
+## Java8 Section:
+
