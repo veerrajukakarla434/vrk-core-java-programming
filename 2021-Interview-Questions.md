@@ -450,5 +450,25 @@ Sorted...
 {n=99, g=50, c=20, z=10, f=9, y=8, e=7, a=6, b=5, m=2, d=1}
 
 ```
+#### General Questions
+
+* **Disadvantages of Spring Boot**
+
+The biggest challenge many developers face when using Spring Boot is the lack of control. The opinionated style installs many additional dependencies (that often go unused) which increases the deployment file size.
+
+The Spring Boot artifact may be run directly in Docker containers. This is useful to get when you need to quickly create microservices. Yet, some developers argue that since Spring Boot was designed to be lightweight and agile, it should therefore not be used for monolithic applications.
+
+Though Spring Boot comes with some basic tools for logs and your app health monitoring, these aren’t sufficient. Tools like Retrace help teams to monitor Java apps with ease. This tool helps to detect slow SQL queries, provides performance and CPU usage reports and shows the most common errors by interpreting the logs.
+
+On top of that, it can be quite challenging to update your legacy Spring code. You can overcome this problem by using tools such as the Spring Boot CLI (Command Line Interface) that will help you convert your legacy code.
+
+Some other disadvantages are:
+
+If you have never worked with Spring before and want to learn about proxies, dependency injection, and AOP programming, it is not recommended to start with Spring Boot because it doesn’t cover most of these details.
+You really have to understand a lot of the underlying Spring systems (and a bit of Spring history too), along with some advanced topics in order to modify and troubleshoot it.
+Spring Boot works well with microservices. The Spring Boot artifacts can be deployed directly into Docker containers. However, some developers don’t recommend the framework for building large and monolithic apps.
+If you are not familiar with other projects of the Spring ecosystem like Spring Security, Spring AMQP, Spring Integration, etc), using them with Spring Boot will make you miss many concepts that you would grasp if you had started using them independently.
+Bottom Line
+The Spring Boot framework was designed to help developers reduce the time on development and improve performance by providing a default unit setup and integration tests. If you want to start your Java app development project quickly, you can just accept all the default property values and skip the XML configuration.
 
     
