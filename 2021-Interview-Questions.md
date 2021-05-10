@@ -241,9 +241,11 @@ public class StreamListSorting {
 Output:
 [Orange, Mango, Banana, Apple]
 [Orange, Mango, Banana, Apple]
+
 ```
 
 * **How to sort an Employee by salary in ascending order using Java 8 Stream APIs:**
+
 ```java
 
 import java.util.ArrayList;
@@ -271,13 +273,18 @@ public class StreamListSorting {
         System.out.println(employeesSortedList2);
     }
 }
+
 Output:
+
 [Employee [id=20, name=John, age=29, salary=350000], Employee [id=10, name=Ramesh, age=30, salary=400000], Employee [id=30, name=Tom, age=30, salary=450000], Employee [id=40, name=Pramod, age=29, salary=500000]]
 [Employee [id=20, name=John, age=29, salary=350000], Employee [id=10, name=Ramesh, age=30, salary=400000], Employee [id=30, name=Tom, age=30, salary=450000], Employee [id=40, name=Pramod, age=29, salary=500000]]
+
 ```
 
 * **How to sort an Employee by salary in descending order using Java 8 Stream APIs:**
+
 ```java
+
 import java.util.ArrayList;
 
 import java.util.Comparator;
@@ -303,9 +310,11 @@ public class StreamListSorting {
         System.out.println(employeesSortedList2);
     }
 }
+
 Output:
 [Employee [id=40, name=Pramod, age=29, salary=500000], Employee [id=30, name=Tom, age=30, salary=450000], Employee [id=10, name=Ramesh, age=30, salary=400000], Employee [id=20, name=John, age=29, salary=350000]]
 [Employee [id=40, name=Pramod, age=29, salary=500000], Employee [id=30, name=Tom, age=30, salary=450000], Employee [id=10, name=Ramesh, age=30, salary=400000], Employee [id=20, name=John, age=29, salary=350000]]
+
 ```
 * **Java 8 Stream examples to sort a Map, by keys or by values.**
 * Steps to sort a Map in Java 8.
@@ -322,6 +331,7 @@ Map result = map.entrySet().stream()
 * **By default, Collectors.toMap will returns a HashMap**
 
 * **Sort by Keys**
+
 ```java
 import java.util.HashMap;
 import java.util.LinkedHashMap;
@@ -381,8 +391,9 @@ Sorted...
 {a=6, b=5, c=20, d=1, e=7, f=9, g=50, m=2, n=99, y=8, z=10}
 
 ```
-* **Sort by Values**
 
+* **Sort by Values**
+```java
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
