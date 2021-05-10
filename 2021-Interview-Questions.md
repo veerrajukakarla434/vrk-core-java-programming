@@ -307,3 +307,137 @@ Output:
 [Employee [id=40, name=Pramod, age=29, salary=500000], Employee [id=30, name=Tom, age=30, salary=450000], Employee [id=10, name=Ramesh, age=30, salary=400000], Employee [id=20, name=John, age=29, salary=350000]]
 [Employee [id=40, name=Pramod, age=29, salary=500000], Employee [id=30, name=Tom, age=30, salary=450000], Employee [id=10, name=Ramesh, age=30, salary=400000], Employee [id=20, name=John, age=29, salary=350000]]
 ```
+* **Java 8 Stream examples to sort a Map, by keys or by values.**
+* Steps to sort a Map in Java 8.
+  * Convert a Map into a Stream
+  * Sort it
+  * Collect and return a new LinkedHashMap (keep the order)
+
+```java
+Map result = map.entrySet().stream()
+    .sorted(Map.Entry.comparingByKey()) 			
+    .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,
+    (oldValue, newValue) -> oldValue, LinkedHashMap::new));
+```
+* **By default, Collectors.toMap will returns a HashMap**
+
+* **Sort by Keys**
+```java
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.stream.Collectors;
+
+public class SortByKeyExample {
+
+    public static void main(String[] argv) {
+
+        Map<String, Integer> unsortMap = new HashMap<>();
+        unsortMap.put("z", 10);
+        unsortMap.put("b", 5);
+        unsortMap.put("a", 6);
+        unsortMap.put("c", 20);
+        unsortMap.put("d", 1);
+        unsortMap.put("e", 7);
+        unsortMap.put("y", 8);
+        unsortMap.put("n", 99);
+        unsortMap.put("g", 50);
+        unsortMap.put("m", 2);
+        unsortMap.put("f", 9);
+
+        System.out.println("Original...");
+        System.out.println(unsortMap);
+
+        // sort by keys, a,b,c..., and return a new LinkedHashMap
+        // toMap() will returns HashMap by default, we need LinkedHashMap to keep the order.
+        Map<String, Integer> result = unsortMap.entrySet().stream()
+                .sorted(Map.Entry.comparingByKey())
+                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,
+                        (oldValue, newValue) -> oldValue, LinkedHashMap::new));
+
+
+        // Not Recommend, but it works.
+        //Alternative way to sort a Map by keys, and put it into the "result" map
+        Map<String, Integer> result2 = new LinkedHashMap<>();
+        unsortMap.entrySet().stream()
+                .sorted(Map.Entry.comparingByKey())
+                .forEachOrdered(x -> result2.put(x.getKey(), x.getValue()));
+
+        System.out.println("Sorted...");
+        System.out.println(result);
+        System.out.println(result2);
+
+    }
+
+}
+Output
+
+
+Original...
+{a=6, b=5, c=20, d=1, e=7, f=9, g=50, y=8, z=10, m=2, n=99}
+
+Sorted...
+{a=6, b=5, c=20, d=1, e=7, f=9, g=50, m=2, n=99, y=8, z=10}
+{a=6, b=5, c=20, d=1, e=7, f=9, g=50, m=2, n=99, y=8, z=10}
+
+```
+* **Sort by Values**
+
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.stream.Collectors;
+
+public class SortByValueExample {
+
+    public static void main(String[] argv) {
+
+        Map<String, Integer> unsortMap = new HashMap<>();
+        unsortMap.put("z", 10);
+        unsortMap.put("b", 5);
+        unsortMap.put("a", 6);
+        unsortMap.put("c", 20);
+        unsortMap.put("d", 1);
+        unsortMap.put("e", 7);
+        unsortMap.put("y", 8);
+        unsortMap.put("n", 99);
+        unsortMap.put("g", 50);
+        unsortMap.put("m", 2);
+        unsortMap.put("f", 9);
+
+        System.out.println("Original...");
+        System.out.println(unsortMap);
+
+        //sort by values, and reserve it, 10,9,8,7,6...
+        Map<String, Integer> result = unsortMap.entrySet().stream()
+                .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
+                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,
+                        (oldValue, newValue) -> oldValue, LinkedHashMap::new));
+
+                        
+        //Alternative way
+        Map<String, Integer> result2 = new LinkedHashMap<>();
+        unsortMap.entrySet().stream()
+                .sorted(Map.Entry.<String, Integer>comparingByValue().reversed())
+                .forEachOrdered(x -> result2.put(x.getKey(), x.getValue()));
+
+        System.out.println("Sorted...");
+        System.out.println(result);
+        System.out.println(result2);
+
+    }
+}
+Output
+
+
+Original...
+{a=6, b=5, c=20, d=1, e=7, f=9, g=50, y=8, z=10, m=2, n=99}
+
+Sorted...
+{n=99, g=50, c=20, z=10, f=9, y=8, e=7, a=6, b=5, m=2, d=1}
+{n=99, g=50, c=20, z=10, f=9, y=8, e=7, a=6, b=5, m=2, d=1}
+
+```
+
+    
