@@ -209,3 +209,97 @@ Output:
 [Apple, Banana, Mango, Orange]
 
 ```
+* **Different ways to sort List of String objects in descending order using Java 8 Stream APIs:**
+
+```java
+import java.util.Comparator;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class StreamListSorting {
+    public static void main(String[] args) {
+
+        List < String > fruits = new ArrayList < String > ();
+        fruits.add("Banana");
+        fruits.add("Apple");
+        fruits.add("Mango");
+        fruits.add("Orange");
+
+        // descending order
+        List < String > sortedList3 = fruits.stream().sorted(Comparator.reverseOrder()).collect(Collectors.toList());
+        System.out.println(sortedList3);
+
+        List < String > sortedList4 = fruits.stream().sorted((o1, o2) -> o2.compareTo(o1)).collect(Collectors.toList());
+        System.out.println(sortedList4);
+    }
+}
+
+Output:
+[Orange, Mango, Banana, Apple]
+[Orange, Mango, Banana, Apple]
+```
+
+* **How to sort an Employee by salary in ascending order using Java 8 Stream APIs:**
+```java
+
+import java.util.ArrayList;
+
+import java.util.Comparator;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class StreamListSorting {
+    public static void main(String[] args) {
+
+        // sort employee by salary in ascending order
+        List < Employee > employees = new ArrayList < Employee > ();
+        employees.add(new Employee(10, "Ramesh", 30, 400000));
+        employees.add(new Employee(20, "John", 29, 350000));
+        employees.add(new Employee(30, "Tom", 30, 450000));
+        employees.add(new Employee(40, "Pramod", 29, 500000));
+
+        List < Employee > employeesSortedList1 = employees.stream()
+            .sorted((o1, o2) -> (int)(o1.getSalary() - o2.getSalary())).collect(Collectors.toList());
+        System.out.println(employeesSortedList1);
+
+        List < Employee > employeesSortedList2 = employees.stream()
+            .sorted(Comparator.comparingLong(Employee::getSalary)).collect(Collectors.toList()); //ascending order
+        System.out.println(employeesSortedList2);
+    }
+}
+Output:
+[Employee [id=20, name=John, age=29, salary=350000], Employee [id=10, name=Ramesh, age=30, salary=400000], Employee [id=30, name=Tom, age=30, salary=450000], Employee [id=40, name=Pramod, age=29, salary=500000]]
+[Employee [id=20, name=John, age=29, salary=350000], Employee [id=10, name=Ramesh, age=30, salary=400000], Employee [id=30, name=Tom, age=30, salary=450000], Employee [id=40, name=Pramod, age=29, salary=500000]]
+```
+
+* **How to sort an Employee by salary in descending order using Java 8 Stream APIs:**
+```java
+import java.util.ArrayList;
+
+import java.util.Comparator;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class StreamListSorting {
+    public static void main(String[] args) {
+
+        // sort employee by salary in ascending order
+        List < Employee > employees = new ArrayList < Employee > ();
+        employees.add(new Employee(10, "Ramesh", 30, 400000));
+        employees.add(new Employee(20, "John", 29, 350000));
+        employees.add(new Employee(30, "Tom", 30, 450000));
+        employees.add(new Employee(40, "Pramod", 29, 500000));
+
+        List < Employee > employeesSortedList1 = employees.stream()
+            .sorted((o1, o2) -> (int)(o2.getSalary() - o1.getSalary())).collect(Collectors.toList());
+        System.out.println(employeesSortedList1);
+
+        List < Employee > employeesSortedList2 = employees.stream()
+            .sorted(Comparator.comparingLong(Employee::getSalary).reversed()).collect(Collectors.toList()); //ascending order
+        System.out.println(employeesSortedList2);
+    }
+}
+Output:
+[Employee [id=40, name=Pramod, age=29, salary=500000], Employee [id=30, name=Tom, age=30, salary=450000], Employee [id=10, name=Ramesh, age=30, salary=400000], Employee [id=20, name=John, age=29, salary=350000]]
+[Employee [id=40, name=Pramod, age=29, salary=500000], Employee [id=30, name=Tom, age=30, salary=450000], Employee [id=10, name=Ramesh, age=30, salary=400000], Employee [id=20, name=John, age=29, salary=350000]]
+```
