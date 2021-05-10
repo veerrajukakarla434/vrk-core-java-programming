@@ -162,3 +162,16 @@ public class KafkaConfig {
 
 ## Java8 Section:
 
+* **Reference**
+* https://github.com/veerrajukakarla434/vrk-core-java-programming/blob/master/Part5_Java8_CoreJava_Interview_Questions.md
+* https://www.simplilearn.com/java-8-interview-questions-and-answers-article
+* https://java2blog.com/java-8-interview-questions/
+* https://intellipaat.com/blog/interview-question/java-8-interview-questions/
+* https://www.interviewbit.com/java-8-interview-questions/
+* https://www.journaldev.com/2366/core-java-interview-questions-and-answers
+* https://www.baeldung.com/java-8-interview-questions
+
+#### Java8 Programms
+
+ 
+
