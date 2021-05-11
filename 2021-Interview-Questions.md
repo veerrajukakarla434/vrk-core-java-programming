@@ -525,3 +525,6 @@ It is very easy for a new developer to on-board the project as he needs to under
 * https://www.kindsonthegenius.com/microservices/explaining-bounded-context-in-microservices/#:~:text=Bounded%20Context%20is%20a%20very,microservice%20becomes%20a%20bit%20clearer.&text=So%20we%20can%20now%20understand,an%20entity%20made%20certain%20sense%E2%80%9D.
 * https://www.youtube.com/watch?v=RvekNMydS0A
 * https://www.youtube.com/watch?v=NNFJREcalc0
+
+
+* **Event Handling in Spring / Event Handling With Spring Framework**
