@@ -519,3 +519,8 @@ It is very easy for a new developer to on-board the project as he needs to under
   * Microservices are less secure relative to monolithic applications due to the inter-services communication over the network.
   * Debugging is difficult as the control flows over many microservices and to point out why and where exactly the error occurred is a difficult task.
 
+* **Explaining Bounded Context in Microservices **
+
+* Bounded Context is a very important term in Microservices. If you get the hang of it, then design of microservice becomes a bit clearer.
+* https://www.kindsonthegenius.com/microservices/explaining-bounded-context-in-microservices/#:~:text=Bounded%20Context%20is%20a%20very,microservice%20becomes%20a%20bit%20clearer.&text=So%20we%20can%20now%20understand,an%20entity%20made%20certain%20sense%E2%80%9D.
+*
