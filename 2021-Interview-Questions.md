@@ -472,3 +472,50 @@ Bottom Line
 * The Spring Boot framework was designed to help developers reduce the time on development and improve performance by providing a default unit setup and integration tests. If you want to start your Java app development project quickly, you can just accept all the default property values and skip the XML configuration.
 
     
+* **What is the Difference between monolithic and microservices architecture**
+
+* Monolithic architecture  is built as one large system and is usually one code-base. Monolithic application is tightly coupled and entangled as the application evolves, making it difficult to isolate services for purposes such as independent scaling or code maintainability.
+
+* It extremely difficult to change technology or language or framework because everything is tightly coupled and depend on each other.
+
+* Microservices architecture is built as small independent module based on business functionality. In microservices application, each project and services are independent from each other at the code level. Therefore it is easy to  configure and deploy completely and also easy to scale based on demand.
+
+* **Disadvantages of Monolithic applications:**
+
+  * It becomes too large in size with time and hence, difficult to manage.
+  * We need to redeploy the whole application even for a small change.
+  * As the size of the application increases, its start-up and deployment time also increases.
+  * For any new developer joining the project, it is very difficult to understand the logic of large Monolithic application even if his responsibility is related to a single functionality.
+  * Even if a single part of the application is facing a large load/traffic, we need to deploy the instances of the whole application in multiple servers. It is very inefficient   and takes up more resources unnecessarily. Hence, horizontal scaling is not feasible in monolithic applications.
+  * It is very difficult to adopt any new technology which is well suited for a particular functionality as it affects the whole application, both in terms of time and cost.
+  * It is not very reliable as a single bug in any module can bring down the whole monolithic application.
+
+* **Advantages of monolithic applications:**
+
+  * Simple to develop relative to microservices where skilled developers are required in order to identify and develop the services.
+  * Easier to deploy as only a single jar/war file is deployed.
+  * Relatively easier and simple to develop in comparison to microservices architecture.
+  * The problems of network latency and security are relatively less in comparison to microservices architecture.
+
+* **Microservices** 
+* It is an architectural development style in which the application is made up of smaller services communicating with each other directly using light weight protocols like HTTP.
+
+* **Advantages of microservices:**
+
+  * It is easy to manage as it is relatively smaller in size.
+  * If there’s any update in one of the microservices, then we need to redeploy only that microservice.
+  * Microservices are self-contained and hence, deployed independently. Their start-up and deployment time are relatively less.
+It is very easy for a new developer to on-board the project as he needs to understand only a particular microservice providing the functionality he will be working on and not the whole system.
+  * If a particular microservice is facing a large load because of the users using that functionality in excess then we need to scale out that microservice only. Hence, microservices architecture supports horizontal scaling.
+  * Each microservice can use different technology based on the business requirements.
+  * If a particular microservice goes down due to some bug, then it doesn’t affect other microservices and the whole system remains intact, continues providing other functionalities to the users.
+
+* **Disadvantages of microservices:**
+
+  * Being a distributed system, it is much more complex than the monolothic applications. Its complexity increases with the increase in number of microservices.
+  * Skilled developers are required to work with microservices architecture which can identify the microservices and manage their inter-communications.
+  * Independent deployment of microservices is complicated.
+  * Microservices are costly in terms of network usage as they need to interact with each other and all these remote calls results into network latency.
+  * Microservices are less secure relative to monolithic applications due to the inter-services communication over the network.
+  * Debugging is difficult as the control flows over many microservices and to point out why and where exactly the error occurred is a difficult task.
+
