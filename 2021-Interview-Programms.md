@@ -1,5 +1,49 @@
 # 2021-Interview-Programms
 
+### Second largest number without using utility methods
+```java
+
+public class SecondlargetNumber {
+
+	public static void main(String[] args) {
+		
+		int [] arr = {7,8,5,4,3,2,3,4,9};
+		int temp= 0;
+		for(int i=0; i<arr.length; i++) {
+			
+			for(int j=i+1; j<arr.length; j++) {
+				
+				if(arr[i]>arr[j]) {
+					temp = arr[i];
+					arr[i] = arr[j];
+					arr[j]=temp;
+				}
+				
+			}
+			
+		}
+		
+		for(int k :arr) {
+			System.out.println(k);
+		}
+		
+		System.out.println("Second largest number is :" + arr[arr.length-2] );
+	}
+
+}
+
+2
+3
+3
+4
+4
+5
+7
+8
+9
+Second highest number is :8
+```
+
 ### Given an array of strings, return all groups of strings. OR Group anagrams together from a list of words
 
 ```java
