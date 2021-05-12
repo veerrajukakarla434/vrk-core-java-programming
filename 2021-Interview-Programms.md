@@ -138,6 +138,21 @@ public class CountHighestRepeatingWordsFromText {
 {veer=1, hai=2, how=2, are=5, you=9}
 {you=9, are=5, hai=2, how=2, veer=1}
 
+// For 2nd Most repeated Value given String
+
+      System.out.println(" 2nd most "+ sortedByCount);
+		int value = (int)sortedByCount.values().toArray()[sortedByCount.size()-2];
+		System.out.println(" 2nd most "+ value);
+		
+		for(Map.Entry<String, Integer> entry : sortedByCount.entrySet()) {
+			if(entry.getValue()==value) {
+				System.out.println(" 2nd most repeated word : "+ entry.getKey());
+			}
+		}
+		
+ 2nd most {veer=1, hai=2, how=2, are=5, you=9}
+ 2nd most 5
+ 2nd most repeated word : are
 ```
 
 ``` java
