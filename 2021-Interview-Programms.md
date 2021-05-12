@@ -272,4 +272,29 @@ Second Largest: 5
 Second Largest: 77
 
 ```
+### How do you swap two string variables without using third or temp variable in java?
 
+```java
+public class Test {
+
+	public static void main(String[] args) {
+		String str = "veerraju";
+		String str1="Raju";
+		
+		System.out.println("Before swap :" + str +"  "+ str1);
+		
+		str = str+str1;
+		
+		str1 =str.substring(0,str.length()-str1.length()) ;
+		
+		str =str.substring(str1.length()); 
+		
+		System.out.println("After swap :" + str +"  "+ str1);
+	}
+
+}
+
+Before swap :veerraju  Raju
+After swap :Raju  veerraju
+
+```
