@@ -96,6 +96,97 @@ how - 2
 are - 5
 you - 9
 ```
+
+#### Pring Duplicate words in Assending Order and DessingOrder 
+```java
+public class CountHighestRepeatingWordsFromText {
+	public static void main(String args[]) {
+
+		String str = "hai how are you you you you you you you you hai are are are how are you veer";
+
+		Map<String, Integer> wordMap = new HashMap<>();
+		String[] words = str.split(" ");
+
+		for (String word : words) {
+			if (wordMap.containsKey(word)) {
+				wordMap.put(word, wordMap.get(word) + 1);
+			} else {
+				wordMap.put(word, 1);
+			}
+		}
+		
+		// start
+		Map<String, Integer> sortedByCount = wordMap.entrySet()
+                .stream()
+                .sorted(Map.Entry.comparingByValue())
+                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e1, LinkedHashMap::new));
+		
+		System.out.println(sortedByCount);
+		//end
+		
+		// start
+		 Map<String, Integer> sortedByCount1 = wordMap.entrySet()
+                .stream()
+                .sorted((Map.Entry.<String, Integer>comparingByValue().reversed()))
+                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e1, LinkedHashMap::new));
+				System.out.println(sortedByCount1);
+				//end
+		
+		 
+	}
+}
+{veer=1, hai=2, how=2, are=5, you=9}
+{you=9, are=5, hai=2, how=2, veer=1}
+
+```
+
+``` java
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.stream.Collectors;
+
+public class CountHighestRepeatingWordsFromText {
+	public static void main(String args[]) {
+
+		String str = "hai how are you you you you you you you you hai are are are how are you veer";
+
+		Map<String, Integer> wordMap = new HashMap<>();
+		String[] words = str.split(" ");
+
+		for (String word : words) {
+			if (wordMap.containsKey(word)) {
+				wordMap.put(word, wordMap.get(word) + 1);
+			} else {
+				wordMap.put(word, 1);
+			}
+		}
+		
+		// start
+		Map<String, Integer> sortedByCount = wordMap.entrySet()
+                .stream()
+                .sorted(Map.Entry.comparingByValue())
+                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e1, LinkedHashMap::new));
+		
+		System.out.println(sortedByCount);
+		//end
+		
+		// start
+		final Map<String, Integer> sortedByCount1 = wordMap.entrySet()
+                .stream()
+                .sorted((Map.Entry.<String, Integer>comparingByValue().reversed()))
+                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e1, LinkedHashMap::new));
+				System.out.println(sortedByCount1);
+				//end
+		
+		 System.out.println("2nd most repated number :" + sortedByCount1.values().toArray());		
+		 System.out.println("2nd most repated number :" + sortedByCount1.values().toArray()[1]);
+		 
+
+	}
+
+```
+
 ### Java Program To Check Given Number Is Prime Or Not
 
 ``` java
