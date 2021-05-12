@@ -1,6 +1,6 @@
 # 2021-Interview-Programms
 
-### Given an array of strings, return all groups of strings. OR Group anagrams together from a list of words
+### 1) Given an array of strings, return all groups of strings. OR Group anagrams together from a list of words
 
 ```java
 import java.util.ArrayList;
