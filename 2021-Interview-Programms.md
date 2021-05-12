@@ -1,6 +1,6 @@
 # 2021-Interview-Programms
 
-### 1) Given an array of strings, return all groups of strings. OR Group anagrams together from a list of words
+### Given an array of strings, return all groups of strings. OR Group anagrams together from a list of words
 
 ```java
 import java.util.ArrayList;
@@ -57,7 +57,7 @@ public class GroupAnagramsTogetherFromWords {
 
 ```
 
-### 2) How to find duplicate characters in a string in java?
+###  How to find duplicate characters in a string in java?
 
 ```java
 import java.util.HashMap;
@@ -95,4 +95,28 @@ hai - 2
 how - 2
 are - 5
 you - 9
+```
+### Java Program To Check Given Number Is Prime Or Not
+
+``` java
+public class Main {
+
+  public static void main(String[] args) {
+
+    int num = 29;
+    boolean flag = false;
+    for (int i = 2; i <= num / 2; ++i) {
+      // condition for nonprime number
+      if (num % i == 0) {
+        flag = true;
+        break;
+      }
+    }
+
+    if (!flag)
+      System.out.println(num + " is a prime number.");
+    else
+      System.out.println(num + " is not a prime number.");
+  }
+}
 ```
