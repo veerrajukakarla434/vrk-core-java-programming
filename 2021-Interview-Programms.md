@@ -57,3 +57,42 @@ public class GroupAnagramsTogetherFromWords {
 
 ```
 
+### 2) How to find duplicate characters in a string in java?
+
+```java
+import java.util.HashMap;
+import java.util.Map;
+
+public class CountDulpicateWordsFromString {
+
+	public static void main(String[] args) {
+		String str = "hai how are you you you you you you you you hai are are are how are you veer";
+
+		Map<String, Integer> wordMap = new HashMap<>();
+		String[] words = str.split(" ");
+
+		for (String word : words) {
+			if (wordMap.containsKey(word)) {
+				wordMap.put(word, wordMap.get(word) + 1);
+			} else {
+				wordMap.put(word, 1);
+			}
+		}
+		
+		for(Map.Entry<String, Integer> entry : wordMap.entrySet()) {
+			if(entry.getValue()>1) {
+				System.out.println(entry.getKey() +" - " + entry.getValue());
+			}
+			
+		}
+     
+	}
+
+}
+
+Out Put :
+hai - 2
+how - 2
+are - 5
+you - 9
+```
