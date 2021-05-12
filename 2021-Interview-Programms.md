@@ -123,7 +123,8 @@ public class Main {
 ### Write a java program to find second largest number in an integer array
 
 ``` java
-Using Collections
+ //Using Collections
+ 
 public class SecondLargestInArrayExample2{  
 public static int getSecondLargest(Integer[] a, int total){  
 List<Integer> list=Arrays.asList(a);  
