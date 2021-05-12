@@ -1,6 +1,6 @@
 # 2021-Interview-Programms
 
-### Second largest number without using utility methods
+### Second highest number without using utility methods
 ```java
 
 public class SecondlargetNumber {
@@ -27,7 +27,7 @@ public class SecondlargetNumber {
 			System.out.println(k);
 		}
 		
-		System.out.println("Second largest number is :" + arr[arr.length-2] );
+		System.out.println("Second highest number is :" + arr[arr.length-2] );
 	}
 
 }
