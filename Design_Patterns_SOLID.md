@@ -23,5 +23,11 @@
 * **5) D: Dependency inversion principle** 
 
 
+* https://www.baeldung.com/solid-principles
+* https://www.javatpoint.com/solid-principles-java
+* https://www.educative.io/edpresso/what-are-the-solid-principles-in-java
+* https://howtodoinjava.com/best-practices/solid-principles/
+
+
 
 
