@@ -54,3 +54,9 @@ Tightly Coupled and Loosely coupled |It extremely difficult to change technology
 ## Saga distributed transactions
 * **Reference** : https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/saga/saga#:~:text=The%20saga%20design%20pattern%20is,trigger%20the%20next%20transaction%20step.
 
+### Twelve-Factor Methodology in a Spring Boot Microservice
+
+* https://www.baeldung.com/spring-boot-12-factor
+* https://dzone.com/articles/12-factor-app-principles-and-cloud-native-microser
+* https://dev.to/simon_sugob/the-twelve-factor-appa-successful-microservices-guideline-3a1h
+
