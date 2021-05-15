@@ -472,7 +472,7 @@ Bottom Line
 * The Spring Boot framework was designed to help developers reduce the time on development and improve performance by providing a default unit setup and integration tests. If you want to start your Java app development project quickly, you can just accept all the default property values and skip the XML configuration.
 
     
-* **What is the Difference between monolithic and microservices architecture**
+### What is the Difference between monolithic and microservices architecture
 
 * Monolithic architecture  is built as one large system and is usually one code-base. Monolithic application is tightly coupled and entangled as the application evolves, making it difficult to isolate services for purposes such as independent scaling or code maintainability.
 
