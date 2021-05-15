@@ -18,3 +18,5 @@
 * https://www.edureka.co/blog/microservices-design-patterns
 
 * https://dzone.com/articles/design-patterns-for-microservices
+* https://examples.javacodegeeks.com/design-patterns-for-microservices/
+
