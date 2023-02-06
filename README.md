@@ -1,7 +1,7 @@
 # vrk-core-java-programming
 
 
-#### Core Java: java8 (Fetures, Java 11 fetures)
+#### Core Java: java8 (Fetures)
          
        Data Types
        Hello World
