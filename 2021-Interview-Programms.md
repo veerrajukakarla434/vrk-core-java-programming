@@ -342,3 +342,72 @@ Before swap :veerraju  Raju
 After swap :Raju  veerraju
 
 ```
+* **Coding Problem** : Given an input string of random letters find letters that make up numbers in Java
+```java
+public class TestExample1 {  
+  public static void main(String[] args) {  
+	
+	  String input = "seveneightninetwothreefive";
+	  String[] numberWords =createWordList(); 
+	  int out = findNumber(numberWords, input);
+	  System.out.println("--------------> : "+out);
+	  
+  }
+  
+  public static String[] createWordList() {
+	    String[] numberWords = new String[10];
+	    numberWords[0] = "zero";
+	    numberWords[1] = "one";
+	    numberWords[2] = "two";
+	    numberWords[3] = "three";
+	    numberWords[4] = "four";
+	    numberWords[5] = "five";
+	    numberWords[6] = "six";
+	    numberWords[7] = "seven";
+	    numberWords[8] = "eight";
+	    numberWords[9] = "nine";
+	    return numberWords;
+	}
+  
+  public static String sort(String input) {
+	    char[] digits = input.toCharArray();
+	    Arrays.sort(digits);
+	    return new String(digits);
+	}
+  
+  public static int findNumber(String[] numberWords, String input) {
+	    input = sort(input);
+
+	    int length = input.length();
+	    double minPower = Math.floor(length / 5d);
+	    double maxPower = Math.ceil(length / 3d);
+	    int minimum = (int) Math.pow(10d, minPower);
+	    int maximum = (int) Math.pow(10d, maxPower);
+
+	    for (int index = minimum; index < maximum; index++) {
+	        String test = createNumberString(numberWords,
+	                index);
+	        test = sort(test);
+	        if (test.equals(input)) {
+	            return index;
+	        }
+	    }
+
+	    return -1;
+	}
+  
+  public static String createNumberString(String[] numberWords,
+	        int index) {
+	    String output = "";
+
+	    while (index > 0) {
+	        int digit = index % 10;
+	        output = numberWords[digit] + output;
+	        index /= 10;
+	    }
+
+	    return output;
+	}
+}
+
+```
