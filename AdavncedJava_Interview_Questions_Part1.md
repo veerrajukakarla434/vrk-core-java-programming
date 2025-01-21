@@ -107,11 +107,11 @@ apiListingScanner
   
 #### 2) What happened if I use/put @Component on top of Service layer or repo layer ?
 
- * **With Springís auto-scanning feature, it automatically detects various beans defined in our application.** We usually annotate our beans using one of the available Spring annotations ñ @Component, @Repository, @Service, @Controller.
+ * **With Spring‚Äôs auto-scanning feature, it automatically detects various beans defined in our application.** We usually annotate our beans using one of the available Spring annotations ‚Äì @Component, @Repository, @Service, @Controller.
  * On detecting the bean, Spring simply registers it into the ApplicationContext.
  
 * **@Component:**
-  * We can use @Component annotation to mark a bean as a Spring-managed component. **In other words, itís a generic stereotype for any Spring-managed component.**
+  * We can use @Component annotation to mark a bean as a Spring-managed component. **In other words, it‚Äôs a generic stereotype for any Spring-managed component.**
 ```Java
 
 @Component
@@ -136,7 +136,7 @@ For this, we should configure PersistenceExceptionTranslationPostProcessor in ou
 <bean class=
   "org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor"/>
 ```  
-This bean post processor adds an advisor to all beans marked with @Repository. The advisorís responsibility is to translate the platform-specific exceptions to the Springís unified unchecked exceptions.
+This bean post processor adds an advisor to all beans marked with @Repository. The advisor‚Äôs responsibility is to translate the platform-specific exceptions to the Spring‚Äôs unified unchecked exceptions.
 
 * **@Service:**
 * Just like @Repository, @Service is another specialization of @Component:
@@ -149,18 +149,18 @@ public @interface Service {
 
 * Just like @Repository, @Service is also a type of @Component. That means Spring will also automatically detect such beans.
 
-* **The @Service annotation represents that our bean holds some business logic.** Till date, it doesnít provide any specific behavior over @Component.
+* **The @Service annotation represents that our bean holds some business logic.** Till date, it doesn‚Äôt provide any specific behavior over @Component.
 
 * Still, **we should annotate the service-layer beans with the @Service annotation to make our intent clear.** Additionally, we never know if someday Spring chooses to add some specific functionality to it.
 
 #### Differences in NutShell:
-* Letís quickly sum up the differences between @Component, @Repository and, @Service:
+* Let‚Äôs quickly sum up the differences between @Component, @Repository and, @Service:
 
   * @Component is the most generic stereotype and marks a bean as a Spring-managed component
   * Both @Service and @Repository annotations are the specializations over the @Component annotation
-  * @Repository is a stereotype used for persistence layer. It translates any persistence related exceptions into a Springís DataAccessException
-  * @Service is used for the beans at the service layer. Currently, it doesnít offer any additional functionality over @Component
-  * Itís always preferable to use @Repository and @Service annotations over @Component, wherever applicable. It communicates the beanís intent more clearly
+  * @Repository is a stereotype used for persistence layer. It translates any persistence related exceptions into a Spring‚Äôs DataAccessException
+  * @Service is used for the beans at the service layer. Currently, it doesn‚Äôt offer any additional functionality over @Component
+  * It‚Äôs always preferable to use @Repository and @Service annotations over @Component, wherever applicable. It communicates the bean‚Äôs intent more clearly
 ```Console
 So Nothing will happens if we declare we can do all operations and we will get results without any exception, 
 But to get persistence related exceptions we should use @Repository 
@@ -223,7 +223,7 @@ return book;
 @EnableAutoConfiguration(exclude = DataSourceAutoConfiguration.class)
 public class MyConfiguration { }
 ```
-* If we enabled auto-configuration with the @SpringBootApplication annotation ó which has @EnableAutoConfiguration as a meta-annotation ó we could disable auto-configuration with an attribute of the same name:
+* If we enabled auto-configuration with the @SpringBootApplication annotation ‚Äî which has @EnableAutoConfiguration as a meta-annotation ‚Äî we could disable auto-configuration with an attribute of the same name:
 ```Java
 // other annotations
 @SpringBootApplication(exclude = DataSourceAutoConfiguration.class)
@@ -237,7 +237,7 @@ spring.autoconfigure.exclude=org.springframework.boot.autoconfigure.jdbc.DataSou
 
 * **A) Spring Boot has many advantages, such as:**
   * Operate independently
-  * implified configuration
+  * Simplified configuration
   * Automatic configuration
   * No code generation and XML configuration
   * Application monitoring
@@ -279,11 +279,11 @@ spring.autoconfigure.exclude=org.springframework.boot.autoconfigure.jdbc.DataSou
 ## Spring Boot Annotations
 
 * The spring boot annotations are mostly placed in **org.springframework.boot.autoconfigure** and 
-**org.springframework.boot.autoconfigure.condition** packages. Letís learn about some frequently used spring boot 
+**org.springframework.boot.autoconfigure.condition** packages. Let‚Äôs learn about some frequently used spring boot 
 annotations as well as which work behind the scene.
 
 #### Spring Boot @SpringBootApplication Annotation
-* Spring Boot @SpringBootApplication annotation is used to mark a configuration class that declares one or more @Bean methods and also triggers auto-configuration and component scanning. Itís same as declaring a class with @Configuration, @EnableAutoConfiguration and @ComponentScan annotations.
+* Spring Boot @SpringBootApplication annotation is used to mark a configuration class that declares one or more @Bean methods and also triggers auto-configuration and component scanning. It‚Äôs same as declaring a class with @Configuration, @EnableAutoConfiguration and @ComponentScan annotations.
 
 #### 10 Spring MVC and REST annotations for Java developers
 
@@ -427,18 +427,18 @@ the values of the query parameters where as @PathVariable used for accessing the
 
 **SPRING ANNOTATION**|**JAX-RS ANNOTATION**
 --------------------|------------------
-@RequestMapping(path = ì/troopersî | @Path(ì/troopersî)
+@RequestMapping(path = ‚Äú/troopers‚Äù | @Path(‚Äú/troopers‚Äù)
 @PostMapping	| @POST
 @PutMapping	| @PUT
 @GetMapping	| @GET
 @DeleteMapping	| @DELETE
 @ResponseBody	| N/A
 @RequestBody	| N/A
-@PathVariable(ìidî)	| @PathParam(ìidî)
-@RequestParam(ìxyzî)	| @QueryParam(ëxyzî)
-@RequestParam(value=îxyzî)	| @FormParam(ìxyzî)
-@RequestMapping(produces = {ìapplication/jsonî}) | 	@Produces(ìapplication/jsonî)
-@RequestMapping(consumes = {ìapplication/jsonî}) |	@Consumes(ìapplication/jsonî)
+@PathVariable(‚Äúid‚Äù)	| @PathParam(‚Äúid‚Äù)
+@RequestParam(‚Äúxyz‚Äù)	| @QueryParam(‚Äòxyz‚Äù)
+@RequestParam(value=‚Äùxyz‚Äù)	| @FormParam(‚Äúxyz‚Äù)
+@RequestMapping(produces = {‚Äúapplication/json‚Äù}) | 	@Produces(‚Äúapplication/json‚Äù)
+@RequestMapping(consumes = {‚Äúapplication/json‚Äù}) |	@Consumes(‚Äúapplication/json‚Äù)
 
 #### Diff between PathParam and QueryParam ?
 
@@ -448,12 +448,12 @@ the values of the query parameters where as @PathVariable used for accessing the
 PathParam example
 GET http://base-url/students/{roll-number}  OR
 
-@RequestMapping(path = ì/base-url/students/{roll-number}î  == @Path(ì/base-url/students/{roll-number}î)
+@RequestMapping(path = ‚Äú/base-url/students/{roll-number}‚Äù  == @Path(‚Äú/base-url/students/{roll-number}‚Äù)
 
 QueryParam example
 GET http://base-url/students?grade=10    OR
 
-@RequestMapping(path = ì/base-url/students/{roll-number}î  == @Path(ì/base-url/students/{roll-number}î)
+@RequestMapping(path = ‚Äú/base-url/students/{roll-number}‚Äù  == @Path(‚Äú/base-url/students/{roll-number}‚Äù)
 ```
 
 * **When to use @PathParam vs @QueryParam**
