@@ -111,16 +111,13 @@ public class ArrayShift {
     }
 }
 ```
+
 **Out Put**
-```java
-	Original Array: [1, 2, 3, 4, 5, 6, 7]
-	After shifting 3 elements: [4, 5, 6, 7, 1, 2, 3]
-	
-	Original Array: [10, 20, 30, 40, 50]
-	After shifting 2 elements: [30, 40, 50, 10, 20]
-```
-#### Explanation in detail
-![image](https://github.com/user-attachments/assets/fa338858-b43c-4a16-a279-f855da540165)
+
+
+![image](https://github.com/user-attachments/assets/0c15dcd5-2b1d-43e3-a74e-f8e69a304558)
+
+
 
 
 
