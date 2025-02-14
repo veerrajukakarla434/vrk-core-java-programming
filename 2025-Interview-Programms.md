@@ -117,6 +117,7 @@ public class ArrayShift {
 
 ![image](https://github.com/user-attachments/assets/0c15dcd5-2b1d-43e3-a74e-f8e69a304558)
 
+2) Move K - Element/Elements End of the Array
 
 ```java
 public class ArrayManipulation {
