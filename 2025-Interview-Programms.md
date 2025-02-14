@@ -118,7 +118,60 @@ public class ArrayShift {
 ![image](https://github.com/user-attachments/assets/0c15dcd5-2b1d-43e3-a74e-f8e69a304558)
 
 
+```java
+public class ArrayManipulation {
+    // Method to move a specific element to the end of the array
+    public static int[] moveElementToEnd(int[] arr, int element) {
+        // Two-pointer approach
+        int i = 0;
+        int j = arr.length - 1;
+        
+        while (i < j) {
+            // Move j pointer left while it points to the target element
+            while (i < j && arr[j] == element) {
+                j--;
+            }
+            
+            // If current element is the target, swap with j
+            if (arr[i] == element) {
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+            
+            i++;
+        }
+        
+        return arr;
+    }
+    
+    // Utility method to print array
+    public static void printArray(int[] arr) {
+        for (int num : arr) {
+            System.out.print(num + " ");
+        }
+        System.out.println();
+    }
+    
+    // Example usage
+    public static void main(String[] args) {
+        int[] arr = {2, 1, 2, 2, 3, 4, 2};
+        System.out.println("Original array:");
+        printArray(arr);
+        
+        moveElementToEnd(arr, 2);
+        System.out.println("Array after moving 2s to end:");
+        printArray(arr);
+    }
+}
+```
+**Out Put**
 
-
-
+```java
+	Original array:
+	2 1 2 2 3 4 2 
+	Array after moving 2s to end:
+	4 1 3 2 2 2 2 
+```
+![image](https://github.com/user-attachments/assets/33169995-e549-4efc-b4dd-86c6286a30e6)
 
