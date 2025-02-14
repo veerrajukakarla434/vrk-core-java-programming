@@ -14,7 +14,7 @@
 
 1) Shift N-Elements to End of the Array With Same Order 
 
-#### Solution One Using % (Modulo operation)
+#### Solution 1 Using % (Modulo operation)
 ```text
 // Implementation of Modulo or Remainder Operator in Java
 % operation how it work
@@ -62,9 +62,65 @@ public class P0002ShiftArrayWithSameOrder {
 	   output  :  5 6 9 1 2 3 4 
 ```	
 
-
-
-
+#### Solution 2
+```java
+public class ArrayShift {
+    public static void shiftNElementsToEnd(int[] arr, int n) {
+        if (arr == null || arr.length <= 1 || n <= 0 || n >= arr.length) {
+            return;
+        }
+        
+        // Step 1: Create a temporary array to store first n elements
+        int[] temp = new int[n];
+        for (int i = 0; i < n; i++) {
+            temp[i] = arr[i];
+        }
+        
+        // Step 2: Shift remaining elements to the left
+        int left = 0;  // Points to position where elements should be placed
+        int right = n; // Points to elements that need to be shifted
+        
+        while (right < arr.length) {
+            arr[left] = arr[right];
+            left++;
+            right++;
+        }
+        
+        // Step 3: Place the temporary stored elements at the end
+        int tempIndex = 0;
+        while (left < arr.length) {
+            arr[left] = temp[tempIndex];
+            left++;
+            tempIndex++;
+        }
+    }
+    
+    public static void main(String[] args) {
+        // Test cases
+        int[] arr1 = {1, 2, 3, 4, 5, 6, 7};
+        System.out.println("Original Array: " + java.util.Arrays.toString(arr1));
+        
+        shiftNElementsToEnd(arr1, 3);
+        System.out.println("After shifting 3 elements: " + java.util.Arrays.toString(arr1));
+        
+        int[] arr2 = {10, 20, 30, 40, 50};
+        System.out.println("\nOriginal Array: " + java.util.Arrays.toString(arr2));
+        
+        shiftNElementsToEnd(arr2, 2);
+        System.out.println("After shifting 2 elements: " + java.util.Arrays.toString(arr2));
+    }
+}
+```
+**Out Put**
+```java
+	Original Array: [1, 2, 3, 4, 5, 6, 7]
+	After shifting 3 elements: [4, 5, 6, 7, 1, 2, 3]
+	
+	Original Array: [10, 20, 30, 40, 50]
+	After shifting 2 elements: [30, 40, 50, 10, 20]
+```
+#### Explanation in detail
+![image](https://github.com/user-attachments/assets/fa338858-b43c-4a16-a279-f855da540165)
 
 
 
